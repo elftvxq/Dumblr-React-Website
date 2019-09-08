@@ -4,8 +4,10 @@ import user from '../image/picture.png';
 import { ReactComponent as Comment } from "../image/chat.svg";
 import { ReactComponent as Retweet } from "../image/retweet.svg";
 import { ReactComponent as Heart } from "../image/heart.svg";
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import Reply from './Reply';
+import { Link } from "react-router-dom";
 
 class PostList extends Component {
     
@@ -19,7 +21,6 @@ class PostList extends Component {
         
         this.setState({
             displayReply:true, key:id }, ()=>{
-                console.log('監聽隱藏');
             // document.addEventListener('click', this.hideReply);    
         });
     }
@@ -29,7 +30,6 @@ class PostList extends Component {
         e.stopPropagation();
         this.setState({
             displayReply: false}, ()=>{
-                console.log('點到隱藏');
                 // document.removeEventListener('click', this.hideReply);
             });
     }
@@ -38,43 +38,44 @@ class PostList extends Component {
 
 
     render(){
-        const { posts } = this.props;
-
+        const { screams } = this.props;
+        dayjs.extend(relativeTime);
 
         return(
             <div className="post-list section">
-            { posts && posts.map(post => {
+            { screams && screams.map(scream => {
 
                 {/* let hash = "";
-                    post.tags.forEach( tag => {
+                    scream.tags.forEach(tag => {
                       hash += tag + " ";  
-                })
-                 */}
-                if (post) {
+                }) */}
+                
+                if (scream) {
 
                    let reply;
-                   if (this.state.displayReply && this.state.key == post.id) {
-                       reply = <div> <Reply key={post.id}/> <div className="mask" onClick={this.hideReply}></div></div> ;
+                   if (this.state.displayReply && this.state.key == scream.screamId) {
+                       reply = <div> <Reply key={scream.screamId}/> <div className="mask" onClick={this.hideReply}></div></div> ;
                    } else {
                        reply = null;
                    }
                                         
 
                   return (
-                    <div className="post-body" key={post.id}>
-                        <img className="user-pic" src={user} alt=""/>
+                    <div className="post-body" key={scream.screamId}>
+                        <img className="user-pic" src={scream.userImage}  alt=""/>
                         <div className="post-card">
-                            <p className="user-id">{post.userName}</p>
-                            <p className="post-time">{moment(post.createdAt.toDate().toString()).calendar()}</p>
-                            <p className="card-title">{post.title}</p>
-                            <img className="mainImage" src={post.pictureUrl} alt=""/>
-                            <p className="card-content">{post.content}</p>
+                              <Link to={`/users/${scream.userHandle}`} className="user-id">{scream.userHandle}</Link> 
+                            {/* <p className="post-time">{moment(scream.createdAt.toDate().toString()).calendar()}</p> */}
+                            <p className="post-time">{dayjs(scream.createdAt).fromNow()}</p>
+                            <p className="card-title">{scream.title}</p>
+                            <img className="mainImage" src={scream.pictureUrl} alt=""/>
+                            <p className="card-content">{scream.body}</p>
 
                             {/* <p className="card-hashtag">{hash}</p> */}
                             <div className="post-details">
-                                <p>105則迴響</p>
+                                <p>{`${scream.commentCount}則迴響`}</p>
                                 <div className="interact-icons">
-                                    <Comment className="interact-icon" onClick={()=>{this.showReply(post.id)}}/>
+                                    <Comment className="interact-icon" onClick={()=>{this.showReply(scream.screamId)}}/>
                                     
                                     <div className="reply-box" >
                                         {/* { (this.state.displayReply && this.state.key==post.id) ? (<Reply key={post.id}/><div className="mask" onClick={this.hideReply}></div>):(null) } */}

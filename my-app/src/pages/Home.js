@@ -27,14 +27,14 @@ class Home extends Component {
         render(){
             console.log(this.state);            
             // const { screams } = this.props;
-            console.log(this.props);
+      
             return(
                 
                     <div className="main">
                         <Navbar/>
                         <div className="left">
                             <CreatePost/>
-                            <PostList posts={this.state.screams}/>
+                            <PostList screams={this.state.screams}/>
                         </div>
                         <div className="right"></div>
                     </div>
