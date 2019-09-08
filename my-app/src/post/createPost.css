@@ -1,0 +1,73 @@
+.post-bar {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 500;
+}
+
+.post-section {
+    background-color: #ffffff;
+    height: 100px;
+    width: 540px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+    padding: 10px 0 20px 0;
+    box-sizing: border-box;
+}
+
+.post-section img {
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+    transition: top 0.5s;
+}
+
+.avatar-Pic {
+    z-index: 999;
+    height: 64px;
+    width: 64px;
+    background-color: #001935;
+    display: block;
+    border-radius: 3px;
+    background-size: cover;
+    overflow: visible;
+    margin-right: 20px;
+}
+
+.post-section img:hover {
+    top: -3px
+}
+
+.icon-text {
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 15px;
+}
+
+.post-text,
+.post-pic,
+.post-quote,
+.post-video {
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+.post-text,
+.post-pic,
+.post-quote {
+    border-right: rgba(0, 0, 0, 0.3) 0.5px solid;
+    padding-right: 50px;
+    /* height: 60px; */
+    /* border: 0;
+    height: 1px; */
+    /* background-image: -webkit-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0); */
+}

@@ -1,0 +1,29 @@
+.searchBar input {
+    /* background-color: #405368; */
+    border: none;
+    border-radius: 3px;
+    height: 35px;
+    width: 350px;
+    padding-left: 35px;
+    color: #ffffff;
+    background: #405368 url(../image/magnifying-glass.svg) no-repeat center;
+    background-size: 5%;
+    background-position: 10px 7px;
+}
+
+.searchBar input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+/* .searchBar ::-webkit-input-placeholder {
+    color: #ffffff;
+    font-size: 16px;
+} */
+
+.searchBar:focus {
+    color: #000000;
+    outline: none;
+    background: #ffffff url(../image/magnifying-glass-black.svg) no-repeat center;
+    background-size: 5%;
+    background-position: 10px 7px;
+}
