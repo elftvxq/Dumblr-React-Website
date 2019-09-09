@@ -18,14 +18,14 @@ let authenticated;
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecoded(token);
-  console.log(decodedToken);
-  if(decodedToken.exp * 1000 < Date.now()){
+  // console.log(decodedToken);
+  if(decodedToken.exp * 1001 < Date.now()){
     window.location.href = '/signin';
     authenticated = false;
   } else {
     authenticated = true;
   }
-}
+};
 
 function App() {
   return (
