@@ -1,3 +1,6 @@
+.signup-page{
+    width: 100%;
+}
 .signin-nav {
     width: 100%;
     justify-content: flex-end;
@@ -28,7 +31,6 @@
 }
 
 
-
 .signin-title {
     color: #ffffff;
     border: 0;
@@ -43,20 +45,13 @@
 }
 
 .singin-section {
-    position: absolute;
-    left: 50%;
-    margin-left: -400px;
-    position: absolute;
-    top: 35%;
     width: 800px;
     box-sizing: border-box;
     justify-content: center;
     display: flex;
 }
 
-.signin-form {
-    width: 40%;
-}
+
 
 .singin-section input {
     width: 100%;

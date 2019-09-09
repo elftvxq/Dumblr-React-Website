@@ -30,7 +30,7 @@ body {
     font-family: 'Noto Sans TC',"Microsoft YaHei","黑體","宋體", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #001935;
+  /* background-color: #001935; */
   padding-right: 50px;
   padding-left: 50px;
 }

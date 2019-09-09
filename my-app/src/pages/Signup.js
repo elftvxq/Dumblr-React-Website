@@ -1,53 +1,194 @@
 import React,{ Component } from "react";
 import "./signUp.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
+import withStyles from '@material-ui/core/styles/withStyles'
+import Logo from '../image/Dumblr.png';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+//MUI 
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+
+const styles = {
+    form: {
+            textAlign: 'center'
+        },
+        image: {
+            width: '150px',
+            margin: '20px auto 20px auto'
+        },
+        textField: {
+            margin: '10px auto 10px auto',
+            // borderColor:'white',
+            // backgroundColor: '#fcfcfb',
+        },
+        button: {
+            marginTop: 20,
+            marginBottom: 10,
+            paddingTop: 10,
+            paddingBottom: 10,
+            position: 'relative'
+
+        },
+        customError: {
+            color: 'red',
+            fontSize: '0.8rem'
+        },
+        progress: {
+            position: 'absolute'
+        }
+};
+
+// const styles = (theme) => ({
+//     ...theme.spreadIt
+// })
 
 class Signup extends Component{
     state = {
     email: '',
     password: '',
-    username: '',
+    confirmPassword:'',
+    handle: '',
+    loading: false,
+    errors:{}
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
-  }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.signUp(this.state);
-  }
+  };
+
+  
+    handleSubmit = (e) =>{
+        e.preventDefault();
+        this.setState({
+            loading: true
+        });
+        const newUserData = {
+            email: this.state.email,
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword,
+            handle: this.state.handle
+        }
+        axios.post('/signup', newUserData)
+        .then((res) =>{
+            console.log(res.data);
+            localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
+            this.setState({
+                loading:false
+            });
+            this.props.history.push('/');
+        })
+        .catch((err)=>{
+            this.setState({
+                errors: err.response.data,
+                loading: false
+            })
+        })
+    };
 
   render() {
-
-    const { auth, authError } = this.props;
-        if(auth.uid) return <Redirect to="/dashboard"/>
+    const { classes } = this.props;
+    const { errors, loading } = this.state;
 
     return (
-        <div>
-            <div className="signin-nav">
-                <NavLink to ="/signin"><button className="login-btn">登入</button></NavLink>
-            </div>
+        <Grid container className={classes.form}>
+                <Grid item sm />
+                <Grid item sm>
+                <img src={Logo} alt="Dumblr" className={classes.image} />
+                <Typography variant="h4" className={classes.pageTitle}>
+                    Signup
+                </Typography>
+                    <form noValidate onSubmit={this.handleSubmit}>
+                        <TextField
+                            id="email"
+                            label="Email"
+                            className={classes.textField}
+                            type="email"
+                            name="email"
+                            onChange={this.handleChange}
+                            margin="normal"
+                            variant="outlined"
+                            value={this.state.email}
+                            helperText={errors.email} error={errors.email ? true : false} 
+                            fullWidth
+                        />
+                        
+                        <TextField
+                            id="password"
+                            label="Password"
+                            className={classes.textField}
+                            type="password"
+                            name="password"
+                            onChange={this.handleChange}
+                            margin="normal"
+                            variant="outlined"
+                            value={this.state.password}
+                            helperText={errors.password} error={errors.password ? true : false} 
+                            fullWidth
+                        />
+                        <TextField
+                            id="confirmPassword"
+                            label="Confirm Password"
+                            className={classes.textField}
+                            type="password"
+                            name="confirmPassword"
+                            onChange={this.handleChange}
+                            margin="normal"
+                            variant="outlined"
+                            value={this.state.confirmPassword}
+                            helperText={errors.confirmPassword} error={errors.confirmPassword ? true : false} 
+                            fullWidth
+                        />
 
-            <div className="singin-section">
-                
-                <form className="signin-form" onSubmit={this.handleSubmit}>     
-                    <span className="signin-title">Dumblr</span>
-                      <input type="email" id="email" placeholder="電子郵件" className="signin-mail" onChange={this.handleChange}/>
-                      <input type="password" id="password" placeholder="密碼" onChange={this.handleChange}/>
-                      <input type="text" id="username" placeholder="使用者名稱" onChange={this.handleChange}/>
-                      <button className="register-btn">註冊</button>
-                       {authError? <p className="signup-message">{ authError }</p> : null }
-                </form>
-                
-            </div>
-
-        </div>
+                        <TextField
+                            id="handle"
+                            label = "Handle"
+                            className={classes.textField}
+                            type="text"
+                            name = "handle"
+                            onChange={this.handleChange}
+                            margin="normal"
+                            variant="outlined"
+                            value={this.state.handle}
+                            helperText={errors.handle} error={errors.handle ? true : false} 
+                            fullWidth
+                        />
+                        {/* <TextField className={classes.textField} type="password" id="password" name="password" lable="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} helperText={errors.password} error={errors.password ? true: false} variant="filled" fullWidth/> */}
+                        { errors.general && (
+                            <Typography variant="body2" className={classes.customError}>
+                            {errors.general}
+                            </Typography>
+                        )}
+                        <Button type="submit" variant="contained" color="primary" className={classes.button} disabled={loading}>
+                        Signup
+                        { loading && (
+                            <CircularProgress size={25} className={classes.progress}/>
+                        )}
+                        </Button>
+                         {/* <div>
+                         {authError? <p className="signin-message">{ authError }</p> : null }
+                         </div> */}
+                         <br/>
+                         <small>
+                             Already have an account? Sign in <Link to="/signin">here</Link>
+                         </small>
+                         </form>
+                    </Grid>
+                    <Grid item sm />
+                </Grid>
     )
   }
 };
 
+Signup.propTypes ={
+    classes: PropTypes.object.isRequired
+}
 
-export default Signup;
+export default (withStyles(styles)(Signup));
