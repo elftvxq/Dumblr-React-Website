@@ -6,6 +6,7 @@ import { ReactComponent as Explore } from '../image/explore.svg';
 import { ReactComponent as Notification } from '../image/flash.svg';
 import { ReactComponent as User } from '../image/people.svg';
 import { ReactComponent as Like} from '../image/like-black.svg';
+
 // import { ReactComponent as Create } from "../../image/create.svg";
 import Search from './Search'
 import Notifications from "../components/Notifications";
@@ -79,7 +80,7 @@ class Navbar extends Component {
 
                      { this.state.displayMenu ? (
                         <ul>
-                            <div className="menu-header"><p>帳號</p><a className="logout" href="#" onClick={this.props.signOut}>登出</a></div>
+                            <div className="menu-header"><p>帳號</p><a className="logout" href="#">登出</a></div>
                             <li className="menu-sub"><a href="#"> <Like/> 喜歡</a><p className="menu-num">30</p></li>
                             <li className="menu-sub"><a href="#">追蹤中</a><p className="menu-num">28</p></li>
                             <li className="menu-sub"><a href="#Setting">你的帳號</a></li>
