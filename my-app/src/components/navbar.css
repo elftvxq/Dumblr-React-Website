@@ -5,9 +5,23 @@
     display: flex;
     justify-content: space-between;
     /* padding-right: 30px; */
-    padding-left: 30px;
     /* border-bottom: 0.02px solid #114B5F; */
     margin-bottom: 20px;
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid #FFFFFF; */
+    background-color: #14213D;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 15px;
 }
 
 .headLeft {
@@ -16,10 +30,11 @@
 }
 
 .brandlogo {
-    color: white;
+    color: #EDF2F4;
     text-decoration: none;
     margin-right: 20px;
     font-size: 20px;
+    font-weight: 700;
 }
 
 .navicons {
@@ -29,7 +44,7 @@
 
 .navicon {
     padding-right: 30px;
-    fill: #A5AEB8;
+    fill: #EDF2F4;
     width: 24px;
     height: 24px;
     cursor: pointer;

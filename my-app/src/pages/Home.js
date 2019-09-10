@@ -32,11 +32,15 @@ class Home extends Component {
                 
                     <div className="main">
                         <Navbar/>
-                        <div className="left">
+                        <div className="main-content">
+                             <div className="left">
                             <CreatePost/>
                             <PostList screams={this.state.screams}/>
+                            </div>
+                            <div className="right">
+                                <p>Profile...</p>  
+                            </div>
                         </div>
-                        <div className="right"></div>
                     </div>
             )
         }  

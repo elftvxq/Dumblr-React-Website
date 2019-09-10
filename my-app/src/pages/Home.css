@@ -1,5 +1,12 @@
 .main {
-    margin-top: 10px; 
     width: 100%;
-    /* margin-left: 10%; */
+}
+
+.main-content{
+    display: flex;
+    justify-content: center;
+}
+
+.left{
+    margin-right: 30px;
 }

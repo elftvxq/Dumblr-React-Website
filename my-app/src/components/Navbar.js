@@ -6,7 +6,7 @@ import { ReactComponent as Explore } from '../image/explore.svg';
 import { ReactComponent as Notification } from '../image/flash.svg';
 import { ReactComponent as User } from '../image/people.svg';
 import { ReactComponent as Like} from '../image/like-black.svg';
-
+import Logo from '../image/Dumblr.png';
 // import { ReactComponent as Create } from "../../image/create.svg";
 import Search from './Search'
 import Notifications from "../components/Notifications";
@@ -58,9 +58,10 @@ class Navbar extends Component {
     render(){
       
       return(
-        <nav>
-            <div className="container">
-                <div className="headLeft">
+    
+            <React.Fragment>
+                <div className="navbar">
+                     <div className="headLeft">
                     <Link to="/" className="brandlogo">Dumblr</Link>
                     <Search/>
                 </div>
@@ -91,10 +92,12 @@ class Navbar extends Component {
 
                     </div>
                 </div>
+                </div>
+               
                     
                 
-            </div>
-        </nav>
+            </React.Fragment>
+        
         )  
     }
     
