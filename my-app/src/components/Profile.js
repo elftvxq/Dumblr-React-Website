@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 // MUI
@@ -15,6 +14,9 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from "@material-ui/icons/Edit";
+//Redux
+import { connect } from "react-redux";
+import { uploadImage } from "../redux/actions/userActions";
 
 const styles = (theme) => ({
     paper: {
@@ -68,6 +70,9 @@ class Profile extends Component {
 
      handleImageChange =(e) =>{
         const image = e.target.files[0];
+        const formData = new FormData();
+        formData.append('image', image, image.name);
+        this.props.uploadImage(formData);
      }
 
      handleEditPicture = () =>{
@@ -140,9 +145,12 @@ const mapStateToProps = (state) => ({
     user: state.user,
 });
 
+const mapActionsToProps = { uploadImage };
+
 Profile.propTypes = {
+    uploadImage: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     classes: PropTypes.object.isRequired
 };
 
-export default connect(mapStateToProps)(withStyles(styles)(Profile));
+export default connect(mapStateToProps, mapActionsToProps )(withStyles(styles)(Profile));

@@ -7,9 +7,13 @@ import { ReactComponent as Notification } from '../image/flash.svg';
 import { ReactComponent as User } from '../image/people.svg';
 import { ReactComponent as Like} from '../image/like-black.svg';
 import Logo from '../image/Dumblr.png';
+import PropTypes from 'prop-types';
 // import { ReactComponent as Create } from "../../image/create.svg";
 import Search from './Search'
 import Notifications from "../components/Notifications";
+//Redux
+import { connect } from "react-redux";
+import { logoutUser } from "../redux/actions/userActions";
 
 class Navbar extends Component {
 
@@ -103,5 +107,10 @@ class Navbar extends Component {
     
 }
 
+Navbar.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+};
 
-export default Navbar;
+const mapActionsToProps = { logoutUser };
+
+export default connect(null, mapActionsToProps)(Navbar);
