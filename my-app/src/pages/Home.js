@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PostList from "../post/PostList";
 import "./Home.css";
-import CreatePost from '../post/CreatePost';
-import Navbar from "../components/Navbar";
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
-
+//Component
+import CreatePost from '../post/CreatePost';
+import Navbar from "../components/Navbar";
+import Profile from '../components/Profile';
 
 class Home extends Component {
 
@@ -34,11 +35,11 @@ class Home extends Component {
                         <Navbar/>
                         <div className="main-content">
                              <div className="left">
-                            <CreatePost/>
-                            <PostList screams={this.state.screams}/>
+                                <CreatePost/>
+                                <PostList screams={this.state.screams}/>
                             </div>
                             <div className="right">
-                                <p>Profile...</p>  
+                                <Profile/>
                             </div>
                         </div>
                     </div>

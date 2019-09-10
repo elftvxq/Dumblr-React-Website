@@ -17,7 +17,7 @@ import { loginUser } from "../redux/actions/userActions";
 
 const styles = {
     form: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     image:{
         width: '150px',
@@ -27,7 +27,6 @@ const styles = {
         margin: '10px auto 10px auto', 
         // borderColor:'white',
         // backgroundColor: '#fcfcfb',
-        width: '400px'
     },
     button: {
         marginTop: 20,
@@ -66,7 +65,7 @@ class SignIn extends Component{
            this.setState({ errors: nextProps.UI.errors }); 
         }  
     };
-    
+
     handleSubmit = (e) =>{
         e.preventDefault();
         const userData = {
