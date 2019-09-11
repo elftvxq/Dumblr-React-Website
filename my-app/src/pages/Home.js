@@ -1,60 +1,62 @@
-import React, { Component } from 'react';
-import PostList from "../post/PostList";
+import React, { Component, Fragment } from 'react';
+import PropTypes from "prop-types";
+import Posts from "../post/PostList";
 import "./Home.css";
-import axios from 'axios';
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { getScreams } from "../redux/actions/dataActions";
 //Component
 import CreatePost from '../post/CreatePost';
 import Navbar from "../components/Navbar";
 import Profile from '../components/Profile';
 
 
-class Home extends Component {
 
-        state = {
-            screams: null
-        }    
+class Home extends Component {
+   
 
         componentDidMount(){
-            axios.get('/screams')
-            .then((res)=>{
-                console.log(res.data)
-              this.setState({
-                  screams: res.data
-              })  
-            })
-            .catch((err)=> console.log(err));
+           this.props.getScreams();
         }
 
         render(){
-            console.log(this.state);  
-            const { classes, authenticated } = this.props;          
-            // const { screams } = this.props;
-      
+            
+            const { classes, screams, loading } = this.props.data;          
+            const { authenticated } = this.props;
+            
+            let recentPosts = !loading ? (
+                screams.map((scream) => <Posts key={scream.screamId} scream={scream} />)
+            ) : (
+                <p>Loading...</p>
+            )
             return(
                 
-                    <div className="main">
+                    <Fragment>
                         <Navbar/>
                         <div className="main-content">
                              <div className="left">
                              { authenticated ? (
                                  <CreatePost/>
                              ):( null )}
+                            {recentPosts}
                                 
-                                <PostList screams={this.state.screams}/>
                             </div>
                             <div className="right">
                                 <Profile/>
                             </div>
                         </div>
-                    </div>
+                    </Fragment>
             )
         }  
 };
 
+Home.propTypes = {
+    getScreams: PropTypes.func.isRequired,
+    data: PropTypes.object.isRequired
+};
+
 const mapStateToProps = (state) => ({
-    authenticated: state.user.authenticated
+    authenticated: state.user.authenticated,
+    data: state.data
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { getScreams })(Home);

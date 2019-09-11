@@ -9,7 +9,6 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 //Icon
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
@@ -18,8 +17,6 @@ import EditIcon from "@material-ui/icons/Edit";
 //Redux
 import { connect } from "react-redux";
 import { uploadImage } from "../redux/actions/userActions";
-import { Tooltip } from "@material-ui/core";
-import Fab from '@material-ui/core/Fab';
 import MyButton from '../util/MyButton';
 
 
@@ -79,13 +76,14 @@ const styles = (theme) => ({
 });
 
 class Profile extends Component {
+   
 
-     handleImageChange =(e) =>{
-        const image = e.target.files[0];
-        const formData = new FormData();
-        formData.append('image', image, image.name);
-        this.props.uploadImage(formData);
-     }
+      handleImageChange = (event) => {
+          const image = event.target.files[0];
+          const formData = new FormData();
+          formData.append('image', image, image.name);
+          this.props.uploadImage(formData);
+      };
 
      handleEditPicture = () =>{
          const fileInput = document.getElementById('imageInput');
@@ -100,9 +98,9 @@ class Profile extends Component {
               <div className={classes.profile}>
                   <div className="image-wrapper">
                       <img src={imageUrl} alt="profile" className="profile-image"/>
-                      <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange}/>
+                      <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange} ref={fileInput=> this.fileInput = fileInput}/>
                       <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button">
-                          <EditIcon color="primary"/> 
+                          <EditIcon color="primary" onClick={()=> this.fileInput.click()}/> 
                       </MyButton>
                         
                       
@@ -130,9 +128,11 @@ class Profile extends Component {
                           </Fragment>
                       )}
                         <CalendarToday color='primary'/> {` `}
-                        <span>Joined {dayjs(createdAt).format('MM YYYY')}</span>
+                        <span>Joined {dayjs(createdAt).format('MM YYYY')}</span> 
+
+                        <EditDetails/>
                   </div>
-                        <EditDetails className={classes.editicon}/>
+                       
                     
               </div>
           </Paper>  
@@ -158,7 +158,7 @@ class Profile extends Component {
 };
 
 const mapStateToProps = (state) => ({
-    user: state.user,
+    user: state.user
 });
 
 const mapActionsToProps = { uploadImage };
