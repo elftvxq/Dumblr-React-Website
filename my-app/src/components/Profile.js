@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
+import EditDetails from './EditDetails';
 // MUI
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
@@ -17,6 +18,10 @@ import EditIcon from "@material-ui/icons/Edit";
 //Redux
 import { connect } from "react-redux";
 import { uploadImage } from "../redux/actions/userActions";
+import { Tooltip } from "@material-ui/core";
+import Fab from '@material-ui/core/Fab';
+import MyButton from '../util/MyButton';
+
 
 const styles = (theme) => ({
     paper: {
@@ -41,6 +46,7 @@ const styles = (theme) => ({
         },
         '& .profile-details': {
             textAlign: 'center',
+            position: 'relative',
             '& span, svg': {
                 verticalAlign: 'middle'
             },
@@ -63,6 +69,12 @@ const styles = (theme) => ({
         '& a': {
             margin: '20px 10px'
         }
+    },
+    editicon: {
+        top: '465 px',
+        float: 'right',
+        position: 'absolute',
+        right: '90 px'
     }
 });
 
@@ -88,10 +100,12 @@ class Profile extends Component {
               <div className={classes.profile}>
                   <div className="image-wrapper">
                       <img src={imageUrl} alt="profile" className="profile-image"/>
-                      <input type="file" name="" id="imageInput" hidden="hidden" onChange={this.handleImageChange}/>
-                      <IconButton onClick={this.handleEditPicture} className="button">
-                        <EditIcon color="primary"/>
-                      </IconButton>
+                      <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange}/>
+                      <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button">
+                          <EditIcon color="primary"/> 
+                      </MyButton>
+                        
+                      
                   </div>
                   <hr/>
                   <div className="profile-details">
@@ -118,6 +132,8 @@ class Profile extends Component {
                         <CalendarToday color='primary'/> {` `}
                         <span>Joined {dayjs(createdAt).format('MM YYYY')}</span>
                   </div>
+                        <EditDetails className={classes.editicon}/>
+                    
               </div>
           </Paper>  
         ):(

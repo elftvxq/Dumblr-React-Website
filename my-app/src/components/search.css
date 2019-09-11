@@ -10,6 +10,7 @@
     background-size: 5%;
     background-position: 10px 7px;
     border: 1px solid white;
+    margin-right: 300px;
 }
 
 .searchBar input::-webkit-input-placeholder {

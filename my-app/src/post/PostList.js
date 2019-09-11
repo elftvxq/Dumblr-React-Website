@@ -62,7 +62,10 @@ class PostList extends Component {
 
                   return (
                     <div className="post-body" key={scream.screamId}>
-                        <img className="user-pic" src={scream.userImage}  alt=""/>
+                        <div className="pic-wrapper">
+                             <img className="user-pic" src={scream.userImage} alt=""/>
+                        </div>
+                       
                         <div className="post-card">
                               <Link to={`/users/${scream.userHandle}`} className="user-id">{scream.userHandle}</Link> 
                             {/* <p className="post-time">{moment(scream.createdAt.toDate().toString()).calendar()}</p> */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import { MuiThemeProvider } from '@material-ui/core';
