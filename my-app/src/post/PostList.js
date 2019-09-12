@@ -9,6 +9,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Reply from './Reply';
+import DeleteScream from '../components/DeleteScream';
 //Redux
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -17,6 +18,7 @@ import { likeScream, unlikeScream } from '../redux/actions/dataActions';
 import MyButton from '../util/MyButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+
 
 
 const styles = {
@@ -67,7 +69,7 @@ class Posts extends Component {
     }
 
     render(){
-        const { classes, user: { authenticated }, scream: { body, createdAt, userImage, userHandle, title, pictureUrl, screamId, likeCount, commentCount, tags} } = this.props;
+        const { classes, user: { authenticated, credentials: { handle } }, scream: { body, createdAt, userImage, userHandle, title, pictureUrl, screamId, likeCount, commentCount, tags} } = this.props;
         dayjs.extend(relativeTime);
         console.log(this.props);
 
@@ -88,6 +90,10 @@ class Posts extends Component {
               </MyButton>
           ) 
         );
+
+        const deleteButton = authenticated && userHandle === handle ? (
+            <DeleteScream screamId={screamId}/>
+        ): null 
 
         //Hashtag陣列
         let hash = "";
@@ -111,7 +117,8 @@ class Posts extends Component {
                 </div>
                 
                 <div className="post-card">
-                    <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link> 
+                    <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
+                    {deleteButton} 
                     <p className="post-time">{dayjs(createdAt).fromNow()}</p>
                     <p className="card-title">{title}</p>
                     <img className="mainImage" src={pictureUrl} alt=""/>

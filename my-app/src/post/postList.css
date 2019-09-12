@@ -23,7 +23,8 @@
     border-radius: 3px;
     margin-bottom: 20px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-    border: 1px solid #D6DBD2;;
+    border: 1px solid #D6DBD2;
+    position: relative;
 }
 
 .mainImage {
