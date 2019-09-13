@@ -44,6 +44,7 @@ const styles = (theme) => ({
         '& .profile-details': {
             textAlign: 'center',
             position: 'relative',
+            fontSize: '14px',
             '& span, svg': {
                 verticalAlign: 'middle'
             },

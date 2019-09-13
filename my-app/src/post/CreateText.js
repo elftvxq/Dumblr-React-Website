@@ -1,21 +1,44 @@
 import React, { Component } from "react";
-// import { storage } from '../../config/fbConfig';
+import { storage } from '../config/fbConfig';
 import './createText.css';
-
+import withStyles from '@material-ui/core/styles/withStyles';
+import PropTypes from 'prop-types';
 import uploadphoto from '../image/photo-camera-grey.png';
 import PreviewPicture from "./PreviewPicture";
+import { postScream } from '../redux/actions/dataActions';
+import { connect } from 'react-redux';
 
+
+const styles = {
+    previewPic: {
+        width: '100%'
+    }
+};
 
 class CreateText extends Component {
     
     state = {
        type: 'text', 
        title:'',
-       content:'',
+       body:'',
        tags: [ ],
        picture: null,
-       pictureUrl: null
-    }
+       pictureUrl: null,
+       errors: {}
+    };
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.UI.errors){
+            this.setState({
+            errors: nextProps.UI.errors
+        });
+       };
+       if(!nextProps.UI.errors && !nextProps.UI.loading){
+           this.setState({ body: '', erros:{} });
+           this.props.isClose();
+       }
+            
+    };
     
     removeTag = (i) =>{
         const newTags = [...this.state.tags];
@@ -48,45 +71,45 @@ class CreateText extends Component {
         console.log(this.state)
     }
 
-    //upload image
-    // handleSubmit=(e)=>{
-    //     e.preventDefault();
-    //     // console.log("ssss")
-    //     // console.log(this.state)
-    //     if (this.state.picture == null) {
-    //         this.props.createPost(this.state);
-    //         this.props.isClose();
-    //         return;
-    //     } else {
-    //         const { picture } = this.state;
-    //         const createTime = `${new Date().getTime()}`
-    //         const uploadTask = storage.ref(`images/${createTime + picture.name}`).put(picture);
+    
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        // console.log("ssss")
+        // console.log(this.state)
+        if (this.state.picture == null) {
+            this.props.postScream(this.state);
+            this.props.isClose();
+            return;
+        } else {
+            const { picture } = this.state;
+            const createTime = `${new Date().getTime()}`
+            const uploadTask = storage.ref(`images/${createTime + picture.name}`).put(picture);
 
             
-    //         uploadTask.on('state_changed', 
-    //         (snapshot)=>{
-    //             // progress function
-    //             // const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) *100);
-    //             // console.log(progress);
-    //         }, (error)=>{
-    //             // error function
-    //         console.log(error)     
-    //         }, () => {
+            uploadTask.on('state_changed', 
+            (snapshot)=>{
+                // progress function
+                // const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) *100);
+                // console.log(progress);
+            }, (error)=>{
+                // error function
+            console.log(error)     
+            }, () => {
                
-    //             storage.ref('images').child(createTime + picture.name).getDownloadURL().then(url => {
-    //                 console.log(url);
+                storage.ref('images').child(createTime + picture.name).getDownloadURL().then(url => {
+                    console.log(url);
                    
-    //                 console.log(this.state)
-    //                 this.props.createPost({
-    //                     ...this.state,
-    //                     picture: "",
-    //                     pictureUrl: url
-    //                 })
-    //                 this.props.isClose();
-    //             })
-    //         }); 
-    //     } 
-    // }
+                    console.log(this.state)
+                    this.props.postScream({
+                        ...this.state,
+                        picture: "",
+                        pictureUrl: url
+                    })
+                    this.props.isClose();
+                })
+            }); 
+        } 
+    }
    
     //預覽照片檔案
     displayPicture = (e) =>{
@@ -108,17 +131,18 @@ class CreateText extends Component {
 
     render(){
         const { tags } = this.state;
-        const { profile } = this.props;
+        const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location } }} = this.props;
+    
     return(     
         <div className="wrap">
             <div className="bg"></div>
             
             <div className="text-section">
             <form onSubmit={this.handleSubmit}>
-                  <p className="post-id">{profile.userName}</p>
+                  <p className="post-id">{handle}</p>
                 
                 <input className="post-title" id="title" type="title" placeholder="標題" onChange={this.handleChange}/>
-                <PreviewPicture pictureUrl={this.state.pictureUrl}/>
+                <PreviewPicture pictureUrl={this.state.pictureUrl} className={classes.previewPic}/>
                 <div className="upload"><img title="上傳照片" src={uploadphoto} alt="" onClick={()=> this.fileInput.click()}/>
                     <input type="file" className="upload-image" onChange={(e)=> {this.displayPicture(e)}} multiple={false} accept="image/*" validate="required" ref={fileInput=> this.fileInput = fileInput} style={{display:'none'}}/>
                     <div className="preview-image">
@@ -126,7 +150,7 @@ class CreateText extends Component {
                     </div>
                 </div>
 
-                <textarea className="post-content" id="content" cols="15" rows="5" placeholder="在這裡填寫文字" onChange={this.handleChange}></textarea>
+                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="在這裡填寫文字" onChange={this.handleChange}></textarea>
                 {/* Hashtag輸入 */}
               
                 <div className="input-tag">
@@ -144,7 +168,7 @@ class CreateText extends Component {
 
                 <div className="post-btns">
                     <span className="close-btn" onClick={()=>{this.props.isClose()}}>關閉</span>
-                    <button className="send-btn">貼文</button> 
+                    <span type="submit" className="send-btn" onClick={this.handleSubmit}>貼文</span> 
                 </div>
     
             </form>
@@ -157,17 +181,15 @@ class CreateText extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         profile: state.firebase.profile
-//     }
-// }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         createPost: (post) => dispatch(createPost(post)) 
-//     }
-// }
+CreateText.propType ={
+    postScream: PropTypes.func.isRequired,
+    UI: PropTypes.object.isRequired
+}
+const mapStateToProps = (state) => ({
+    UI: state.UI,
+    user: state.user
+})
 
-// export default connect(mapStateToProps, mapDispatchToProps)(CreateText);
-export default CreateText;
+
+export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateText));

@@ -6,6 +6,8 @@ import quote from "../image/left-quote.png";
 import video from "../image/video-camera.png";
 import './createPost.css';
 import CreateText from "./CreateText";
+import { clearErrors } from '../redux/actions/dataActions';
+import { connect } from "react-redux";
 
 
 class CreatePost extends Component {
@@ -22,6 +24,7 @@ class CreatePost extends Component {
     }
 
      handleCloseText=()=> {
+         this.props.clearErrors();
          this.setState({
              showText: false
          });
@@ -53,4 +56,4 @@ class CreatePost extends Component {
     }
 }
 
-export default CreatePost;
+export default connect( null , { clearErrors } )(CreatePost);

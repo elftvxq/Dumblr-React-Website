@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Reply from './Reply';
 import DeleteScream from '../components/DeleteScream';
+import PostDailog from '../components/PostDialog';
 //Redux
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -18,12 +19,12 @@ import { likeScream, unlikeScream } from '../redux/actions/dataActions';
 import MyButton from '../util/MyButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import ChatIcon from '@material-ui/icons/Chat';
+import Typography from '@material-ui/core/Typography';
 
+const styles = (theme)=> ({
 
-
-const styles = {
-
-};
+});
 
 class Posts extends Component {
 
@@ -95,11 +96,11 @@ class Posts extends Component {
             <DeleteScream screamId={screamId}/>
         ): null 
 
-        //Hashtag陣列
-        let hash = "";
-        tags.forEach(tag => {
-            hash += tag + " ";  
-                });
+        // //Hashtag陣列
+        // let hash = "";
+        // tags.forEach(tag => {
+        //     hash += tag + " ";  
+        //         });
                 
         //該貼文回覆
         let reply;
@@ -116,7 +117,7 @@ class Posts extends Component {
                         <img className="user-pic" src={userImage} alt=""/>
                 </div>
                 
-                <div className="post-card">
+                <div className="post-card" >
                     <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
                     {deleteButton} 
                     <p className="post-time">{dayjs(createdAt).fromNow()}</p>
@@ -124,18 +125,24 @@ class Posts extends Component {
                     <img className="mainImage" src={pictureUrl} alt=""/>
                     <p className="card-content">{body}</p>
 
-                    <p className="card-hashtag">{hash}</p>
+                    {/* <p className="card-hashtag">{hash}</p> */}
                     <div className="post-details">
-                        <p>{`${commentCount}則迴響 ${likeCount}個喜歡`}</p>
-                        <div className="interact-icons">
-                            <Comment className="interact-icon" onClick={()=>{this.showReply(screamId)}}/>
+                        <p>{`${commentCount}則迴響 `}</p>
+                        <MyButton tip="comments">
                             
-                            <div className="reply-box" >
+                            <ChatIcon color="primary"/>
+                        </MyButton>
+                        <div className="interact-icons">
+                            {/* <Comment className="interact-icon" onClick={()=>{this.showReply(screamId)}}/> */}
+{/*                             
+                            <div className="reply-box" screamid={screamId} userhandle={userHandle}>
                                 {reply}
-                            </div>
+                            </div> */}
 
-                            <Retweet className="interact-icon"/>
+                            {/* <Retweet className="interact-icon"/> */}
+                            <p>{`${likeCount}個喜歡`}</p>
                             {likeButton }
+                            <PostDailog screamId={screamId} userHandle={userHandle}/> 
                         </div>
 
                     </div>

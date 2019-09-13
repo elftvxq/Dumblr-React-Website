@@ -1,4 +1,16 @@
-import { SET_SCREAMS, LOADING_DATA, LIKE_SCREAM, UNLIKE_SCREAM, SET_SCREAM, LOADING_UI,DELETE_SCREAM } from '../types';
+import {
+    SET_SCREAMS,
+    LOADING_DATA,
+    LIKE_SCREAM,
+    UNLIKE_SCREAM,
+    SET_SCREAM,
+    LOADING_UI,
+    DELETE_SCREAM,
+    SET_ERRORS,
+    CLEAR_ERRORS,
+    POST_SCREAM,
+    STOP_LOADING_UI
+} from '../types';
 import axios from 'axios';
 
 
@@ -29,12 +41,34 @@ export const getScream = (screamId) => (dispatch) => {
         type: SET_SCREAM,
         payload: res.data
       });
-    //   dispatch({ type: STOP_LOADING_UI });
+      dispatch({ type: STOP_LOADING_UI });
     })
     .catch((err) => console.log(err));
 };
 
-//Like a scream
+// Post a scream
+export const postScream = (newScream) => (dispatch) => {
+    dispatch({ type: LOADING_UI});
+    axios
+        .post('/scream', newScream)
+        .then((res) => {
+            dispatch({
+                type: POST_SCREAM,
+                payload: res.data
+            });
+            dispatch({ type: CLEAR_ERRORS });
+        })
+        .catch((err) => {
+            // console.log(err);
+            dispatch({
+                type: SET_ERRORS,
+                payload: err.response.data
+            })
+        })
+}
+
+
+// Like a scream
 export const likeScream = (screamId) => (dispatch) => {
   axios
     .get(`/scream/${screamId}/like`)
@@ -66,8 +100,11 @@ export const deleteScream = (screamId) => dispatch => {
     .delete(`/scream/${screamId}`)
     .then(() => {
         dispatch({
-            type: DELETE_SCREAM, payload: screamId
-        });
+            type: DELETE_SCREAM, payload: screamId });
     })
     .catch((err) => console.log(err));
 };
+
+export const clearErrors = () => dispatch => {
+    dispatch ({ type: CLEAR_ERRORS });
+}
