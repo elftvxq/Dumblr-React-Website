@@ -39,6 +39,7 @@
     background-size: cover;
     overflow: visible;
     margin-right: 20px;
+    object-fit: cover;
 }
 
 .post-section img:hover {

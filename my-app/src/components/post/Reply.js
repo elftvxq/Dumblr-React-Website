@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './reply.css';
-import user from '../image/picture.png';
+import user from '../../image/picture.png';
 
 class Reply extends Component {
     

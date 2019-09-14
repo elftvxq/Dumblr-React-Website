@@ -1,19 +1,19 @@
 import React, { Component, Fragment } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import { ReactComponent as Home } from '../image/home.svg';
-import { ReactComponent as Explore } from '../image/explore.svg';
-import { ReactComponent as Notification } from '../image/flash.svg';
-import { ReactComponent as User } from '../image/people.svg';
-import { ReactComponent as Like} from '../image/like-black.svg';
-import Logo from '../image/Dumblr.png';
+import { ReactComponent as Home } from '../../image/home.svg';
+import { ReactComponent as Explore } from '../../image/explore.svg';
+import { ReactComponent as Notification } from '../../image/flash.svg';
+import { ReactComponent as User } from '../../image/people.svg';
+import { ReactComponent as Like} from '../../image/like-black.svg';
+import Logo from '../../image/Dumblr.png';
 import PropTypes from 'prop-types';
 // import { ReactComponent as Create } from "../../image/create.svg";
 import Search from './Search'
-import Notifications from "../components/Notifications";
+import Notifications from "../Notifications";
 //Redux
 import { connect } from "react-redux";
-import { logoutUser } from "../redux/actions/userActions";
+import { logoutUser } from "../../redux/actions/userActions";
 // MUI Stuff
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';

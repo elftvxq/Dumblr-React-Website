@@ -42,5 +42,14 @@ export default {
         progress: {
             position: 'absolute'
         }
+    },
+    invisibleSeperator: {
+        border: 'none',
+        margin: 4
+    },
+    visibleSeperator: {
+        width: '100%',
+        borderBottom: '1px solid rbga(0, 0, 0, 0.1)',
+        marginBottom: 20
     }
 };

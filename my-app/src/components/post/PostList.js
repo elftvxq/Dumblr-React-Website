@@ -1,24 +1,24 @@
 import React, { Component, Fragment } from "react";
 import "./postList.css";
-import { ReactComponent as Comment } from "../image/chat.svg";
-import { ReactComponent as Retweet } from "../image/retweet.svg";
-import { ReactComponent as Heart } from "../image/heart.svg";
-import { ReactComponent as Liked } from "../image/like.svg";
+// import { ReactComponent as Comment } from "../image/chat.svg";
+// import { ReactComponent as Retweet } from "../image/retweet.svg";
+// import { ReactComponent as Heart } from "../image/heart.svg";
+// import { ReactComponent as Liked } from "../image/like.svg";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Reply from './Reply';
-import DeleteScream from '../components/DeleteScream';
-import PostDailog from '../components/PostDialog';
+// import DeleteScream from './DeleteScream';
+import DeleteScream from "./DeleteScream";
+import PostDailog from './PostDialog';
+import LikeButton from './LikeButton';
 //Redux
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { likeScream, unlikeScream } from '../redux/actions/dataActions';
 //MUI
-import MyButton from '../util/MyButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import MyButton from '../../util/MyButton';
+
 import ChatIcon from '@material-ui/icons/Chat';
 import Typography from '@material-ui/core/Typography';
 
@@ -28,24 +28,7 @@ const styles = (theme)=> ({
 
 class Posts extends Component {
 
-     likedScream = () => {
-            if (
-            this.props.user.likes &&
-            this.props.user.likes.find(
-                (like) => like.screamId === this.props.scream.screamId
-            )
-            )
-            return true;
-            else return false;
-        };
-
-     likeScream = () => {
-         this.props.likeScream(this.props.scream.screamId);
-     };
-     unlikeScream = () => {
-         this.props.unlikeScream(this.props.scream.screamId);
-     };
-    
+     
     state = {
         displayReply: false,
         key: ""
@@ -74,23 +57,6 @@ class Posts extends Component {
         dayjs.extend(relativeTime);
         console.log(this.props);
 
-        const likeButton = !authenticated ? (
-            <MyButton tip="Like">
-                <Link to ='/signin'>
-                    <FavoriteBorder color="primary" />
-                </Link>
-            </MyButton>
-        ):(
-          this.likedScream() ? (
-              <MyButton tip="Undo Like" onClick={this.unlikeScream}>
-                  <FavoriteIcon color="red" />
-              </MyButton>
-          ) : (
-              <MyButton tip="Like" onClick={this.likeScream}>
-                  <FavoriteBorder color="primary" />
-              </MyButton>
-          ) 
-        );
 
         const deleteButton = authenticated && userHandle === handle ? (
             <DeleteScream screamId={screamId}/>
@@ -126,13 +92,13 @@ class Posts extends Component {
                     <p className="card-content">{body}</p>
 
                     {/* <p className="card-hashtag">{hash}</p> */}
-                    <div className="post-details">
-                        <p>{`${commentCount}則迴響 `}</p>
+                    {/* <div className="post-details">
+    
+                        <span>{`${commentCount}則迴響 `}</span>
                         <MyButton tip="comments">
-                            
                             <ChatIcon color="primary"/>
-                        </MyButton>
-                        <div className="interact-icons">
+                        </MyButton> */}
+                        {/* <div className="interact-icons"> */}
                             {/* <Comment className="interact-icon" onClick={()=>{this.showReply(screamId)}}/> */}
 {/*                             
                             <div className="reply-box" screamid={screamId} userhandle={userHandle}>
@@ -140,21 +106,31 @@ class Posts extends Component {
                             </div> */}
 
                             {/* <Retweet className="interact-icon"/> */}
-                            <p>{`${likeCount}個喜歡`}</p>
-                            {likeButton }
-                            <PostDailog screamId={screamId} userHandle={userHandle}/> 
-                        </div>
+                            {/* <span>{`${likeCount}個喜歡`}</span>
+                            <LikeButton screamId={screamId}/>
+                            <PostDailog screamId={screamId} userHandle={userHandle}/>  */}
+                        {/* </div> */}
 
-                    </div>
+                    {/* </div> */}
+
+                        <LikeButton screamId={screamId} />
+                        <span>{likeCount} Likes</span>
+                        <MyButton tip="comments">
+                            <ChatIcon color="primary" />
+                        </MyButton>
+                        <span>{commentCount} comments</span>
+                        <PostDailog
+                            screamId={screamId}
+                            userHandle={userHandle}
+                            openDialog={this.props.openDialog}
+                        />
                 </div>            
             </div>
         )       
-}
+    }
 }
 
 Posts.propTypes = {
-    likeScream: PropTypes.func.isRequired,
-    unlikeScream: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     scream: PropTypes.object.isRequired,
     classes: PropTypes.object.isRequired
@@ -164,9 +140,5 @@ const mapStateToProps = (state) => ({
     user: state.user  
 })
 
-const mapActionsToProps = {
-    likeScream,
-    unlikeScream
-}
 
-export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(Posts));
+export default connect(mapStateToProps)(withStyles(styles)(Posts));

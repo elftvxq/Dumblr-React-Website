@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from "prop-types";
-import Posts from "../post/PostList";
+import Posts from "../components/post/PostList";
 import "./Home.css";
 import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
 //Component
-import CreatePost from '../post/CreatePost';
-import Navbar from "../components/Navbar";
-import Profile from '../components/Profile';
+import CreatePost from '../components/post/CreatePost';
+import Navbar from '../components/layout/Navbar';
+import Profile from '../components/profile/Profile';
 
 
 

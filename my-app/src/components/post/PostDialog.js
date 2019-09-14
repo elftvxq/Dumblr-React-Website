@@ -2,33 +2,35 @@ import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import dayjs from 'dayjs';
-import MyButton from '../util/MyButton';
+import MyButton from '../../util/MyButton';
 import { Link } from 'react-router-dom';
+import Comments from './Commets';
 //MUI
-import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import LikeButton from './LikeButton';
+import ChatIcon from '@material-ui/icons/Chat';
 //Icon
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import CloseIcon from '@material-ui/icons/Close';
 
 //Redux
 import { connect } from 'react-redux';
-import { getScream } from '../redux/actions/dataActions';
+import { getScream } from '../../redux/actions/dataActions';
 
-const styles = {
+const styles = (theme) => ({
+    
     invisibleSeperator: {
         border: 'none',
         margin: 4
     },
     profileImage: {
         maxWidth: 200,
-        height:200,
+        height:150,
+        width:150,
         borderRadius: '50%',
         objectFit: 'cover'
     },
@@ -47,8 +49,12 @@ const styles = {
         textAlign: 'center',
         marginTop: 50,
         marginBottom: 50
+    },
+    gridContent:{
+        display: 'flex',
+        flexWrap: 'wrap'
     }
-};
+});
 
 class PostDialog extends Component {
 
@@ -66,14 +72,14 @@ class PostDialog extends Component {
     };
 
     render(){
-        const { classes, scream :  { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle }, UI:{ loading } } = this.props;
+        const { classes, scream :  { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle, comments }, UI:{ loading } } = this.props;
         
         const dialogMarkup = loading ? (
             <div className={classes.spinnerDiv}>
              <CircularProgress size={200} thickness={2}/>   
             </div>
         ):( 
-            <Grid contianer spacing={16}>
+            <Grid contianer spacing={16} className={classes.gridContent}>
                 <Grid item sm={5}>
                     <img src={userImage} alt="profile" className={classes.profileImage}/>
                 </Grid>
@@ -91,10 +97,19 @@ class PostDialog extends Component {
                             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
                         </Typography>
                         <hr className={classes.invisibleSeperator}/>
-                         <Typography variant="body1">
-                            {body}
+                         <Typography variant="body2">{body}</Typography>
+
+                         <Typography variant="body2" >
+                         <LikeButton screamId={screamId}/>
+                         <span>{likeCount} 個喜歡</span>
+                         <MyButton tip="comments">
+                             <ChatIcon color="primary"/>
+                         </MyButton>
+                         <span>{commentCount} 個留言</span>
                          </Typography>
                 </Grid>
+                <hr className={classes.invisibleSeperator}/>
+                <Comments comments={comments}/> 
             </Grid>
         )
     return (
@@ -114,18 +129,15 @@ class PostDialog extends Component {
                 tipClassName={classes.closeButton}
             >
                 <CloseIcon/>
-            </MyButton>
-            <DialogContent className={classes.dialogContent}>
-                {dialogMarkup}
-            </DialogContent>
-            </Dialog>
+                </MyButton>
+                <DialogContent className={classes.dialogContent}>
+                    {dialogMarkup}
+                </DialogContent>
+                </Dialog>
         </Fragment>
      )
     
-    
     }
-
-    
 };
 
 PostDialog.porpTypes = {

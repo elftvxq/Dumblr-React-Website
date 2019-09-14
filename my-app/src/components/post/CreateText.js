@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { storage } from '../config/fbConfig';
+import { storage } from '../../config/fbConfig';
 import './createText.css';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
-import uploadphoto from '../image/photo-camera-grey.png';
+import uploadphoto from '../../image/photo-camera-grey.png';
 import PreviewPicture from "./PreviewPicture";
-import { postScream } from '../redux/actions/dataActions';
+import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
 
 

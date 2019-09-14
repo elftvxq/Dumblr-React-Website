@@ -6,7 +6,7 @@
     width: 350px;
     padding-left: 35px;
     color: #000000;
-    background: #E2E2E2 url(../image/magnifying-glass-black.svg) no-repeat center;
+    background: #E2E2E2 url(../../image//magnifying-glass-black.svg) no-repeat center;
     background-size: 5%;
     background-position: 10px 7px;
     border: 1px solid white;
@@ -25,7 +25,7 @@
 .searchBar input:focus {
     color: #000000;
     outline: none;
-    background: #ffffff url(../image/magnifying-glass-black.svg) no-repeat center;
+    background: #ffffff url(../../image//magnifying-glass-black.svg) no-repeat center;
     background-size: 5%;
     background-position: 10px 7px;
 }

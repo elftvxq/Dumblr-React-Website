@@ -16,8 +16,8 @@ import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from "@material-ui/icons/Edit";
 //Redux
 import { connect } from "react-redux";
-import { uploadImage } from "../redux/actions/userActions";
-import MyButton from '../util/MyButton';
+import { uploadImage } from "../../redux/actions/userActions";
+import MyButton from '../../util/MyButton';
 
 
 const styles = (theme) => ({
@@ -99,9 +99,9 @@ class Profile extends Component {
               <div className={classes.profile}>
                   <div className="image-wrapper">
                       <img src={imageUrl} alt="profile" className="profile-image"/>
-                      <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange} ref={fileInput=> this.fileInput = fileInput}/>
+                      <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange}/>
                       <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button">
-                          <EditIcon color="primary" onClick={()=> this.fileInput.click()}/> 
+                          <EditIcon color="primary"/> 
                       </MyButton>
                         
                       
