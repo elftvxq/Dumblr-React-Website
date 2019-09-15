@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import user from '../../image/user.svg';
 import text from "../../image/text.png";
 import photo from "../../image/photo-camera.png";
 import quote from "../../image/left-quote.png";

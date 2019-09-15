@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import MyButton from '../../util/MyButton';
 import { Link } from 'react-router-dom';
 import Comments from './Commets';
+import CommentForm from './CommentForm';
 //MUI
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -19,7 +20,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 //Redux
 import { connect } from 'react-redux';
-import { getScream } from '../../redux/actions/dataActions';
+import { getScream, clearErrors } from '../../redux/actions/dataActions';
 
 const styles = (theme) => ({
     
@@ -59,18 +60,33 @@ const styles = (theme) => ({
 class PostDialog extends Component {
 
     state = {
-        open: false
-    }
-
-    handleOpen = () => {
-        this.setState({ open: true })
-        this.props.getScream(this.props.screamId);
+    open: false,
+    oldPath: '',
+    newPath: ''
     };
+        componentDidMount() {
+            if (this.props.openDialog) {
+            this.handleOpen();
+            }
+        }
+        handleOpen = () => {
+            let oldPath = window.location.pathname;
 
-     handleClose = () => {
-        this.setState({ open: false })
-    };
+            const { userHandle, screamId } = this.props;
+            const newPath = `/users/${userHandle}/scream/${screamId}`;
 
+            if (oldPath === newPath) oldPath = `/users/${userHandle}`;
+
+            window.history.pushState(null, null, newPath);
+
+            this.setState({ open: true, oldPath, newPath });
+            this.props.getScream(this.props.screamId);
+        };
+        handleClose = () => {
+            window.history.pushState(null, null, this.state.oldPath);
+            this.setState({ open: false });
+            this.props.clearErrors();
+        };
     render(){
         const { classes, scream :  { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle, comments }, UI:{ loading } } = this.props;
         
@@ -87,7 +103,7 @@ class PostDialog extends Component {
                     <Typography
                         component={Link}
                         color="primary"
-                        variant="h5"
+                        variant="h6"
                         to ={`users/${userHandle}`}
                         >
                             @{userHandle}
@@ -109,6 +125,7 @@ class PostDialog extends Component {
                          </Typography>
                 </Grid>
                 <hr className={classes.invisibleSeperator}/>
+                <CommentForm screamId={screamId}/>
                 <Comments comments={comments}/> 
             </Grid>
         )
@@ -141,6 +158,7 @@ class PostDialog extends Component {
 };
 
 PostDialog.porpTypes = {
+    clearErrors: PropTypes.func.isRequired,
     getScream: PropTypes.func.isRequired,
     screamId: PropTypes.string.isRequired,
     userHandle: PropTypes.string.isRequired,
@@ -154,7 +172,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = {
-    getScream
+    getScream,
+    clearErrors
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(PostDialog));

@@ -14,9 +14,10 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from "@material-ui/icons/Edit";
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 //Redux
 import { connect } from "react-redux";
-import { uploadImage } from "../../redux/actions/userActions";
+import { uploadImage, logoutUser } from "../../redux/actions/userActions";
 import MyButton from '../../util/MyButton';
 
 
@@ -91,6 +92,10 @@ class Profile extends Component {
          fileInput.click();
      }
 
+      handleLogout = () => {
+          this.props.logoutUser();
+      };
+
     render(){
         const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location }, loading, authenticated }} = this.props;
         
@@ -130,11 +135,11 @@ class Profile extends Component {
                       )}
                         <CalendarToday color='primary'/> {` `}
                         <span>Joined {dayjs(createdAt).format('MM YYYY')}</span> 
-
+                        </div>
+                        <MyButton tip="Logout" onClick={this.handleLogout}>
+                            <KeyboardReturn color="primary" />
+                        </MyButton>
                         <EditDetails/>
-                  </div>
-                       
-                    
               </div>
           </Paper>  
         ):(
@@ -162,9 +167,13 @@ const mapStateToProps = (state) => ({
     user: state.user
 });
 
-const mapActionsToProps = { uploadImage };
+const mapActionsToProps = {
+    uploadImage,
+    logoutUser
+};
 
 Profile.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
     uploadImage: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     classes: PropTypes.object.isRequired

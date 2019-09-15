@@ -17,11 +17,12 @@ import Home from './pages/Home';
 import SignIn from './pages/Signin';
 import Signup from './pages/Signup';
 import axios from 'axios';
+import user from './pages/user';
 
 
 const theme = createMuiTheme(themeFile);
 
-let authenticated;
+
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecoded(token);
@@ -48,6 +49,8 @@ function App() {
                   <Route exact path='/' component={Home}/>
                   <AuthRoute exact path='/signin' component={SignIn}/>
                   <AuthRoute exact path='/signup' component={Signup}/>
+                  <Route exact path='/users/:handle' component={user}/>
+                  <Route exact path='/users/:handle/scream/:screamId' component={user}/>
                 </Switch>
               </div>
             </Router> 

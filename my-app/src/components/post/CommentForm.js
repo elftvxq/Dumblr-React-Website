@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 //MUI Staff
@@ -12,6 +12,9 @@ import { CLEAR_ERRORS } from "../../redux/types";
  
 
 const styles= (theme) => ({
+    button:{
+        marginTop: '20px'
+    }
 
 });
 
@@ -19,58 +22,60 @@ class CommentForm extends Component {
     
     state = {
         body: '',
-        errors
+        errors:{ }
     }
 
     componentWillReceiveProps(nextProps){
         if(nextProps.UI.errors){
             this.setState({errors: nextProps.UI.errors });
         }
+        if (!nextProps.UI.errors && !nextProps.UI.loading ) {
+            this.setState({ body: ''});
+        }
     }
-
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
     };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.submitComment(this.props.screamId, { bodt: this.state.body });
-    }
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.submitComment(this.props.screamId, { body: this.state.body });
+    };
+
 
     render() {
 
         const { classes, authenticated } = this.props;
         const errors = this.state.errors;
 
-        const commentFromMarkup = authenticated ? (
-            <Grid item sm={12} style={ { textAlign: 'center'} }>
-                <form onSubmit={this.handleSubmit}>
-                    <TextField 
-                        name='body'
-                        type='text'
-                        lable='Comment on psot'
-                        error={errors.comment ? true : false}
-                        helperText= {errors.comment}
-                        value={this.state.body}
-                        onChange={this.handleChange}
-                        fullWidth
-                        className={classes.textField}
-                        />
-                        <Button type='submit'
-                        variant='contained'
-                        color='primary'
-                        className={classes.button}>
-                            Submit
-                        </Button>
-                </form>
-                <hr className={classes.visibleSeperator}/>
-            </Grid>
-        ) : null;   
-
-        return commentFromMarkup;
-    }
+        const commentFormMarkup = authenticated ? (
+      <Grid item sm={12} style={{ textAlign: 'center' }}>
+        <form onSubmit={this.handleSubmit}>
+          <TextField
+            name="body"
+            type="text"
+            label="Comment here!"
+            error={errors.comment ? true : false}
+            helperText={errors.comment}
+            value={this.state.body}
+            onChange={this.handleChange}
+            fullWidth
+            className={classes.textField}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Submit
+          </Button>
+        </form>
+        <hr className={classes.invisibleSeparator} />
+      </Grid>
+    ) : null;
+    return commentFormMarkup;
+  }
 }
 
 

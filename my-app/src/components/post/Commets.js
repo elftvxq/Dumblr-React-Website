@@ -11,7 +11,8 @@ import Typography from '@material-ui/core/Typography';
 const styles = (theme) => ({
     commentImage: {
         maxWith: '100%',
-        height: '100',
+        height: '100px',
+        width:'100px',
         objectFit: 'cover',
         borderRadius: '70%'
     },
@@ -40,10 +41,11 @@ class Comments extends Component {
                                     <Grid item sm={9}>
                                         <div className={classes.commentData}>
                                                 <Typography
-                                                    variant="h5"
+                                                    variant="h6"
                                                     component={Link}
                                                     to={`/uder/${userHandle}`}
                                                     color="primary"
+                                                    style={ {textDecoration: 'none'}}
                                                 >
                                                     {userHandle}
                                                 </Typography>
