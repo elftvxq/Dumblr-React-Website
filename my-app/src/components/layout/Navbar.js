@@ -2,11 +2,6 @@ import React, { Component, Fragment } from "react";
 import withStyles from '@material-ui/core/styles/withStyles';
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import { ReactComponent as Home } from '../../image/home.svg';
-import { ReactComponent as Explore } from '../../image/explore.svg';
-import { ReactComponent as Notification } from '../../image/flash.svg';
-import { ReactComponent as User } from '../../image/people.svg';
-import { ReactComponent as Like} from '../../image/like-black.svg';
 import PropTypes from 'prop-types';
 // import { ReactComponent as Create } from "../../image/create.svg";
 import Search from './Search'

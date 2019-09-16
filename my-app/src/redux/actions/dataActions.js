@@ -139,8 +139,8 @@ export const getUserData = (userHandle) => (dispatch) => {
       dispatch({
         type: SET_SCREAMS,
         payload: null
-      });
-    });
+      })
+    })
 };
 
 export const clearErrors = () => dispatch => {

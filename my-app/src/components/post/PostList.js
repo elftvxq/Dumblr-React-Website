@@ -18,9 +18,10 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //MUI
 import MyButton from '../../util/MyButton';
-
 import ChatIcon from '@material-ui/icons/Chat';
-import Typography from '@material-ui/core/Typography';
+
+import { ReactTinyLink } from 'react-tiny-link';
+import LinkPreview from 'react-native-link-preview';
 
 const styles = (theme)=> ({
 
@@ -53,7 +54,29 @@ class Posts extends Component {
     }
 
     render(){
-        const { classes, user: { authenticated, credentials: { handle } }, scream: { body, createdAt, userImage, userHandle, title, pictureUrl, screamId, likeCount, commentCount, tags} } = this.props;
+        const {
+            classes,
+            user: {
+                authenticated,
+                credentials: {
+                    handle
+                }
+            },
+            scream: {
+                type,
+                body,
+                createdAt,
+                userImage,
+                userHandle,
+                title,
+                pictureUrl,
+                screamId,
+                likeCount,
+                commentCount,
+                tags,
+                linkUrl
+            }
+        } = this.props;
         dayjs.extend(relativeTime);
         console.log(this.props);
 
@@ -70,6 +93,16 @@ class Posts extends Component {
         const deleteButton = authenticated && userHandle === handle ? (
             <DeleteScream screamId={screamId}/>
         ): null 
+        
+        const linkPost = linkUrl && type === 'link' ? (
+            <ReactTinyLink
+            cardSize="large"
+            showGraphic={true}
+            maxLine={2}
+            minLine={1}
+            url = {linkUrl}
+          />
+        ) : null
 
         
                 
@@ -92,6 +125,7 @@ class Posts extends Component {
                     <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
                     {deleteButton} 
                     <p className="post-time">{dayjs(createdAt).fromNow()}</p>
+                    {linkPost}
                     <p className="card-title">{title}</p>
                     <img className="mainImage" src={pictureUrl} alt=""/>
                     <div>

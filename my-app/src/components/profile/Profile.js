@@ -11,7 +11,6 @@ import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 //Icon
 import LocationOn from '@material-ui/icons/LocationOn';
-import LinkIcon from '@material-ui/icons/Link';
 import Public from '@material-ui/icons/Public';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from "@material-ui/icons/Edit";

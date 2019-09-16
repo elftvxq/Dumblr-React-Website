@@ -1,7 +1,6 @@
 import React,{ Component } from "react";
 import "./signUp.css";
 import { Link } from "react-router-dom";
-import { Redirect } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles'
 import Logo from '../image/Dumblr.png';
 import PropTypes from 'prop-types';

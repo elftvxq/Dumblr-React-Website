@@ -22,6 +22,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import { connect } from 'react-redux';
 import { getScream, clearErrors } from '../../redux/actions/dataActions';
 
+
+
 const styles = (theme) => ({
     
     invisibleSeperator: {
@@ -151,6 +153,7 @@ class PostDialog extends Component {
                     {dialogMarkup}
                 </DialogContent>
                 </Dialog>
+                
         </Fragment>
      )
     

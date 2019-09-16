@@ -40,7 +40,8 @@ const styles = {
         fontSize: '0.8rem'
     },
     progress:{
-        position:'absolute'
+        position:'absolute',
+        color: '#4B4E6D'
     },
     pageTitle: {
         color: '#FFFFFF'
