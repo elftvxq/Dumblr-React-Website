@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 //Icon
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
+import Public from '@material-ui/icons/Public';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from "@material-ui/icons/Edit";
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
@@ -40,7 +41,7 @@ const styles = (theme) => ({
             height: 200,
             objectFit: 'cover',
             maxWidth: '100%',
-            borderRadius: '50%'
+            borderRadius: '5%'
         },
         '& .profile-details': {
             textAlign: 'center',
@@ -127,7 +128,7 @@ class Profile extends Component {
                       )}
                       {website && (
                           <Fragment>
-                            <LinkIcon color="primary"/> <a href={website} target='_blank' rel='noopener noreferrer'>
+                            <Public color="primary"/> <a href={website} target='_blank' rel='noopener noreferrer'>
                                 {` `}{website}
                             </a>
                             <hr/>
@@ -147,7 +148,7 @@ class Profile extends Component {
                 <Typography variant='body2' align='center'>
                     No profile found, please login again.</Typography>
                     <div className={classes.buttons}>
-                        <Button variant='contained' color='primary' component={Link} to='/signin'>
+                        <Button variant='contained' color='primary' component={Link} to='/login'>
                             Login
                         </Button>
                         <Button variant='contained' color='secondary' component={Link} to='/signup'>

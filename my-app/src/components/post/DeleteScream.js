@@ -16,11 +16,11 @@ import { deleteScream } from '../../redux/actions/dataActions';
 const styles =(theme)=>({
     deleteButton: {
         position: 'absolute',
-        left: '88%',
+        left: '90%',
         top:'0%'
     },
     deleteIcon: {
-        color: theme.palette.primary.dark
+        color: '#C9C9C9'
     }
 });
 

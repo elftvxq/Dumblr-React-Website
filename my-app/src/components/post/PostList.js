@@ -57,21 +57,20 @@ class Posts extends Component {
         dayjs.extend(relativeTime);
         console.log(this.props);
 
+        // //Hashtag陣列
+        let hash = '';
+        if (tags && tags.length > 0) {
+            tags.forEach(item => {
+            hash += item + " ";  
+                });
+        } else {
+            hash = "";
+        };
 
         const deleteButton = authenticated && userHandle === handle ? (
             <DeleteScream screamId={screamId}/>
         ): null 
 
-        // //Hashtag陣列
-        let hash = "";
-        if (tags && tags.length > 0) {
-            tags.forEach(tag => {
-            hash += tag + " ";  
-                });
-        } else {
-            hash = null;
-        };
-        
         
                 
         //該貼文回覆

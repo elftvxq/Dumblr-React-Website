@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import withStyles from '@material-ui/core/styles/withStyles';
 import MyButton from '../../util/MyButton';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -8,6 +9,12 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 //Redux
 import { connect } from "react-redux";
 import { likeScream, unlikeScream } from '../../redux/actions/dataActions';
+
+const styles = {
+    likeIcon: {
+        color: '#DB5461'
+    }
+}
 
 export class LikeButton extends Component {
 
@@ -31,6 +38,7 @@ export class LikeButton extends Component {
     
 
     render() {
+        const { classes } = this.props;
         const { authenticated } = this.props.user;
         const likeButton = !authenticated ? (
             <Link to ='/signin'>
@@ -41,7 +49,7 @@ export class LikeButton extends Component {
             ):(
             this.likedScream() ? (
                 <MyButton tip="Undo Like" onClick={this.unlikeScream}>
-                    <FavoriteIcon color="primary" />
+                    <FavoriteIcon className={classes.likeIcon} />
                 </MyButton>
             ) : (
                 <MyButton tip="Like" onClick={this.likeScream}>
@@ -70,4 +78,4 @@ const mapActionsToProps = {
   unlikeScream
 };
 
-export default connect( mapStateToProps, mapActionsToProps)(LikeButton);
+export default connect( mapStateToProps, mapActionsToProps)(withStyles(styles)(LikeButton)) ;

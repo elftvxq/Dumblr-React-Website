@@ -28,7 +28,7 @@ const styles ={
         backgroundColor: '#14213D'
     },
     appTitle: {
-        marginRight: '100px',
+        marginRight: '30px',
         color: '#FFFFFF'
     }
 }
@@ -43,6 +43,7 @@ class Navbar extends Component {
           {authenticated ? (
             <Fragment>
             <Typography variant="h6" color="secondary" className={classes.appTitle}>Dumblr</Typography>
+              <Search/>
               <Link to="/">
                 <MyButton tip="Home">
                   <HomeIcon />
