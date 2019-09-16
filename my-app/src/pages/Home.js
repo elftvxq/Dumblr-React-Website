@@ -28,6 +28,8 @@ class Home extends Component {
             ) : (
                 <p>Loading...</p>
             )
+                
+
             return(
                 
                     <Fragment>

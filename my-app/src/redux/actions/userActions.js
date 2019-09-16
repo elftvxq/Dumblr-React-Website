@@ -47,6 +47,16 @@ export const uploadImage = (formData) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+export const uploadCoverImage = (formData) => (dispatch) => {
+    dispatch({ type: LOADING_USER });
+    axios
+    .post('/user/coverimage', formData)
+    .then(() => {
+        dispatch(getUserData());
+    })
+    .catch((err) => console.log(err));
+};
+
 export const editUserDetails = (userDetails) => (dispatch) => {
     dispatch({ type: LOADING_USER});
     axios

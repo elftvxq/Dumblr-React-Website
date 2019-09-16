@@ -24,6 +24,7 @@ class CreateText extends Component {
        tags: [],
        picture: null,
        pictureUrl: null,
+       linkUrl: null,
        errors: {}
     };
 
@@ -131,7 +132,7 @@ class CreateText extends Component {
 
     render(){
         const { tags } = this.state;
-        const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location } }} = this.props;
+        const { classes, user: { credentials: { handle } }} = this.props;
     
     return(     
         <div className="wrap">

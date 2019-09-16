@@ -77,6 +77,7 @@ class Posts extends Component {
                 linkUrl
             }
         } = this.props;
+
         dayjs.extend(relativeTime);
         console.log(this.props);
 
@@ -104,7 +105,6 @@ class Posts extends Component {
           />
         ) : null
 
-        
                 
         //該貼文回覆
         let reply;

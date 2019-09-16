@@ -119,11 +119,11 @@ class PostDialog extends Component {
 
                          <Typography variant="body2" >
                          <LikeButton screamId={screamId}/>
-                         <span>{likeCount} 個喜歡</span>
+                         <span>{likeCount} Likes </span>
                          <MyButton tip="comments">
                              <ChatIcon color="primary"/>
                          </MyButton>
-                         <span>{commentCount} 個留言</span>
+                         <span>{commentCount} Comments </span>
                          </Typography>
                 </Grid>
                 <hr className={classes.invisibleSeperator}/>

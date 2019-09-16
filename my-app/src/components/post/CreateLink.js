@@ -93,12 +93,8 @@ class CreateText extends Component {
                 <div className="link-section">
                     <input className="link-title" id="linkUrl" type="title" placeholder='輸入或貼上一個URL' onChange={this.linkChange}/>
                 </div>
-                    <input type="file" className="upload-image" onChange={(e)=> {this.displayPicture(e)}} multiple={false} accept="image/*" validate="required" ref={fileInput=> this.fileInput = fileInput} style={{display:'none'}}/>
-                    <div className="preview-image">
-                </div>
                 
-
-                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="在這裡填寫文字" onChange={this.linkChange}></textarea>
+                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="加上敘述才可以" onChange={this.linkChange}></textarea>
                 {/* Hashtag輸入 */}
               
                 <div className="input-tag">

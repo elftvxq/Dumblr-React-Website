@@ -4,6 +4,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
+import coverPhoto from '../../image/coverImage.gif';
 // MUI
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
@@ -17,16 +18,30 @@ import EditIcon from "@material-ui/icons/Edit";
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 //Redux
 import { connect } from "react-redux";
-import { uploadImage, logoutUser } from "../../redux/actions/userActions";
+import { uploadImage, logoutUser, uploadCoverImage } from "../../redux/actions/userActions";
 import MyButton from '../../util/MyButton';
 
 
 const styles = (theme) => ({
     paper: {
-        padding: 20
+        // padding: 10,
+        width: '300px',
+        
+        '& .cover-wrapper': {
+            position: 'relative',
+        
+        },
+        '& .profile-cover': {
+            width: '100%',
+            position: 'relative',
+            objectFit: 'cover',
+        },
     },
     profile: {
+        
         '& .image-wrapper': {
+            position: 'absolute',
+            bottom: '45px',
             textAlign: 'center',
             position: 'relative',
             '& button': {
@@ -36,11 +51,15 @@ const styles = (theme) => ({
             }
         },
         '& .profile-image': {
-            width: 200,
-            height: 200,
+            width: 100,
+            height: 100,
             objectFit: 'cover',
             maxWidth: '100%',
-            borderRadius: '5%'
+            borderRadius: '5%',
+            position: 'absolute',
+            bottom: '-55px',
+            left: '100px',
+            boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)'
         },
         '& .profile-details': {
             textAlign: 'center',
@@ -74,7 +93,8 @@ const styles = (theme) => ({
         float: 'right',
         position: 'absolute',
         right: '90 px'
-    }
+    },
+    
 });
 
 class Profile extends Component {
@@ -96,11 +116,33 @@ class Profile extends Component {
           this.props.logoutUser();
       };
 
+     handleCoverImageChange = (event) => {
+            const image = event.target.files[0];
+            const formData = new FormData();
+            formData.append('image', image, image.name);
+            this.props.uploadCoverImage(formData);
+        };
+
+     handleEditCoverImage = () => {
+            const fileInput = document.getElementById('coverimageInput');
+            fileInput.click();
+        }
+
     render(){
-        const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location }, loading, authenticated }} = this.props;
+        const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location, coverimageUrl}, loading, authenticated  }} = this.props;
         
         let profileMarkup = !loading ? (authenticated ? (
           <Paper className={classes.paper}>
+
+          <div className="cover-wrapper">
+               <img src={coverimageUrl} alt="" className="profile-cover"/>
+               <input type="file" id="coverimageInput" hidden="hidden" onChange={this.handleCoverImageChange}/>
+                      <MyButton tip="Edit cover photo" onClick={this.handleEditCoverImage} btnClassName="button">
+                          <EditIcon color="second"/> 
+                      </MyButton>
+          </div>
+           
+
               <div className={classes.profile}>
                   <div className="image-wrapper">
                       <img src={imageUrl} alt="profile" className="profile-image"/>
@@ -108,8 +150,7 @@ class Profile extends Component {
                       <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button">
                           <EditIcon color="primary"/> 
                       </MyButton>
-                        
-                      
+
                   </div>
                   <hr/>
                   <div className="profile-details">
@@ -169,10 +210,12 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
     uploadImage,
-    logoutUser
+    logoutUser,
+    uploadCoverImage
 };
 
 Profile.propTypes = {
+    uploadCoverImage: PropTypes.func.isRequired,
     logoutUser: PropTypes.func.isRequired,
     uploadImage: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
