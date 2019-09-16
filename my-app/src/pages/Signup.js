@@ -17,7 +17,7 @@ import { signupUser } from "../redux/actions/userActions";
 
 
 const styles = {
-    form: {
+        form: {
             textAlign: 'center'
         },
         image: {
@@ -26,7 +26,7 @@ const styles = {
         },
         textField: {
             margin: '10px auto 10px auto',
-            // borderColor:'white',
+            background: '#E3F2FD',
             // backgroundColor: '#fcfcfb',
         },
         button: {
@@ -34,8 +34,8 @@ const styles = {
             marginBottom: 10,
             paddingTop: 10,
             paddingBottom: 10,
-            position: 'relative'
-
+            position: 'relative',
+            background: '#8AA29E'
         },
         customError: {
             color: 'red',
@@ -43,6 +43,12 @@ const styles = {
         },
         progress: {
             position: 'absolute'
+        },
+        pageTitle: {
+            color: '#FFFFFF'
+        },
+        remind:{
+            color: 'white'
         }
 };
 
@@ -109,8 +115,9 @@ class Signup extends Component{
                             margin="normal"
                             variant="outlined"
                             value={this.state.email}
-                            helperText={errors.email} error={errors.email ? true : false} 
+                            helperText={errors.email} error={errors.email ? true : false}
                             fullWidth
+                            
                         />
                         
                         <TextField
@@ -169,12 +176,12 @@ class Signup extends Component{
                          {authError? <p className="signin-message">{ authError }</p> : null }
                          </div> */}
                          <br/>
-                         <small>
-                             Already have an account? Sign in <Link to="/signin">here</Link>
+                         <small className={classes.remind}>
+                             Already have an account? Sign in <Link to="/login" className={classes.remind}>here</Link>
                          </small>
                          </form>
                     </Grid>
-                    <Grid item sm />
+                    <Grid item sm/>
                 </Grid>
     )
   }

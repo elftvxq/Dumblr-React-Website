@@ -24,7 +24,7 @@ const styles = {
     },
     textField: {
         margin: '10px auto 10px auto', 
-        // borderColor:'white',
+        background: '#E3F2FD',
         // backgroundColor: '#fcfcfb',
     },
     button: {
@@ -33,6 +33,7 @@ const styles = {
         paddingTop: 10,
         paddingBottom: 10,
         position: 'relative',
+        background: '#8AA29E'
     },
     customError:{
         color: 'red',
@@ -40,6 +41,12 @@ const styles = {
     },
     progress:{
         position:'absolute'
+    },
+    pageTitle: {
+        color: '#FFFFFF'
+    },
+    remind: {
+        color: '#FAFAFA'
     }
 };
 
@@ -99,7 +106,8 @@ class SignIn extends Component{
                             margin="normal"
                             variant="outlined"
                             value={this.state.email}
-                            helperText={errors.email} error={errors.email ? true : false} 
+                            helperText={errors.email} error={errors.email ? true : false}
+
                             fullWidth
                         />
                         {/* <TextField className={classes.textField} type="email" id="email" name="email" lable="email" onChange={this.handleChange} placeholder="Email" value={this.state.email} variant="filled" helperText={errors.email} error={errors.email ? true : false} fullWidth/> */}
@@ -133,12 +141,12 @@ class SignIn extends Component{
                          {authError? <p className="signin-message">{ authError }</p> : null }
                          </div> */}
                          <br/>
-                         <small>
-                             Don't have an account? Sign up <Link to="/signup">here</Link>
+                         <small className={classes.remind}>
+                             Don 't have an account? Sign up <Link to="/signup" className={classes.remind}>  here</Link>
                          </small>
                          </form>
                     </Grid>
-                    <Grid item sm />
+                    <Grid item sm/>
                 </Grid>
         )
     }

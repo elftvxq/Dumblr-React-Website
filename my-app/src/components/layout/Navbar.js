@@ -28,7 +28,8 @@ const styles ={
         backgroundColor: '#14213D'
     },
     appTitle: {
-        marginRight: '100px'
+        marginRight: '100px',
+        color: '#FFFFFF'
     }
 }
 

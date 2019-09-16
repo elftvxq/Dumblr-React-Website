@@ -63,10 +63,16 @@ class Posts extends Component {
         ): null 
 
         // //Hashtag陣列
-        // let hash = "";
-        // tags.forEach(tag => {
-        //     hash += tag + " ";  
-        //         });
+        let hash = "";
+        if (tags && tags.length > 0) {
+            tags.forEach(tag => {
+            hash += tag + " ";  
+                });
+        } else {
+            hash = null;
+        };
+        
+        
                 
         //該貼文回覆
         let reply;
@@ -89,9 +95,12 @@ class Posts extends Component {
                     <p className="post-time">{dayjs(createdAt).fromNow()}</p>
                     <p className="card-title">{title}</p>
                     <img className="mainImage" src={pictureUrl} alt=""/>
-                    <p className="card-content">{body}</p>
-
-                    {/* <p className="card-hashtag">{hash}</p> */}
+                    <div>
+                      <p className="card-content">{body}</p>
+                      <span className="card-hashtag">{hash}</span>  
+                    </div>
+                    
+                    
                     {/* <div className="post-details">
     
                         <span>{`${commentCount}則迴響 `}</span>

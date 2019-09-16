@@ -21,7 +21,7 @@ class CreateText extends Component {
        type: 'text', 
        title:'',
        body:'',
-       tags: [ ],
+       tags: [],
        picture: null,
        pictureUrl: null,
        errors: {}
