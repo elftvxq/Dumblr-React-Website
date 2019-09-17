@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './createLink.css';
+import './createQuote.css';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
@@ -7,16 +7,27 @@ import { connect } from 'react-redux';
 
 
 const styles = {
-  
+    quotefrom: {
+        display: 'flex',
+        position: 'relative'
+    },
+    quoteline: {
+        border: '0',
+        height: '2px',
+        width: '15px',
+        background: '#333',
+        position: 'absolute',
+        top: '3px'
+    }
 };
 
-class CreateText extends Component {
+class CreateQuote extends Component {
     
     state = {
-       type: 'link', 
+       type: 'quote', 
        title: '',
        body: '',
-       linkUrl: '' ,
+       linkUrl: null ,
        tags: [],
        picture: null,
        pictureUrl: null,
@@ -60,7 +71,7 @@ class CreateText extends Component {
         console.log(this.state.tags)
     }
 
-    linkChange=(e)=>{        
+    quoteChange=(e)=>{        
         this.setState({
             [e.target.id]: e.target.value
         })
@@ -68,7 +79,7 @@ class CreateText extends Component {
     }
 
     
-    linkSubmit=(e)=>{
+    quoteSubmit=(e)=>{
         e.preventDefault();
         this.props.postScream(this.state);
     }
@@ -77,22 +88,24 @@ class CreateText extends Component {
 
     render(){
         const { tags } = this.state;
-        const { user: { credentials: { handle } }} = this.props;
+        const { classes, user: { credentials: { handle } }} = this.props;
         
     
     return(     
         <div className="wrap">
             <div className="bg"></div>
             
-            <div className="link-card">
-            <form onSubmit={this.linkSubmit}>
+            <div className="quote-card">
+            <form onSubmit={this.quoteSubmit}>
                 <p className="post-id">{handle}</p>
 
-                <div className="link-section">
-                    <input className="link-title" id="linkUrl" type="title" placeholder='輸入或貼上一個URL' onChange={this.linkChange}/>
+               
+                <input className="quote-title" id="body" type="text" placeholder=' “引述” ' onChange={this.quoteChange}/>
+                <div className={classes.quotefrom}>
+                     <hr className={classes.quoteline}/>
+                    <textarea className="quote-content" id="title" cols="15" rows="5" placeholder="來源" onChange={this.quoteChange}></textarea>
                 </div>
-                
-                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="加上敘述才可以" onChange={this.linkChange}></textarea>
+               
                 {/* Hashtag輸入 */}
               
                 <div className="input-tag">
@@ -110,7 +123,7 @@ class CreateText extends Component {
 
                 <div className="post-btns">
                     <span className="close-btn" onClick={()=>{this.props.isClose()}}>關閉</span>
-                    <span type="submit" className="send-btn" onClick={this.linkSubmit}>貼文</span> 
+                    <span type="submit" className="quote-btn" onClick={this.quoteSubmit}>貼文</span> 
                 </div>
     
             </form>
@@ -124,7 +137,7 @@ class CreateText extends Component {
 }
 
 
-CreateText.propType ={
+CreateQuote.propType = {
     postScream: PropTypes.func.isRequired,
     UI: PropTypes.object.isRequired
 }
@@ -134,4 +147,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateText));
+export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateQuote));

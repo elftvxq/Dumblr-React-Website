@@ -4,7 +4,6 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
-import coverPhoto from '../../image/coverImage.gif';
 // MUI
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
@@ -15,6 +14,7 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import Public from '@material-ui/icons/Public';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import EditIcon from "@material-ui/icons/Edit";
+import Camera from '@material-ui/icons/AddAPhoto';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 //Redux
 import { connect } from "react-redux";
@@ -40,7 +40,6 @@ const styles = (theme) => ({
     profile: {
         
         '& .image-wrapper': {
-            position: 'absolute',
             bottom: '45px',
             textAlign: 'center',
             position: 'relative',
@@ -65,6 +64,7 @@ const styles = (theme) => ({
             textAlign: 'center',
             position: 'relative',
             fontSize: '14px',
+            marginTop: '20px',
             '& span, svg': {
                 verticalAlign: 'middle'
             },
@@ -138,7 +138,7 @@ class Profile extends Component {
                <img src={coverimageUrl} alt="" className="profile-cover"/>
                <input type="file" id="coverimageInput" hidden="hidden" onChange={this.handleCoverImageChange}/>
                       <MyButton tip="Edit cover photo" onClick={this.handleEditCoverImage} btnClassName="button">
-                          <EditIcon color="second"/> 
+                          <EditIcon color="primary"/> 
                       </MyButton>
           </div>
            
@@ -148,7 +148,7 @@ class Profile extends Component {
                       <img src={imageUrl} alt="profile" className="profile-image"/>
                       <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange}/>
                       <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button">
-                          <EditIcon color="primary"/> 
+                          <Camera color="primary"/> 
                       </MyButton>
 
                   </div>

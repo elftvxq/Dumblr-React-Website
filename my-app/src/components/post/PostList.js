@@ -21,7 +21,7 @@ import MyButton from '../../util/MyButton';
 import ChatIcon from '@material-ui/icons/Chat';
 
 import { ReactTinyLink } from 'react-tiny-link';
-import LinkPreview from 'react-native-link-preview';
+
 
 const styles = (theme)=> ({
 
@@ -107,53 +107,134 @@ class Posts extends Component {
 
                 
         //該貼文回覆
-        let reply;
-            if (this.state.displayReply && this.state.key === screamId) {
-                reply = <div> 
-                        <Reply key={screamId}/> 
-                        <div className="mask" onClick={this.hideReply}></div>
-                        </div> ;
-                   } else { reply = null; }
+        // let reply;
+        //     if (this.state.displayReply && this.state.key === screamId) {
+        //         reply = <div> 
+        //                 <Reply key={screamId}/> 
+        //                 <div className="mask" onClick={this.hideReply}></div>
+        //                 </div> ;
+        //            } else { reply = null; }
 
-        return (
+        if (type === "text") {
+             return (
+                    <div className="post-body">
+                        <div className="pic-wrapper">
+                                <img className="user-pic" src={userImage} alt="user profile"/>
+                        </div>
+                    
+                        <div className="post-card" >
+                            <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
+                            {deleteButton} 
+                            <p className="post-time">{dayjs(createdAt).fromNow()}</p>
+
+                            {(title === "") ?
+                            <p className="card-title">{title}</p> : null}
+                            {/* <p className="card-title">{title}</p> */}
+                            <img className="mainImage" src={pictureUrl} alt=""/>
+                            <div>
+                            <p className="card-content">{body}</p>
+                            <span className="card-hashtag">{hash}</span>  
+                            </div>
+                                <LikeButton screamId={screamId} />
+                                <span>{likeCount} Likes</span>
+                                <MyButton tip="comments">
+                                    <ChatIcon color="primary" />
+                                </MyButton>
+                                <span>{commentCount} comments</span>
+                                <PostDailog
+                                    screamId={screamId}
+                                    userHandle={userHandle}
+                                    openDialog={this.props.openDialog}/>
+                        </div>            
+                    </div>
+                )          
+        } else if (type === "link") {
+             return (
+                    <div className="post-body">
+                        <div className="pic-wrapper">
+                                <img className="user-pic" src={userImage} alt="user profile"/>
+                        </div>
+                    
+                        <div className="post-card" >
+                            <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
+                            {deleteButton} 
+                            <p className="post-time">{dayjs(createdAt).fromNow()}</p>
+                            {linkPost}
+                        
+                            <div>
+                            <p className="card-content">{body}</p>
+                            <span className="card-hashtag">{hash}</span>  
+                            </div>
+                                <LikeButton screamId={screamId} />
+                                <span>{likeCount} Likes</span>
+                                <MyButton tip="comments">
+                                    <ChatIcon color="primary" />
+                                </MyButton>
+                                <span>{commentCount} comments</span>
+                                <PostDailog
+                                    screamId={screamId}
+                                    userHandle={userHandle}
+                                    openDialog={this.props.openDialog}/>
+                        </div>            
+                    </div>
+             )      
+
+        } else if(type === 'quote'){
+            return (
+                <div className="post-body">
+                    <div className="pic-wrapper">
+                        <img className="user-pic" src={userImage} alt="user profile"/>
+                    </div>
+                    
+                    <div className="post-card" >
+                        <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
+                        {deleteButton} 
+                        <p className="post-time">{dayjs(createdAt).fromNow()}</p>
+                        <p className="quote-body">“{body}”</p>
+
+                         {(title == "") ?
+                        <p className="quote-from"> {title}</p> : <p className="quote-from">── {title}</p>}
+
+                        {/* <p className="quote-from">── {title}</p> */}
+                        <img className="mainImage" src={pictureUrl} alt=""/>
+                        <div>
+                        
+                        <span className="card-hashtag">{hash}</span>  
+                        </div>
+
+                            <LikeButton screamId={screamId} />
+                            <span>{likeCount} Likes</span>
+                            <MyButton tip="comments">
+                                <ChatIcon color="primary" />
+                            </MyButton>
+                            <span>{commentCount} comments</span>
+                            <PostDailog
+                                screamId={screamId}
+                                userHandle={userHandle}
+                                openDialog={this.props.openDialog}/>
+                    </div>            
+                </div>
+            )      
+        } 
+        
+        else {
+            return (
             <div className="post-body">
                 <div className="pic-wrapper">
-                        <img className="user-pic" src={userImage} alt=""/>
+                        <img className="user-pic" src={userImage} alt="user profile"/>
                 </div>
                 
                 <div className="post-card" >
                     <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
                     {deleteButton} 
                     <p className="post-time">{dayjs(createdAt).fromNow()}</p>
-                    {linkPost}
+                
                     <p className="card-title">{title}</p>
                     <img className="mainImage" src={pictureUrl} alt=""/>
                     <div>
                       <p className="card-content">{body}</p>
                       <span className="card-hashtag">{hash}</span>  
                     </div>
-                    
-                    
-                    {/* <div className="post-details">
-    
-                        <span>{`${commentCount}則迴響 `}</span>
-                        <MyButton tip="comments">
-                            <ChatIcon color="primary"/>
-                        </MyButton> */}
-                        {/* <div className="interact-icons"> */}
-                            {/* <Comment className="interact-icon" onClick={()=>{this.showReply(screamId)}}/> */}
-{/*                             
-                            <div className="reply-box" screamid={screamId} userhandle={userHandle}>
-                                {reply}
-                            </div> */}
-
-                            {/* <Retweet className="interact-icon"/> */}
-                            {/* <span>{`${likeCount}個喜歡`}</span>
-                            <LikeButton screamId={screamId}/>
-                            <PostDailog screamId={screamId} userHandle={userHandle}/>  */}
-                        {/* </div> */}
-
-                    {/* </div> */}
 
                         <LikeButton screamId={screamId} />
                         <span>{likeCount} Likes</span>
@@ -168,7 +249,10 @@ class Posts extends Component {
                         />
                 </div>            
             </div>
-        )       
+        )      
+        }
+
+       
     }
 }
 

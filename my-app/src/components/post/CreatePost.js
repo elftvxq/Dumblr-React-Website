@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import text from "../../image/text.png";
-import photo from "../../image/photo-camera.png";
 import quote from "../../image/left-quote.png";
 import video from "../../image/video-camera.png";
 import link from '../../image/link.png';
 import './createPost.css';
 import CreateText from "./CreateText";
 import CreateLink from './CreateLink';
+import CreateQuote from './CreateQuote';
 import PropTypes from 'prop-types';
 //Redux
 import { clearErrors } from '../../redux/actions/dataActions';
@@ -17,7 +17,8 @@ class CreatePost extends Component {
 
         state = {
         showText: false,
-        showLink: false 
+        showLink: false,
+        showQuote: false
         }
 
     hadleOpenText =() => {
@@ -47,6 +48,19 @@ class CreatePost extends Component {
           });
      };
 
+     handleOpenQuote = () => {
+         this.setState({
+             showQuote: true
+         });
+     };
+
+     handleCloseQuote = () => {
+         this.props.clearErrors();
+         this.setState({
+             showQuote: false
+         });
+     };
+
      
 
     render(){
@@ -63,20 +77,24 @@ class CreatePost extends Component {
             dialog=<CreateLink isClose={this.handleCloseLink}/>;
         }
 
+        let Quote;
+        if (this.state.showQuote) {
+            Quote= <CreateQuote isClose={this.handleCloseQuote}/>
+        }
+
         return(
             <div className="post-bar">
                  <img className="avatar-Pic" src={imageUrl} alt=""/>
                  <div className="post-section">
                     <div className="post-text" onClick={this.hadleOpenText}><img src={text} alt="Post text"/><p className="icon-text" >文字</p></div>
                     <div className="post-pic" onClick={this.handleOpenLink}><img src={link} alt=""/><p className="icon-text">連結</p></div>
-                    <div className="post-quote"><img src={quote} alt=""/><p className="icon-text">引述</p></div>
+                    <div className="post-quote" onClick={this.handleOpenQuote}><img src={quote} alt=""/><p className="icon-text">引述</p></div>
                     <div className="post-video"><img src={video} alt=""/><p className="icon-text">影片</p></div>
                  </div>
 
-
-
                  {dialog}
                  {Link}
+                 {Quote}
                 
              
             </div>

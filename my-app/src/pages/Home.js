@@ -20,7 +20,7 @@ class Home extends Component {
 
         render(){
             
-            const { classes, screams, loading } = this.props.data;          
+            const { screams, loading } = this.props.data;          
             const { authenticated } = this.props;
             
             let recentPosts = !loading ? (
@@ -28,7 +28,7 @@ class Home extends Component {
             ) : (
                 <p>Loading...</p>
             )
-                
+
 
             return(
                 
