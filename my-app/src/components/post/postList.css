@@ -52,20 +52,18 @@
 }
 
 .card-content {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 25px;
     padding-right: 20px;
-}
-
-.card-content,
-.card-hashtag {
+    margin-bottom: 30px;
     padding-left: 20px;
 }
+
 
 .card-hashtag {
     color: #8f8f8f;
     display: inline;
     font-size: 13px;
+    padding-left: 20px;
 }
 
 .post-details {
@@ -112,15 +110,25 @@
     z-index: 1;
 }
 
+.quoteHere{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .quote-body {
-    font-size: 36px;
+    font-size: 34px;
     line-height: 42px;
     margin-left: 15px;
     text-indent: -15px;
     font-family: 'Noto Serif TC',serif;
+    width: 100%;
 }
 
 .quote-from{
     padding-left: 20px;
     font-size: 14px;
+}
+
+.body-content{
+    display: grid;
 }

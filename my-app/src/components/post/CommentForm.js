@@ -14,6 +14,9 @@ import { CLEAR_ERRORS } from "../../redux/types";
 const styles= (theme) => ({
     button:{
         marginTop: '20px'
+    },
+    textField:{
+        backgroundColor: 'transparent'
     }
 
 });

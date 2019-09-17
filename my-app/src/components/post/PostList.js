@@ -95,15 +95,15 @@ class Posts extends Component {
             <DeleteScream screamId={screamId}/>
         ): null 
         
-        const linkPost = linkUrl && type === 'link' ? (
-            <ReactTinyLink
-            cardSize="large"
-            showGraphic={true}
-            maxLine={2}
-            minLine={1}
-            url = {linkUrl}
-          />
-        ) : null
+        // const linkPost = linkUrl && type === 'link' ? (
+        //     <ReactTinyLink
+        //     cardSize="large"
+        //     showGraphic={true}
+        //     maxLine={2}
+        //     minLine={1}
+        //     url = {linkUrl}
+        //   />
+        // ) : null
 
                 
         //該貼文回覆
@@ -128,12 +128,14 @@ class Posts extends Component {
                             <p className="post-time">{dayjs(createdAt).fromNow()}</p>
 
                             {(title === "") ?
-                            <p className="card-title">{title}</p> : null}
-                            {/* <p className="card-title">{title}</p> */}
-                            <img className="mainImage" src={pictureUrl} alt=""/>
-                            <div>
-                            <p className="card-content">{body}</p>
-                            <span className="card-hashtag">{hash}</span>  
+                            null : <p className="card-title">{title}</p>}
+                            
+                            {(pictureUrl === null) ?
+                            null : <img className="mainImage" src={pictureUrl} alt=""/>}
+                            
+                            <div className='body-content'>
+                                <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
+                                <span className="card-hashtag">{hash}</span>  
                             </div>
                                 <LikeButton screamId={screamId} />
                                 <span>{likeCount} Likes</span>
@@ -159,11 +161,19 @@ class Posts extends Component {
                             <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
                             {deleteButton} 
                             <p className="post-time">{dayjs(createdAt).fromNow()}</p>
-                            {linkPost}
+
+                             {(linkUrl === "") ?
+                            null : <ReactTinyLink
+                                        cardSize="large"
+                                        showGraphic={true}
+                                        maxLine={2}
+                                        minLine={1}
+                                        url = {linkUrl}
+                                         />}
                         
-                            <div>
-                            <p className="card-content">{body}</p>
-                            <span className="card-hashtag">{hash}</span>  
+                            <div className='body-content'>
+                                <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
+                                <span className="card-hashtag">{hash}</span>  
                             </div>
                                 <LikeButton screamId={screamId} />
                                 <span>{likeCount} Likes</span>
@@ -190,13 +200,17 @@ class Posts extends Component {
                         <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
                         {deleteButton} 
                         <p className="post-time">{dayjs(createdAt).fromNow()}</p>
-                        <p className="quote-body">“{body}”</p>
+                        
 
-                         {(title == "") ?
-                        <p className="quote-from"> {title}</p> : <p className="quote-from">── {title}</p>}
+                        <div className='quoteHere'>
+                            <span className="quote-body">“{body}”</span>
+                               {(title === "") ?
+                             null : <p className="quote-from">── {title}</p>}
+                        </div>
+                      
 
                         {/* <p className="quote-from">── {title}</p> */}
-                        <img className="mainImage" src={pictureUrl} alt=""/>
+                        {/* <img className="mainImage" src={pictureUrl} alt=""/> */}
                         <div>
                         
                         <span className="card-hashtag">{hash}</span>  

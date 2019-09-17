@@ -94,6 +94,12 @@ const styles = (theme) => ({
         position: 'absolute',
         right: '90 px'
     },
+    bioContent: {
+        fontSize: '0.875 rem',
+        fontWeight: '400',
+        lineHeight: '1.43',
+        letterSpacing: '0.01071em'
+    }
     
 });
 
@@ -130,7 +136,8 @@ class Profile extends Component {
 
     render(){
         const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location, coverimageUrl}, loading, authenticated  }} = this.props;
-        
+
+
         let profileMarkup = !loading ? (authenticated ? (
           <Paper className={classes.paper}>
 
@@ -158,7 +165,7 @@ class Profile extends Component {
                           @{handle}
                       </MuiLink>
                       <hr/>
-                      {bio && <Typography variant="body2">{bio}</Typography>}
+                      {bio && <span variant="body2" className={classes.bioContent}><pre>{bio}</pre></span>}
                       <hr/>
                       {location && (
                           <Fragment>
