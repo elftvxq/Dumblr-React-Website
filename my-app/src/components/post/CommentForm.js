@@ -8,7 +8,6 @@ import TextField from '@material-ui/core/TextField';
 //Redux staff
 import { connect } from 'react-redux';
 import { submitComment } from '../../redux/actions/dataActions';
-import { CLEAR_ERRORS } from "../../redux/types";
  
 
 const styles= (theme) => ({

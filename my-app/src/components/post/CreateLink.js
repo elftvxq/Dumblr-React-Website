@@ -89,10 +89,10 @@ class CreateText extends Component {
                 <p className="post-id">{handle}</p>
 
                 <div className="link-section">
-                    <input className="link-title" id="linkUrl" type="title" placeholder='輸入或貼上一個URL' onChange={this.linkChange}/>
+                    <input className="link-title" id="linkUrl" type="title" placeholder='輸入或貼上一個URL' onChange={this.linkChange} autoComplete="off"/>
                 </div>
                 
-                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="加上敘述才可以" onChange={this.linkChange}></textarea>
+                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="加上敘述才可以" onChange={this.linkChange} autoComplete="off"></textarea>
                 {/* Hashtag輸入 */}
               
                 <div className="input-tag">
@@ -104,7 +104,7 @@ class CreateText extends Component {
                             </li>
                         )) }
                         <li className="keyin-tag"><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
-                        this.tagInput = c; }} /></li>
+                        this.tagInput = c; }} autoComplete="off"/></li>
                     </ul>    
                 </div>
 

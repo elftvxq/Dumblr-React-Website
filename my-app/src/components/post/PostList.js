@@ -18,9 +18,7 @@ import { connect } from "react-redux";
 //MUI
 import MyButton from '../../util/MyButton';
 import ChatIcon from '@material-ui/icons/Chat';
-
 import { ReactTinyLink } from 'react-tiny-link';
-
 
 const styles = (theme)=> ({
 
@@ -54,7 +52,6 @@ class Posts extends Component {
 
     render(){
         const {
-            classes,
             user: {
                 authenticated,
                 credentials: {
@@ -230,7 +227,7 @@ class Posts extends Component {
             )      
         } 
         
-        else {
+        else if (type === 'gif') {
             return (
             <div className="post-body">
                 <div className="pic-wrapper">
@@ -241,8 +238,10 @@ class Posts extends Component {
                     <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
                     {deleteButton} 
                     <p className="post-time">{dayjs(createdAt).fromNow()}</p>
-                
-                    <p className="card-title">{title}</p>
+
+                    {(title === "") ?
+                            null : <p className="card-title">{title}</p>}
+                    
                     <img className="mainImage" src={pictureUrl} alt=""/>
                     <div>
                       <p className="card-content">{body}</p>

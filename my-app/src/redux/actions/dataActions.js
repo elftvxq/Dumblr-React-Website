@@ -63,7 +63,7 @@ export const postScream = (newScream) => (dispatch) => {
             // console.log(err);
             dispatch({
                 type: SET_ERRORS,
-                payload: err.response.data
+                // payload: err.response.data
             })
         })
 }

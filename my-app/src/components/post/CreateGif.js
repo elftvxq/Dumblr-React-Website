@@ -4,15 +4,16 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
+import GifPicker from 'gifpicker';
+import 'gifpicker/dist/style.css';
 import Fab from '@material-ui/core/Fab';
 import GifIcon from '@material-ui/icons/Gif';
 import { makeStyles } from '@material-ui/core/styles';
-import GifPickerTool from './GifPicker';
 
 
 const styles = makeStyles(theme => ({
     fab: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(1)
     },
     extendedIcon: {
         marginRight: theme.spacing(1),
@@ -30,26 +31,28 @@ class CreateGif extends Component {
        picture: null,
        pictureUrl: null,
        errors: {},
-       gifPicker: false
     };
 
-    // componentWillReceiveProps(nextProps){
-    //     if(nextProps.UI.errors){
-    //         this.setState({
-    //         errors: nextProps.UI.errors
-    //     });
-    //    };
-    //    if(!nextProps.UI.errors && !nextProps.UI.loading){
-    //        this.setState({ body: '', erros:{} });
-    //        this.props.isClose();
-    //    }
+     handleGifPicker = () => {
+         console.log('gif出來')
+         this.setState({
+             gifPicker: true
+         })
+     };
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.UI.errors){
+            this.setState({
+            errors: nextProps.UI.errors
+        });
+       };
+       if(!nextProps.UI.errors && !nextProps.UI.loading){
+           this.setState({ body: '',title:'', pictureUrl:'', erros:{} });
+           this.props.isClose();
+       }
             
-    // };
-    
-    handleGifPicker=()=>{
-        console.log('gif出來')
-        this.setState({ gifPicker: true })
-    }
+    };
+  
 
     removeTag = (i) =>{
         const newTags = [...this.state.tags];
@@ -75,6 +78,12 @@ class CreateGif extends Component {
         console.log(this.state.tags)
     }
 
+    passUrl = (gifUrl) => {
+        this.setState({
+            pictureUrl: gifUrl
+        })
+    }
+
     gifChange=(e)=>{        
         this.setState({
             [e.target.id]: e.target.value
@@ -82,12 +91,20 @@ class CreateGif extends Component {
         console.log(this.state)
     }
 
-    
     gifSubmit=(e)=>{
         e.preventDefault();
         this.props.postScream(this.state);
+        this.props.isClose();
     }
    
+    clearSearchInput = () =>{
+        console.log('點到')
+        var gifInput = document.querySelector('.gifpicker__input');
+        console.log(gifInput);
+        var gifInputValue = gifInput.value;
+        gifInputValue = '';
+    };
+    
 
 
     render(){
@@ -104,21 +121,15 @@ class CreateGif extends Component {
                 <p className="post-id">{handle}</p>
 
                 <div className="gif-section">
-                    <input className="gif-title" id="title" type="title" placeholder='標題' onChange={this.gifChange}/>
+                    <input className="gif-title" id="title" type="title" placeholder='標題' onChange={this.gifChange} autoComplete="off"/>
                 </div>
 
-                <Fab variant="extended" aria-label="button" onClick={this.handleGifPicker} style={{height:'30px', boxShadow:'none', borderRadius:'4px', backgroundColor:'#88B7B5', fontSize:'10px'}} className={classes.fab}>
-                    <GifIcon className={classes.extendedIcon} />
-                    Select a Gif
-                </Fab>
+               
                
                 {/* <div className="uploadGif"><img title="選擇一個GIF" src={uploadphoto} alt="" onClick={()=> this.fileInput.click()}/>
                     <input type="file" className="upload-gif" validate="required" style={{display:'none'}}/>
                     
                 </div> */}
-
-               
-                
                 
                 
                 <textarea className="gif-content" id="body" cols="15" rows="5" placeholder="有什麼話想說？" onChange={this.gifChange}></textarea>
@@ -133,17 +144,21 @@ class CreateGif extends Component {
                             </li>
                         )) }
                         <li className="keyin-tag"><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
-                        this.tagInput = c; }} /></li>
+                        this.tagInput = c; }} autoComplete="off"/></li>
                     </ul>    
                 </div>
 
-                <div className="post-btns">
-                    <span className="close-btn" onClick={()=>{this.props.isClose()}}>關閉</span>
+                <div className="gif-btns">
+                    <span className="close-btn" onClick={()=>{this.props.isClose();}}>關閉</span>
                     <span type="submit" className="send-btn" onClick={this.gifSubmit}>貼文</span> 
                 </div>
     
             </form>
-              
+                {/* <Fab variant="extended" aria-label="button" onClick={this.handleGifPicker} style={{height:'30px', boxShadow:'none', borderRadius:'4px', backgroundColor:'#88B7B5', fontSize:'10px'}} className={classes.fab}>
+                    <GifIcon className={classes.extendedIcon} />
+                    Select a Gif
+                </Fab> */}
+                 <GifPicker apikey="HB062X5OE101" onSelect={(gifUrl) => {this.passUrl(gifUrl); console.log(gifUrl)}} /> 
                 
             </div>
            
@@ -163,4 +178,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateGif));
+export default connect(mapStateToProps, { postScream })(CreateGif);

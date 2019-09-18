@@ -108,10 +108,10 @@
     background-color: #B0B5B3;
 }
 
-.post-btns {
+.gif-btns {
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 10px;
 }
 
 .send-btn {

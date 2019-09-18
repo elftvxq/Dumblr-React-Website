@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import text from "../../image/text.png";
 import quote from "../../image/left-quote.png";
-import video from "../../image/video-camera.png";
 import link from '../../image/link.png';
 import gif from '../../image/gif.png';
 import './createPost.css';
@@ -100,7 +99,7 @@ class CreatePost extends Component {
 
         let Gif;
         if (this.state.showGif) {
-            Gif= <CreateGif isClose={this.handleCloseQuote}/>
+            Gif= <CreateGif isClose={this.handleCloseGif}/>
         }
 
         return(

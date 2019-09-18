@@ -142,7 +142,7 @@ class CreateText extends Component {
             <form onSubmit={this.handleSubmit}>
                   <p className="post-id">{handle}</p>
                 
-                <input className="post-title" id="title" type="title" placeholder="標題" onChange={this.handleChange}/>
+                <input className="post-title" id="title" type="title" placeholder="標題" onChange={this.handleChange} autoComplete="off"/>
                 <PreviewPicture pictureUrl={this.state.pictureUrl} className={classes.previewPic}/>
                 <div className="upload"><img title="上傳照片" src={uploadphoto} alt="" onClick={()=> this.fileInput.click()}/>
                     <input type="file" className="upload-image" onChange={(e)=> {this.displayPicture(e)}} multiple={false} accept="image/*" validate="required" ref={fileInput=> this.fileInput = fileInput} style={{display:'none'}}/>
@@ -151,7 +151,7 @@ class CreateText extends Component {
                     </div>
                 </div>
 
-                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="在這裡填寫文字" onChange={this.handleChange}></textarea>
+                <textarea className="post-content" id="body" cols="15" rows="5" placeholder="在這裡填寫文字" onChange={this.handleChange} autoComplete="off"></textarea>
                 {/* Hashtag輸入 */}
               
                 <div className="input-tag">
@@ -163,7 +163,7 @@ class CreateText extends Component {
                             </li>
                         )) }
                         <li className="keyin-tag"><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
-                        this.tagInput = c; }} /></li>
+                        this.tagInput = c; }} autoComplete="off"/></li>
                     </ul>    
                 </div>
 

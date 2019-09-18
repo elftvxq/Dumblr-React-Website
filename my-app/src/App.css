@@ -49,6 +49,19 @@ body{
     background-color: #13203D;
 }
 
+input {
+    background-color: transparent;
+}
+
+input:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+button:active{
+    outline: none;
+}
+
 .container{
     margin: 100px auto 0 auto;
     max-width: 1200px;

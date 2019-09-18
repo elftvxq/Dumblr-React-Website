@@ -17,7 +17,7 @@ const styles = {
         width: '15px',
         background: '#333',
         position: 'absolute',
-        top: '3px'
+        top: '10px'
     }
 };
 
@@ -101,7 +101,7 @@ class CreateQuote extends Component {
                 <p className="post-id">{handle}</p>
 
                
-                <input className="quote-title" id="body" type="text" placeholder=' “引述” ' onChange={this.quoteChange}/>
+                <input className="quote-title" id="body" type="text" placeholder=' “引述” ' onChange={this.quoteChange} autoComplete="off"/>
                 <div className={classes.quotefrom}>
                      <hr className={classes.quoteline}/>
                     <textarea className="quote-content" id="title" cols="15" rows="5" placeholder="來源" onChange={this.quoteChange}></textarea>
@@ -118,7 +118,7 @@ class CreateQuote extends Component {
                             </li>
                         )) }
                         <li className="keyin-tag"><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
-                        this.tagInput = c; }} /></li>
+                        this.tagInput = c; }} autoComplete="off"/></li>
                     </ul>    
                 </div>
 
