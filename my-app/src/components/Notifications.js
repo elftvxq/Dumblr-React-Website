@@ -13,7 +13,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
 // Icons
-import flashIcon from '@material-ui/icons/FlashOn';
+import FlashIcon from '@material-ui/icons/FlashOn';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ChatIcon from '@material-ui/icons/Chat';
@@ -54,12 +54,12 @@ class Notifications extends Component {
               }
               color="secondary"
             >
-              <NotificationsIcon />
+              <FlashIcon />
             </Badge>
           ))
-        : (notificationsIcon = <NotificationsIcon />);
+        : (notificationsIcon = <FlashIcon />);
     } else {
-      notificationsIcon = <NotificationsIcon />;
+      notificationsIcon = <FlashIcon />;
     }
     let notificationsMarkup =
       notifications && notifications.length > 0 ? (

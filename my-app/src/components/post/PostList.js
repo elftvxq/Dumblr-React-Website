@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./postList.css";
 // import { ReactComponent as Comment } from "../image/chat.svg";
 // import { ReactComponent as Retweet } from "../image/retweet.svg";
@@ -8,7 +8,6 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Reply from './Reply';
 // import DeleteScream from './DeleteScream';
 import DeleteScream from "./DeleteScream";
 import PostDailog from './PostDialog';

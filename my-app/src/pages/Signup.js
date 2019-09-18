@@ -2,7 +2,7 @@ import React,{ Component } from "react";
 import "./signUp.css";
 import { Link } from "react-router-dom";
 import withStyles from '@material-ui/core/styles/withStyles'
-import Logo from '../image/Dumblr.png';
+import Logo from '../image/Dumblr2.jpg';
 import PropTypes from 'prop-types';
 //MUI 
 import Grid from '@material-ui/core/Grid';
@@ -25,8 +25,8 @@ const styles = {
         },
         textField: {
             margin: '10px auto 10px auto',
-            background: '#E3F2FD',
-            // backgroundColor: '#fcfcfb',
+            background: '#FFFFFF',
+            borderRadius: 4
         },
         button: {
             marginTop: 20,
@@ -99,8 +99,10 @@ class Signup extends Component{
         <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-                <img src={Logo} alt="Dumblr" className={classes.image} />
+                <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
                 <Typography variant="h4" className={classes.pageTitle}>
+                    Dumblr
+                    <br/>
                     Signup
                 </Typography>
                     <form noValidate onSubmit={this.handleSubmit}>
@@ -112,7 +114,7 @@ class Signup extends Component{
                             name="email"
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                            variant="filled"
                             value={this.state.email}
                             helperText={errors.email} error={errors.email ? true : false}
                             fullWidth
@@ -127,7 +129,7 @@ class Signup extends Component{
                             name="password"
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                            variant="filled"
                             value={this.state.password}
                             helperText={errors.password} error={errors.password ? true : false} 
                             fullWidth
@@ -140,7 +142,7 @@ class Signup extends Component{
                             name="confirmPassword"
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                            variant="filled"
                             value={this.state.confirmPassword}
                             helperText={errors.confirmPassword} error={errors.confirmPassword ? true : false} 
                             fullWidth
@@ -154,7 +156,7 @@ class Signup extends Component{
                             name = "handle"
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                            variant="filled"
                             value={this.state.handle}
                             helperText={errors.handle} error={errors.handle ? true : false} 
                             fullWidth

@@ -3,7 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import "./signIn.css";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import Logo from '../image/Dumblr.png';
+import Logo from '../image/Dumblr2.jpg';
 //MUI 
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -24,7 +24,8 @@ const styles = {
     },
     textField: {
         margin: '10px auto 10px auto', 
-        background: '#E3F2FD',
+        background: '#FFFFFF',
+        borderRadius: 4
         // backgroundColor: '#fcfcfb',
     },
     button: {
@@ -92,8 +93,10 @@ class SignIn extends Component{
              <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-                <img src={Logo} alt="Dumblr" className={classes.image} />
+                <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
                 <Typography variant="h4" className={classes.pageTitle}>
+                    Dumblr 
+                    <br/>
                     Login
                 </Typography>
                     <form noValidate onSubmit={this.handleSubmit}>
@@ -105,7 +108,7 @@ class SignIn extends Component{
                             name="email"
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                            variant="filled"
                             value={this.state.email}
                             helperText={errors.email} error={errors.email ? true : false}
 
@@ -121,7 +124,7 @@ class SignIn extends Component{
                             name="password"
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                            variant="filled"
                             value={this.state.password}
                             helperText={errors.password} error={errors.password ? true : false} 
                             fullWidth

@@ -25,7 +25,7 @@
     top: 10px
 }
 
-.link-card {
+.gif-card {
     width: 540px;
     background-color: #ffffff;
     height: auto;
@@ -34,51 +34,50 @@
     left: 84px;
     top: 1px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-                0 10px 10px rgba(0, 0, 0, 0.22);
+        0 10px 10px rgba(0, 0, 0, 0.22);
     z-index: 999;
     padding: 10px 15px 15px 20px;
     box-sizing: border-box;
 }
 
-.link-section {
+.gif-section {
     width: 100%;
-    height: 200px;
     box-sizing: border-box;
-    background-color: #F2F2F2;
-    border-bottom: 2px dashed #A3A3A3;
-    border-top: 2px dashed #A3A3A3;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.link-title {
+.gif-title {
     width: 100%;
     border: none;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
     display: block;
-    margin-bottom: 10px;
     padding-top: 10px;
-    background-color: #F2F2F2;
+    background-color: transparent;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.link-title:focus {
+.gif-section input:focus {
     outline: none;
-    background-color: #F2F2F2;
+    background-color: transparent;
 }
 
-.post-content {
+
+.gif-content {
     border: none;
     line-height: 21px;
     font-size: 14px;
     width: 95%;
     height: auto;
     resize: none;
+    margin-top: 20px
 }
 
-.post-content:focus {
+.gif-content:focus {
     outline: none;
 }
 

@@ -1,52 +1,56 @@
 import React, { Component } from "react";
-import './createQuote.css';
+import './createGif.css';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
+import Fab from '@material-ui/core/Fab';
+import GifIcon from '@material-ui/icons/Gif';
+import { makeStyles } from '@material-ui/core/styles';
+import GifPickerTool from './GifPicker';
 
 
-const styles = {
-    quotefrom: {
-        display: 'flex',
-        position: 'relative'
+const styles = makeStyles(theme => ({
+    fab: {
+        margin: theme.spacing(1),
     },
-    quoteline: {
-        border: '0',
-        height: '2px',
-        width: '15px',
-        background: '#333',
-        position: 'absolute',
-        top: '3px'
-    }
-};
+    extendedIcon: {
+        marginRight: theme.spacing(1),
+    },
+}));
 
-class CreateQuote extends Component {
+class CreateGif extends Component {
     
     state = {
-       type: 'quote', 
+       type: 'gif', 
        title: '',
        body: '',
-       linkUrl: null ,
+       linkUrl: '' ,
        tags: [],
        picture: null,
        pictureUrl: null,
-       errors: {}
+       errors: {},
+       gifPicker: false
     };
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps.UI.errors){
-            this.setState({
-            errors: nextProps.UI.errors
-        });
-       };
-       if(!nextProps.UI.errors && !nextProps.UI.loading){
-           this.setState({ body: '', erros:{} });
-           this.props.isClose();
-       }
+    // componentWillReceiveProps(nextProps){
+    //     if(nextProps.UI.errors){
+    //         this.setState({
+    //         errors: nextProps.UI.errors
+    //     });
+    //    };
+    //    if(!nextProps.UI.errors && !nextProps.UI.loading){
+    //        this.setState({ body: '', erros:{} });
+    //        this.props.isClose();
+    //    }
             
-    };
+    // };
     
+    handleGifPicker=()=>{
+        console.log('gif出來')
+        this.setState({ gifPicker: true })
+    }
+
     removeTag = (i) =>{
         const newTags = [...this.state.tags];
         newTags.splice(i, 1);
@@ -71,7 +75,7 @@ class CreateQuote extends Component {
         console.log(this.state.tags)
     }
 
-    quoteChange=(e)=>{        
+    gifChange=(e)=>{        
         this.setState({
             [e.target.id]: e.target.value
         })
@@ -79,7 +83,7 @@ class CreateQuote extends Component {
     }
 
     
-    quoteSubmit=(e)=>{
+    gifSubmit=(e)=>{
         e.preventDefault();
         this.props.postScream(this.state);
     }
@@ -90,23 +94,34 @@ class CreateQuote extends Component {
         const { tags } = this.state;
         const { classes, user: { credentials: { handle } }} = this.props;
        
-               
     
     return(     
         <div className="wrap">
             <div className="bg"></div>
             
-            <div className="quote-card">
-            <form onSubmit={this.quoteSubmit}>
+            <div className="gif-card">
+            <form onSubmit={this.gifSubmit}>
                 <p className="post-id">{handle}</p>
 
-               
-                <input className="quote-title" id="body" type="text" placeholder=' “引述” ' onChange={this.quoteChange}/>
-                <div className={classes.quotefrom}>
-                     <hr className={classes.quoteline}/>
-                    <textarea className="quote-content" id="title" cols="15" rows="5" placeholder="來源" onChange={this.quoteChange}></textarea>
+                <div className="gif-section">
+                    <input className="gif-title" id="title" type="title" placeholder='標題' onChange={this.gifChange}/>
                 </div>
-                 
+
+                <Fab variant="extended" aria-label="button" onClick={this.handleGifPicker} style={{height:'30px', boxShadow:'none', borderRadius:'4px', backgroundColor:'#88B7B5', fontSize:'10px'}} className={classes.fab}>
+                    <GifIcon className={classes.extendedIcon} />
+                    Select a Gif
+                </Fab>
+               
+                {/* <div className="uploadGif"><img title="選擇一個GIF" src={uploadphoto} alt="" onClick={()=> this.fileInput.click()}/>
+                    <input type="file" className="upload-gif" validate="required" style={{display:'none'}}/>
+                    
+                </div> */}
+
+               
+                
+                
+                
+                <textarea className="gif-content" id="body" cols="15" rows="5" placeholder="有什麼話想說？" onChange={this.gifChange}></textarea>
                 {/* Hashtag輸入 */}
               
                 <div className="input-tag">
@@ -124,7 +139,7 @@ class CreateQuote extends Component {
 
                 <div className="post-btns">
                     <span className="close-btn" onClick={()=>{this.props.isClose()}}>關閉</span>
-                    <span type="submit" className="quote-btn" onClick={this.quoteSubmit}>貼文</span> 
+                    <span type="submit" className="send-btn" onClick={this.gifSubmit}>貼文</span> 
                 </div>
     
             </form>
@@ -138,7 +153,7 @@ class CreateQuote extends Component {
 }
 
 
-CreateQuote.propType = {
+CreateGif.propType = {
     postScream: PropTypes.func.isRequired,
     UI: PropTypes.object.isRequired
 }
@@ -148,4 +163,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateQuote));
+export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateGif));
