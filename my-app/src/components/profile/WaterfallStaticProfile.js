@@ -12,11 +12,17 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 
+
 const styles = (theme) => ({
     paper: {
-        padding: 20
+        padding: 20,
+        backgroundAttachment: 'fixed',
+        backgroundRepeat:'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
     },
     profile: {
+        color: 'white',
         '& .image-wrapper': {
             textAlign: 'center',
             position: 'relative',
@@ -27,8 +33,8 @@ const styles = (theme) => ({
             }
         },
         '& .profile-image': {
-            width: 200,
-            height: 200,
+            width: 150,
+            height: 150,
             objectFit: 'cover',
             maxWidth: '100%',
             borderRadius: '50%'
@@ -57,14 +63,14 @@ const styles = (theme) => ({
     }
 });
 
-const StaticProfile = (props) => {
+const WaterfallStaticProfile = (props) => {
   const {
     classes,
-    profile: { handle, createdAt, imageUrl, bio, website, location }
+    profile: { handle, createdAt, imageUrl, bio, website, location, coverimageUrl }
   } = props;
 
   return (
-    <Paper className={classes.paper}>
+    <div className={classes.paper} style={{backgroundImage: `url(${coverimageUrl})`}}>
       <div className={classes.profile}>
         <div className="image-wrapper">
           <img src={imageUrl} alt="profile" className="profile-image" />
@@ -80,7 +86,7 @@ const StaticProfile = (props) => {
             @{handle}
           </MuiLink>
           <hr />
-          {bio && <Typography variant="body2"> <pre>{bio}</pre></Typography>}
+          {bio && <span variant="body2"> <pre>{bio}</pre></span>}
           <hr />
           {location && (
             <Fragment>
@@ -102,13 +108,13 @@ const StaticProfile = (props) => {
           <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
         </div>
       </div>
-    </Paper>
+    </div>
   );
 };
 
-StaticProfile.propTypes = {
+WaterfallStaticProfile.propTypes = {
   profile: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(StaticProfile);
+export default withStyles(styles)(WaterfallStaticProfile);

@@ -97,13 +97,13 @@ class CreateGif extends Component {
         this.props.isClose();
     }
    
-    clearSearchInput = () =>{
-        console.log('點到')
-        var gifInput = document.querySelector('.gifpicker__input');
-        console.log(gifInput);
-        var gifInputValue = gifInput.value;
-        gifInputValue = '';
-    };
+    // clearSearchInput = () =>{
+    //     console.log('點到')
+    //     var gifInput = document.querySelector('.gifpicker__input');
+    //     console.log(gifInput);
+    //     var gifInputValue = gifInput.value;
+    //     gifInputValue = '';
+    // };
     
 
 
