@@ -57,11 +57,24 @@ class WaterfallPosts extends Component {
                     hash = "";
                 };
             
+
+            let postTitle;
+             if (scream.type === 'text'|| scream.type === 'link' || scream.type === 'gif')
+                if(scream.title !== null) {
+                    postTitle = <p className="card-title">{scream.title}</p>
+                } else if (scream.type === 'quote') {
+                    postTitle = null
+                }
+
             let postContent;
             if (scream.type === 'text'|| scream.type === 'link' || scream.type === 'gif') {
-                 postContent = <p className="card-content">{scream.body}</p>
+                 postContent = <span className="card-content"><pre>{scream.body}</pre> </span>
             } else if (scream.type === 'quote') {
-                postContent = <p className="quote-body">“{scream.body}”</p>
+                postContent = <div className='quoteHere'>
+                                <span className="quote-body">“{scream.body}”</span>
+                                {(scream.title === "") ?
+                                null : <p className="quote-from">── {scream.title}</p>}
+                            </div>
             };
  
            return (
@@ -70,9 +83,9 @@ class WaterfallPosts extends Component {
                             <Link to={`/users/${scream.userHandle}`} className="user-id">{scream.userHandle}</Link>
                             <p className="post-time">{dayjs(scream.createdAt).fromNow()}</p>
 
-                            
-                            {(scream.title === "" && scream.type === 'text') ?
-                            null : <p className="card-title">{scream.title}</p>}
+                           {postTitle} 
+                            {/* {(scream.title === "" && scream.type === 'text') ?
+                            null : <p className="card-title">{scream.title}</p>} */}
 
                             {/* {(scream.title === "" && scream.type === 'quote') ?
                             null : <p className="quote-title">{scream.title}</p>} */}

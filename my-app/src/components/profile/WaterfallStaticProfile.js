@@ -60,6 +60,9 @@ const styles = (theme) => ({
         float: 'right',
         position: 'absolute',
         right: '90 px'
+    },
+    handleName:{
+        color: '#ffffff'
     }
 });
 
@@ -82,6 +85,7 @@ const WaterfallStaticProfile = (props) => {
             to={`/users/${handle}`}
             color="primary"
             variant="h5"
+            className={classes.handleName}
           >
             @{handle}
           </MuiLink>
