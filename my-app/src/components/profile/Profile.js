@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import { spacing } from '@material-ui/system';
 //Icon
 import LocationOn from '@material-ui/icons/LocationOn';
 import Public from '@material-ui/icons/Public';
@@ -23,6 +24,7 @@ import MyButton from '../../util/MyButton';
 
 
 const styles = (theme) => ({
+    spacing: value => value ** 2,
     paper: {
         // padding: 10,
         width: '300px',
@@ -99,7 +101,14 @@ const styles = (theme) => ({
         fontWeight: '400',
         lineHeight: '1.43',
         letterSpacing: '0.01071em'
-    }
+    },
+    loginButton: {
+        backgroundColor: '#A44A3F',
+         '&:hover': {
+             background: "#F19C79",
+         },
+    },
+    
     
 });
 
@@ -192,10 +201,10 @@ class Profile extends Component {
           </Paper>  
         ):(
             <Paper className={classes.paper}>
-                <Typography variant='body2' align='center'>
+                <Typography variant='body2' align='center' mt={4}>
                     No profile found, please login again.</Typography>
                     <div className={classes.buttons}>
-                        <Button variant='contained' color='primary' component={Link} to='/login'>
+                        <Button variant='contained' className={classes.loginButton} color='primary' component={Link} to='/login'>
                             Login
                         </Button>
                         <Button variant='contained' color='secondary' component={Link} to='/signup'>

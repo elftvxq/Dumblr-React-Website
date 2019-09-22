@@ -8,7 +8,6 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-// import DeleteScream from './DeleteScream';
 import DeleteScream from "./DeleteScream";
 import PostDailog from './PostDialog';
 import LikeButton from './LikeButton';
@@ -19,7 +18,7 @@ import { connect } from "react-redux";
 import MyButton from '../../util/MyButton';
 import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
-
+import CardActions from '@material-ui/core/CardActions';
 
 const styles = (theme)=> ({
 
@@ -134,6 +133,7 @@ class Posts extends Component {
                                 <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
+                            <CardActions>
                                 <LikeButton screamId={screamId} />
                                 <span>{likeCount} Likes</span>
                                 <MyButton tip="comments">
@@ -144,6 +144,8 @@ class Posts extends Component {
                                     screamId={screamId}
                                     userHandle={userHandle}
                                     openDialog={this.props.openDialog}/>
+                            </CardActions>
+                                
                         </div>            
                     </div>
                 )          

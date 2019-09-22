@@ -97,7 +97,7 @@ class PostDialog extends Component {
              <CircularProgress size={200} thickness={2}/>   
             </div>
         ):( 
-            <Grid container spacing={16} className={classes.gridContent}>
+            <Grid container spacing={2} className={classes.gridContent}>
                 <Grid item sm={5}>
                     <img src={userImage} alt="profile" className={classes.profileImage}/>
                 </Grid>

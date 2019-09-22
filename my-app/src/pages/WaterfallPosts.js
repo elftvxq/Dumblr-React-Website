@@ -14,7 +14,7 @@ import { ReactTinyLink } from 'react-tiny-link';
 
 const style = {
     margin: '10px',
-    marginRight: '5px'
+   
 };
 
 
@@ -107,7 +107,7 @@ class WaterfallPosts extends Component {
                                 {postContent}
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
-                            <div className="actions">
+                            
                                 <LikeButton screamId={scream.screamId} />
                                 <span>{scream.likeCount}</span>
                                 <MyButton tip="comments">
@@ -118,7 +118,7 @@ class WaterfallPosts extends Component {
                                     screamId={scream.screamId}
                                     userHandle={scream.userHandle}
                                     openDialog={this.props.openDialog}/>
-                            </div>
+                            
                                 
                         </div>            
                     </Fragment>
