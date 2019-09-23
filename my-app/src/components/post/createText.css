@@ -134,11 +134,15 @@
     border-radius: 2px;
     display: flex;
     /* flex-wrap: wrap; */
+    background: white;
+  
 }
 
 .input-tag input {
     border: none;
     width: 100%;
+    background-color: white;
+    border: 1px solid #d6d6d6;
 }
 
 .input-tag input:focus {
@@ -156,11 +160,12 @@
     padding: 0;
     width: 100%;
     margin-bottom: 20px;
+    background: white;
 }
 
 .input-tags li {
     align-items: center;
-    /* background: #85A3BF; */
+    background: #85A3BF;
     /* border-radius: 2px; */
     color: rgba(0, 0, 0, .65);
     display: flex;
@@ -172,22 +177,46 @@
     font-size: 14px;
 }
 
+.input-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.input-tags li {
+    align-items: center;
+    background: #85A3BF;
+    border-radius: 2px;
+    color: white;
+    display: flex;
+    font-weight: 300;
+    list-style: none;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    color: #000000;
+}
+
 .input-tags li button {
     align-items: center;
-    appearance: none;
-    /* background: #333333; */
+    /* appearance: none; */
+    background: #333333;
     border: none;
     border-radius: 50%;
-    color: rgba(0, 0, 0, .65);
+    /* color: rgba(0, 0, 0, .65); */
     cursor: pointer;
     display: inline-flex;
     font-size: 12px;
     height: 15px;
     justify-content: center;
     line-height: 0;
-    /* margin-left: 8px; */
+    margin-left: 8px;
     transform: rotate(45deg);
     width: 15px;
+    padding-bottom: 1px;
+    color: #ffffff;
 }
 
 .input-tags li button:focus {

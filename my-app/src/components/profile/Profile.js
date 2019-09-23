@@ -60,7 +60,9 @@ const styles = (theme) => ({
             position: 'absolute',
             bottom: '-55px',
             left: '100px',
-            boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)'
+            boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)',
+            margin: '0 auto',
+            border: '5px solid #50597b',
         },
         '& .profile-details': {
             textAlign: 'center',

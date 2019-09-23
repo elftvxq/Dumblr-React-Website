@@ -135,3 +135,9 @@
     position: relative;
     display: inline-block;
 }
+
+.nav-item:hover{
+    background: #50597b;
+    border-bottom: 4px solid #11a8ab;
+    text-decoration: none;
+}

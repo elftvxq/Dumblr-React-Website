@@ -23,6 +23,7 @@ import WaterfallUser from './pages/WaterfallUser';
 
 const theme = createMuiTheme(themeFile);
 
+axios.defaults.baseURL = "https://us-central1-react-personal-project.cloudfunctions.net/api";
 
 const token = localStorage.FBIdToken;
 if(token){

@@ -7,6 +7,7 @@ import uploadphoto from '../../image/photo-camera-grey.png';
 import PreviewPicture from "./PreviewPicture";
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
+import { border } from "@material-ui/system";
 
 
 const styles = {
@@ -162,7 +163,7 @@ class CreateText extends Component {
                                 <button type="button" onClick={()=>{this.removeTag(i)}}>+</button>
                             </li>
                         )) }
-                        <li className="keyin-tag"><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
+                        <li className="keyin-tag" style={{border:'none', backgroundColor:'white'}}><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
                         this.tagInput = c; }} autoComplete="off"/></li>
                     </ul>    
                 </div>

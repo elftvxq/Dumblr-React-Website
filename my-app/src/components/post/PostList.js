@@ -21,8 +21,11 @@ import { ReactTinyLink } from 'react-tiny-link';
 import CardActions from '@material-ui/core/CardActions';
 
 const styles = (theme)=> ({
-
-});
+    likeHeart: {
+        position: 'absolute',
+        left: '85%' 
+        }
+    });
 
 class Posts extends Component {
 
@@ -51,7 +54,7 @@ class Posts extends Component {
     }
 
     render(){
-        const {
+        const { classes,
             user: {
                 authenticated,
                 credentials: {
@@ -75,7 +78,6 @@ class Posts extends Component {
         } = this.props;
 
         dayjs.extend(relativeTime);
-        console.log(this.props);
 
         // //Hashtag陣列
         let hash = '';
@@ -133,18 +135,24 @@ class Posts extends Component {
                                 <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
-                            <CardActions>
-                                <LikeButton screamId={screamId} />
-                                <span>{likeCount} Likes</span>
-                                <MyButton tip="comments">
-                                    <ChatIcon color="primary" />
-                                </MyButton>
-                                <span>{commentCount} comments</span>
-                                <PostDailog
-                                    screamId={screamId}
-                                    userHandle={userHandle}
-                                    openDialog={this.props.openDialog}/>
-                            </CardActions>
+
+                             <div className="postAction">
+                                <div className="likeHeart">
+                                    <LikeButton screamId={screamId}/></div>
+                                   
+                                        <p className='likecount'>{likeCount} Likes</p>
+                                        {/* <MyButton tip="comments">
+                                            <ChatIcon color="primary" />
+                                        </MyButton> */}
+                                        <p className='commentcount'>{commentCount} Comments</p>
+                                   
+                                        
+                                        <PostDailog
+                                            screamId={screamId}
+                                            userHandle={userHandle}
+                                            openDialog={this.props.openDialog}/>
+                                 </div>
+                                
                                 
                         </div>            
                     </div>
@@ -162,28 +170,32 @@ class Posts extends Component {
                             <p className="post-time">{dayjs(createdAt).fromNow()}</p>
 
                              {(linkUrl === "") ?
-                            null : <ReactTinyLink
-                                        cardSize="large"
-                                        showGraphic={true}
-                                        maxLine={2}
-                                        minLine={1}
-                                        url = {linkUrl}
-                                         />}
+                            null :  <div className="linkImage">
+                                        <ReactTinyLink
+                                            cardSize="large"
+                                            showGraphic={true}
+                                            maxLine={2}
+                                            minLine={1}
+                                            url = {linkUrl}
+                                            />
+                                        </div> }
                         
                             <div className='body-content'>
                                 <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
-                                <LikeButton screamId={screamId} />
-                                <span>{likeCount} Likes</span>
-                                <MyButton tip="comments">
-                                    <ChatIcon color="primary" />
-                                </MyButton>
-                                <span>{commentCount} comments</span>
-                                <PostDailog
-                                    screamId={screamId}
-                                    userHandle={userHandle}
-                                    openDialog={this.props.openDialog}/>
+                                <div className="postAction">
+                                <div className="likeHeart">
+                                    <LikeButton screamId={screamId}/></div>
+                                   
+                                        <p className='likecount'>{likeCount} Likes</p>
+                                        <p className='commentcount'>{commentCount} Comments</p>
+                            
+                                        <PostDailog
+                                            screamId={screamId}
+                                            userHandle={userHandle}
+                                            openDialog={this.props.openDialog}/>
+                                 </div>
                         </div>            
                     </div>
              )      
@@ -210,21 +222,22 @@ class Posts extends Component {
 
                         {/* <p className="quote-from">── {title}</p> */}
                         {/* <img className="mainImage" src={pictureUrl} alt=""/> */}
-                        <div>
-                        
+                        <div className='body-content'>
                         <span className="card-hashtag">{hash}</span>  
                         </div>
 
-                            <LikeButton screamId={screamId} />
-                            <span>{likeCount} Likes</span>
-                            <MyButton tip="comments">
-                                <ChatIcon color="primary" />
-                            </MyButton>
-                            <span>{commentCount} comments</span>
-                            <PostDailog
-                                screamId={screamId}
-                                userHandle={userHandle}
-                                openDialog={this.props.openDialog}/>
+                            <div className="postAction">
+                                <div className="likeHeart">
+                                    <LikeButton screamId={screamId}/></div>
+                                   
+                                        <p className='likecount'>{likeCount} Likes</p>
+                                        <p className='commentcount'>{commentCount} Comments</p>
+                            
+                                        <PostDailog
+                                            screamId={screamId}
+                                            userHandle={userHandle}
+                                            openDialog={this.props.openDialog}/>
+                                 </div>
                     </div>            
                 </div>
             )      
@@ -251,17 +264,18 @@ class Posts extends Component {
                       <span className="card-hashtag">{hash}</span>  
                     </div>
 
-                        <LikeButton screamId={screamId} />
-                        <span>{likeCount} Likes</span>
-                        <MyButton tip="comments">
-                            <ChatIcon color="primary" />
-                        </MyButton>
-                        <span>{commentCount} comments</span>
-                        <PostDailog
-                            screamId={screamId}
-                            userHandle={userHandle}
-                            openDialog={this.props.openDialog}
-                        />
+                        <div className="postAction">
+                                <div className="likeHeart">
+                                    <LikeButton screamId={screamId}/></div>
+                                   
+                                        <p className='likecount'>{likeCount} Likes</p>
+                                        <p className='commentcount'>{commentCount} Comments</p>
+                            
+                                        <PostDailog
+                                            screamId={screamId}
+                                            userHandle={userHandle}
+                                            openDialog={this.props.openDialog}/>
+                                 </div>
                 </div>            
             </div>
         )      

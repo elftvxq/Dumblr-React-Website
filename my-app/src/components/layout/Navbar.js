@@ -37,7 +37,7 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-            <Typography variant="h6" color="secondary" className={classes.appTitle}>Dumblr</Typography>
+            <Typography variant="h6" color="secondary" className={classes.appTitle} component={Link} to="/">Dumblr</Typography>
               <Search/>
               <Link to="/">
                 <MyButton tip="Home">
@@ -48,13 +48,13 @@ class Navbar extends Component {
             </Fragment>
           ) : (
             <Fragment>
-              <Button color="inherit" component={Link} to="/login">
+              <Button color="inherit" component={Link} to="/login" className='nav-item'>
                 Login
               </Button>
-              <Button color="inherit" component={Link} to="/">
+              <Button color="inherit" component={Link} to="/" className='nav-item'>
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/signup">
+              <Button color="inherit" component={Link} to="/signup" className='nav-item'>
                 Signup
               </Button>
             </Fragment>
