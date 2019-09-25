@@ -4,17 +4,16 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { getUserData, getScreams } from "../../redux/actions/dataActions";
-import Home from '../../pages/Home';
 import TextField from '@material-ui/core/TextField';
-import { withRouter } from 'react-router-dom';
 import history from '../../util/history';
+import { red } from '@material-ui/core/colors';
 
 class Search extends Component {
 
     state = {
         searchInput:'',
         profile: null,
-        errors:''
+        errors:'',
     }
 
     componentWillReceiveProps(nextProps) {
@@ -30,26 +29,42 @@ class Search extends Component {
         }
     }
 
+    handleValidation = () => {
+        let formIsValid = true;
+
+        if (!this.state.searchInput) {
+            formIsValid = false;
+        } else {
+            return formIsValid;
+        }
+    };
+
     handleChange = (e) => {
         this.setState({
            [e.target.id]: e.target.value 
         })
         
-    }
+    };
     
         
     handleSubmit = (e)=>{
         e.preventDefault();
         // this.props.getUserData(this.state.searchInput);
-        
-        axios.get(`/user/${this.state.searchInput}`)
-        .then((res)=>{
-            
-                //  window.location.href = `/users/${this.state.searchInput}`
-                history.push(`/users/${this.state.searchInput}`);
-          }
-        )
-        .catch((err) => console.log('Error', err.response.data.error)) 
+        if(this.handleValidation()){
+            axios.get(`/user/${this.state.searchInput}`)
+            .then((res)=>{
+                
+                    //  window.location.href = `/users/${this.state.searchInput}`
+                    history.push(`/users/${this.state.searchInput}`);
+            }
+            )
+            .catch((err) => this.setState({
+                errors: err.response.data.error
+            })) 
+        } else {
+            this.setState({ errors: 'Cannot be empty'})
+        }
+           
     }
     
     render(){
@@ -59,8 +74,12 @@ class Search extends Component {
 
     return ( 
         <form className="searchBar" onSubmit={this.handleSubmit}>
+        <div className='search-group'>
             <input type ="search" id='searchInput' className ="Searchinput" placeholder = "請輸入正確的使用者名稱" onChange={this.handleChange} autoComplete='off' 
-            required/>
+            />
+            <p className='error-message'>{this.state.errors}</p>
+        </div>
+            
         </form>
     
     )  
