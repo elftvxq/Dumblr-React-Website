@@ -10,6 +10,7 @@ import MyButton from '../util/MyButton';
 import PostDailog from '../components/post/PostDialog';
 import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
+import Linkify from 'react-linkify';
 
 const style = {
     
@@ -44,6 +45,12 @@ class WaterfallPosts extends Component {
 
      dayjs.extend(relativeTime);
      console.log(this.props);
+
+     const componentDecorator = (href, text, key) => (
+            <a href={href} key={key} target="_blank">
+                {text}
+            </a>
+            );
      
  
      const childElements = screams.map(scream => {
@@ -70,7 +77,7 @@ class WaterfallPosts extends Component {
 
             let postContent;
             if (scream.type === 'text'|| scream.type === 'link' || scream.type === 'gif') {
-                 postContent = <span className="card-content"><pre>{scream.body}</pre> </span>
+                 postContent = <Linkify componentDecorator={componentDecorator}><span className="card-content">{scream.body}</span></Linkify>
             } else if (scream.type === 'quote') {
                 postContent = <div className='quoteHere'>
                                 <span className="quote-body">“{scream.body}”</span>

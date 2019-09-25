@@ -23,7 +23,7 @@ import CommentCircle from '../../image/chat+chatting+comment+message+three+dots+
 //Redux
 import { connect } from 'react-redux';
 import { getScream, clearErrors } from '../../redux/actions/dataActions';
-
+import Linkify from 'react-linkify';
 
 
 const styles = (theme) => ({
@@ -37,7 +37,8 @@ const styles = (theme) => ({
         height:150,
         width:150,
         borderRadius: '50%',
-        objectFit: 'cover'
+        objectFit: 'cover',
+        border: '3px solid #B3CDD1'
     },
     dialogContent: {
         padding: 20
@@ -95,13 +96,20 @@ class PostDialog extends Component {
     render(){
         const { classes, scream :  { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle, comments }, UI:{ loading } } = this.props;
         
+
+        const componentDecorator = (href, text, key) => (
+            <a href={href} key={key} target="_blank">
+                {text}
+            </a>
+            );
+
         const dialogMarkup = loading ? (
             <div className={classes.spinnerDiv}>
-             <CircularProgress size={200} thickness={2}/>   
+             <CircularProgress size={150} thickness={3}/>   
             </div>
         ):( 
             <Grid container spacing={2} className={classes.gridContent}>
-                <Grid item sm={5}>
+                <Grid item sm={4}>
                     <img src={userImage} alt="profile" className={classes.profileImage}/>
                 </Grid>
                 <Grid item sm={7}>
@@ -118,7 +126,7 @@ class PostDialog extends Component {
                             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
                         </Typography>
                         <hr className={classes.invisibleSeperator}/>
-                         <Typography variant="body2">{body}</Typography>
+                         <Linkify componentDecorator={componentDecorator}><span className="dialog-text">{body}</span></Linkify>
 
                         <div className="dialogCount">
                              {/* <LikeButton screamId={screamId} /> */}

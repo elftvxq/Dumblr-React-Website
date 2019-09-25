@@ -27,6 +27,7 @@ class Comments extends Component {
     render(){
         const { comments, classes  } = this.props;
 
+        
         return (
             <Grid container>
                 {comments.map((comment, index) => {
@@ -34,12 +35,12 @@ class Comments extends Component {
 
                     return (
                         <Fragment key={createdAt}>
-                            <Grid item sm={12}>
+                            <Grid item sm={10}>
                                 <Grid container>
-                                    <Grid item sm={12}>
+                                    <Grid item sm={3}>
                                         <img src={userImage} alt="comment" className={classes.commentImage}/>
                                     </Grid>
-                                    <Grid item sm={9}>
+                                    <Grid item sm={7}>
                                         <div className={classes.commentData}>
                                                 <Typography
                                                     variant="h6"

@@ -14,6 +14,7 @@ import { connect } from "react-redux";
 // import MyButton from '../../util/MyButton';
 // import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
+import Linkify from 'react-linkify';
 
 const styles = (theme)=> ({
     likeHeart: {
@@ -99,14 +100,11 @@ class Posts extends Component {
         // ) : null
 
                 
-        //該貼文回覆
-        // let reply;
-        //     if (this.state.displayReply && this.state.key === screamId) {
-        //         reply = <div> 
-        //                 <Reply key={screamId}/> 
-        //                 <div className="mask" onClick={this.hideReply}></div>
-        //                 </div> ;
-        //            } else { reply = null; }
+        const componentDecorator = (href, text, key) => (
+            <a href={href} key={key} target="_blank">
+                {text}
+            </a>
+            );
 
         if (type === "text") {
              return (
@@ -127,7 +125,7 @@ class Posts extends Component {
                             null : <img className="mainImage" src={pictureUrl} alt=""/>}
                             
                             <div className='body-content'>
-                                <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
+                                <Linkify componentDecorator={componentDecorator}><span className="card-content">{body}</span></Linkify>
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
 
@@ -176,7 +174,7 @@ class Posts extends Component {
                                         </div> }
                         
                             <div className='body-content'>
-                                <span className="card-content"><pre style={{fontFamily:"Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif"}}>{body}</pre></span>
+                                 <Linkify componentDecorator={componentDecorator}><span className="card-content">{body}</span></Linkify>
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
                                 <div className="postAction">
@@ -255,7 +253,7 @@ class Posts extends Component {
                     
                     <img className="mainImage" src={pictureUrl} alt=""/>
                     <div className='body-content'>
-                      <p className="card-content">{body}</p>
+                      <Linkify componentDecorator={componentDecorator}><span className="card-content">{body}</span></Linkify>
                       <span className="card-hashtag">{hash}</span>  
                     </div>
 

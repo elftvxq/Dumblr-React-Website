@@ -49,6 +49,7 @@
     font-size: 36px;
     line-height: 47px;
     padding-left: 15px;
+    padding-right: 20px;
     margin-top: 15px;
     /* margin-bottom: 10px; */
 }
@@ -58,6 +59,7 @@
     padding-right: 20px;
     margin-bottom: 30px;
     padding-left: 20px;
+    white-space: pre-wrap;
 }
 
 
@@ -165,3 +167,4 @@
 .commentcount{
     font-weight: 500;
 }
+

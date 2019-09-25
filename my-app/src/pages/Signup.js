@@ -47,7 +47,7 @@ const styles = {
             color: '#FFFFFF'
         },
         remind:{
-            color: 'white'
+            color: '#F2F4F3'
         }
 };
 
@@ -194,7 +194,7 @@ class Signup extends Component{
                          </div> */}
                          <br/>
                          <small className={classes.remind}>
-                             Already have an account? <Link to="/login" className={classes.remind}>Sign in here</Link>
+                             Already have an account? <Link to="/login" className="remind">Sign in here</Link>
                          </small>
                          </form>
                     </Grid>

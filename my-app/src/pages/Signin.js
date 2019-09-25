@@ -48,7 +48,7 @@ const styles = {
         color: '#FFFFFF', 
     },
     remind: {
-        color: '#FAFAFA'
+        color: '#F2F4F3'
     }
 };
 
@@ -98,8 +98,6 @@ class SignIn extends Component{
                         <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
                     </div>
                 </div>
-                
-                
 
                     <div className="text-animation">
                         <div className="content-container">
@@ -163,7 +161,7 @@ class SignIn extends Component{
                          </div> */}
                          <br/>
                          <small className={classes.remind}>
-                             Don 't have an account? <Link to="/signup" className={classes.remind}> Sign up here</Link>
+                             Don 't have an account? <Link to="/signup" className="remind"> Sign up here</Link>
                          </small>
                          </form>
                     </Grid>
