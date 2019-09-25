@@ -6,6 +6,8 @@ import axios from 'axios';
 import { getUserData, getScreams } from "../../redux/actions/dataActions";
 import Home from '../../pages/Home';
 import TextField from '@material-ui/core/TextField';
+import { withRouter } from 'react-router-dom';
+import history from '../../util/history';
 
 class Search extends Component {
 
@@ -42,18 +44,12 @@ class Search extends Component {
         
         axios.get(`/user/${this.state.searchInput}`)
         .then((res)=>{
-            this.setState({
-                profile: res.data.user
-            });
-            if (this.state.profile !== null) {
-                 window.location.href = `/users/${this.state.searchInput}`
-            } else {
-                this.setState(()=> ({errors: 'User cannot be found'}));
-                console.log('有？')
-                return; 
-            } 
+            
+                //  window.location.href = `/users/${this.state.searchInput}`
+                history.push(`/users/${this.state.searchInput}`);
           }
-        ).catch((err) => console.log('Error', err.response.data.error)) 
+        )
+        .catch((err) => console.log('Error', err.response.data.error)) 
     }
     
     render(){
