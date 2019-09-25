@@ -1,6 +1,7 @@
 .dialogCount {
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
 
 .dialog-text {

@@ -49,6 +49,7 @@
     display: block;
     margin-bottom: 10px;
     padding-top: 10px;
+    width: 100%;
 }
 
 .post-title:focus {

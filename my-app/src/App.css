@@ -1,4 +1,6 @@
 /* HTML5 display-role reset for older browsers */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC|Open+Sans&display=swap');
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
@@ -41,9 +43,10 @@ code {
 
 html,
 body{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+    font-family: 'Open Sans','Montserrat', sans-serif, 'Noto Sans TC';
     /* background-color: #DFDFDF; */
     background-color: #13203D;
     /* margin: 0;

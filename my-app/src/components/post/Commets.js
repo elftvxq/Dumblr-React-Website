@@ -11,13 +11,18 @@ import Typography from '@material-ui/core/Typography';
 const styles = (theme) => ({
     commentImage: {
         maxWith: '100%',
-        height: '100px',
-        width:'100px',
+        height: '80px',
+        width:'80px',
         objectFit: 'cover',
-        borderRadius: '70%'
+        borderRadius: '4%',
+        marginLeft: '30px'
     },
     commentData: {
         marginLeft: 20
+    },
+    invisibleSeperator:{
+        border: 'none',
+        marginBottom: '10px'
     }
 
 });
@@ -40,7 +45,7 @@ class Comments extends Component {
                                     <Grid item sm={3}>
                                         <img src={userImage} alt="comment" className={classes.commentImage}/>
                                     </Grid>
-                                    <Grid item sm={7}>
+                                    <Grid item sm={8}>
                                         <div className={classes.commentData}>
                                                 <Typography
                                                     variant="h6"

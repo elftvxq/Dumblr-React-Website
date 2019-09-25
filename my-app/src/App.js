@@ -17,9 +17,8 @@ import Home from './pages/Home';
 import SignIn from './pages/Signin';
 import Signup from './pages/Signup';
 import axios from 'axios';
-import user from './pages/user';
+import User from './pages/user';
 import WaterfallUser from './pages/WaterfallUser';
-import WaterfallPosts from './pages/WaterfallPosts';
 
 
 const theme = createMuiTheme(themeFile);

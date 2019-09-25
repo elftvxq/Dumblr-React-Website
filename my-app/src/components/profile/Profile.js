@@ -63,7 +63,8 @@ const styles = (theme) => ({
             boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)',
             margin: '0 auto',
             border: '3px solid #B3CDD1',
-            backgroundColor: '#ffffff'
+            backgroundColor: '#ffffff',
+            boxShadow: '0 5px 15px 0px rgba(0, 0, 0, 0.6)',
         },
         '& .profile-details': {
             textAlign: 'center',

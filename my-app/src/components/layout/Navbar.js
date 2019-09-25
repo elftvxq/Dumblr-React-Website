@@ -3,10 +3,10 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-// import { ReactComponent as Create } from "../../image/create.svg";
 import Search from './Search'
 import Notifications from "../Notifications"
 import MyButton from '../../util/MyButton'
+import { useSpring, animated } from 'react-spring';
 //Redux
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/actions/userActions";
@@ -25,11 +25,13 @@ const styles ={
     },
     appTitle: {
         marginRight: '30px',
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        fontWeight:'700'
     }
 }
 
 class Navbar extends Component {
+
   
   render() {
     const { classes, authenticated } = this.props;

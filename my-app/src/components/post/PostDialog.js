@@ -38,7 +38,8 @@ const styles = (theme) => ({
         width:150,
         borderRadius: '50%',
         objectFit: 'cover',
-        border: '3px solid #B3CDD1'
+        border: '3px solid #B3CDD1',
+        boxShadow: '0 5px 15px 0px rgba(0, 0, 0, 0.6)'
     },
     dialogContent: {
         padding: 20

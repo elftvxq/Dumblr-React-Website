@@ -60,9 +60,11 @@ class WaterfallUser extends Component {
         ) : !screamIdParam ? (
             <WaterfallPosts screams={screams}/>
         ) : (
-                screams.screamId !== screamIdParam ? 
-                (<WaterfallPosts screams={screams}/>):
-                (<WaterfallPosts screams={screams} key={screams.screamId} openDialog/>)
+                screams.map(scream => {
+                if(scream.screamId !== screamIdParam)
+                return <Posts key={scream.screamId} scream={scream}/>
+                else return <Posts key={scream.screamId} scream={scream} openDialog/>
+            })
         )
 
         return (
