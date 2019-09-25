@@ -19,6 +19,7 @@ import Signup from './pages/Signup';
 import axios from 'axios';
 import user from './pages/user';
 import WaterfallUser from './pages/WaterfallUser';
+import WaterfallPosts from './pages/WaterfallPosts';
 
 
 const theme = createMuiTheme(themeFile);
@@ -52,7 +53,7 @@ function App() {
                   <AuthRoute exact path='/login' component={SignIn}/>
                   <AuthRoute exact path='/signup' component={Signup}/>
                   <Route exact path='/users/:handle' component={WaterfallUser}/>
-                  <Route exact path='/users/:handle/scream/:screamId' component={user}/>
+                  <Route exact path='/users/:handle/scream/:screamId' component={WaterfallUser}/>
                 </Switch>
               </div>
             </Router> 

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-
+import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import "./notifications.css";
 // MUI
@@ -19,6 +19,10 @@ import ChatIcon from '@material-ui/icons/Chat';
 //Redux
 import { connect } from 'react-redux';
 import { markNotificationsRead } from '../redux/actions/userActions';
+
+const styles = {
+
+};
 
 
 class Notifications extends Component {
@@ -78,11 +82,11 @@ class Notifications extends Component {
               {icon}
               <Typography
                 component={Link}
-                color="default"
+                color="primary"
                 variant="body1"
                 to={`/users/${not.recipient}/scream/${not.screamId}`}
               >
-                {not.sender} {verb} your scream {time}
+                {not.sender} {verb} your post {time}
               </Typography>
             </MenuItem>
           );
@@ -125,7 +129,4 @@ const mapStateToProps = (state) => ({
   notifications: state.user.notifications
 });
 
-export default connect(
-  mapStateToProps,
-  { markNotificationsRead }
-)(Notifications);
+export default connect( mapStateToProps,{ markNotificationsRead })(withStyles(styles)(Notifications));

@@ -5,13 +5,11 @@ import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 //MUI
 import MuiLink from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 // Icons
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
-
+import './WaterfallStaticProfile.css';
 
 const styles = (theme) => ({
     paper: {
@@ -19,7 +17,9 @@ const styles = (theme) => ({
         backgroundAttachment: 'fixed',
         backgroundRepeat:'no-repeat',
         backgroundPosition: 'center',
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
+        marginBottom:'20px',
+        height: '500px'
     },
     profile: {
         color: 'white',
@@ -37,7 +37,9 @@ const styles = (theme) => ({
             height: 150,
             objectFit: 'cover',
             maxWidth: '100%',
-            borderRadius: '50%'
+            borderRadius: '50%',
+            border: '3px solid #B3CDD1',
+            boxShadow:'0 5px 10px 0 rgba(0, 0, 0, .1)'
         },
         '& .profile-details': {
             textAlign: 'center',
@@ -48,7 +50,8 @@ const styles = (theme) => ({
             },
             '& a': {
                 color: theme.palette.primary.main
-            }
+            },
+            
         },
         '& hr': {
             border: 'none',
@@ -63,7 +66,8 @@ const styles = (theme) => ({
     },
     handleName:{
         color: '#ffffff'
-    }
+    },
+    
 });
 
 const WaterfallStaticProfile = (props) => {
@@ -80,6 +84,7 @@ const WaterfallStaticProfile = (props) => {
         </div>
         <hr />
         <div className="profile-details">
+          <div className="profile-background" style={{color:'#000000'}}>
           <MuiLink
             component={Link}
             to={`/users/${handle}`}
@@ -90,7 +95,7 @@ const WaterfallStaticProfile = (props) => {
             @{handle}
           </MuiLink>
           <hr />
-          {bio && <span variant="body2"> <pre>{bio}</pre></span>}
+          {bio && <span variant="body2" className='waterfall-bio'> <pre>{bio}</pre></span>}
           <hr />
           {location && (
             <Fragment>
@@ -110,6 +115,7 @@ const WaterfallStaticProfile = (props) => {
           )}
           <CalendarToday color="primary" />{' '}
           <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
+        </div>
         </div>
       </div>
     </div>

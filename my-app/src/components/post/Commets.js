@@ -25,7 +25,7 @@ const styles = (theme) => ({
 
 class Comments extends Component {
     render(){
-        const { classes, comments } = this.props;
+        const { comments,classes  } = this.props;
         return (
             <Grid container>
                 {comments.map((comment, index) => {
@@ -43,7 +43,7 @@ class Comments extends Component {
                                                 <Typography
                                                     variant="h6"
                                                     component={Link}
-                                                    to={`/uder/${userHandle}`}
+                                                    to={`/users/${userHandle}`}
                                                     color="primary"
                                                     style={ {textDecoration: 'none'}}
                                                 >

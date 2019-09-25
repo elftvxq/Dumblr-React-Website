@@ -4,12 +4,12 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
+import './profile.css';
 // MUI
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import { spacing } from '@material-ui/system';
 //Icon
 import LocationOn from '@material-ui/icons/LocationOn';
 import Public from '@material-ui/icons/Public';
@@ -62,7 +62,8 @@ const styles = (theme) => ({
             left: '100px',
             boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)',
             margin: '0 auto',
-            border: '5px solid #50597b',
+            border: '3px solid #B3CDD1',
+            backgroundColor: '#ffffff'
         },
         '& .profile-details': {
             textAlign: 'center',
@@ -153,11 +154,14 @@ class Profile extends Component {
           <Paper className={classes.paper}>
 
           <div className="cover-wrapper">
-               <img src={coverimageUrl} alt="" className="profile-cover"/>
-               <input type="file" id="coverimageInput" hidden="hidden" onChange={this.handleCoverImageChange}/>
-                      <MyButton tip="Edit cover photo" onClick={this.handleEditCoverImage} btnClassName="button">
-                          <EditIcon color="primary"/> 
-                      </MyButton>
+                    <div className="coverEdit">
+                        <input type="file" id="coverimageInput" hidden="hidden" onChange={this.handleCoverImageChange}/>
+                        <MyButton tip="Edit cover photo" onClick={this.handleEditCoverImage} btnClassName="button">
+                            <EditIcon color="primary"/> 
+                        </MyButton>
+                    </div>
+                    
+               <img src={coverimageUrl} alt="" className="profile-cover"/>  
           </div>
            
 
@@ -215,7 +219,7 @@ class Profile extends Component {
                     </div>
                
             </Paper>
-        )) :( <p>Loading...</p> )
+        )) :( <span className="loader"><span className="loader-inner"></span></span> )
         
         return profileMarkup;
            

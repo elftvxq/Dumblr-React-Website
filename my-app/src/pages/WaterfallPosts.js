@@ -4,7 +4,6 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import './waterfallPosts.css';
 import { connect } from 'react-redux';
 import Masonry from 'react-masonry-component';
-import photo from '../../src/image/Dumblr2.jpg';
 import { Link } from "react-router-dom";
 import LikeButton from '../components/post/LikeButton';
 import MyButton from '../util/MyButton';
@@ -13,7 +12,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
 
 const style = {
-    margin: '10px',
+    
    
 };
 
@@ -33,19 +32,21 @@ class WaterfallPosts extends Component {
   render() {
      const {
          user: {
-             authenticated,
-             credentials: {
-                 handle
-             }
-         },
-         screams
+                 authenticated,
+                 credentials: {
+                     handle
+                 }
+             },
+             screams
      } = this.props;
+
+
 
      dayjs.extend(relativeTime);
      console.log(this.props);
      
  
-    const childElements = this.props.screams.map(scream => {
+     const childElements = screams.map(scream => {
 
             //Hashtag陣列
             let hash = '';
@@ -56,6 +57,8 @@ class WaterfallPosts extends Component {
                 } else {
                     hash = "";
                 };
+            
+                
             
 
             let postTitle;
@@ -107,8 +110,21 @@ class WaterfallPosts extends Component {
                                 {postContent}
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
-                            
-                                <LikeButton screamId={scream.screamId} />
+                                <div className="postAction">
+                                 <div className="likeHeart2">
+                                    <LikeButton screamId={scream.screamId}/></div>
+                                   
+                                        <p className='likecount'>{scream.likeCount} Likes</p>
+                                        <p className='commentcount'>{scream.commentCount} Comments</p>
+                                        
+                                            <PostDailog
+                                            screamId={scream.screamId}
+                                            userHandle={scream.userHandle}
+                                            openDialog={this.props.openDialog}/>
+
+                                 </div>
+
+                                {/* <LikeButton screamId={scream.screamId} />
                                 <span>{scream.likeCount}</span>
                                 <MyButton tip="comments">
                                     <ChatIcon color="primary" />
@@ -117,7 +133,7 @@ class WaterfallPosts extends Component {
                                 <PostDailog
                                     screamId={scream.screamId}
                                     userHandle={scream.userHandle}
-                                    openDialog={this.props.openDialog}/>
+                                    openDialog={this.props.openDialog}/> */}
                             
                                 
                         </div>            

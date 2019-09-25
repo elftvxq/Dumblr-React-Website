@@ -48,6 +48,8 @@ class Navbar extends Component {
             </Fragment>
           ) : (
             <Fragment>
+            <Typography variant="h6" color="secondary" className={classes.appTitle} component={Link} to="/">Dumblr</Typography>
+            <Search/>
               <Button color="inherit" component={Link} to="/login" className='nav-item'>
                 Login
               </Button>

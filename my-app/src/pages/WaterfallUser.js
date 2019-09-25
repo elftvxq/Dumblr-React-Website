@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import WaterfallPosts from '../pages/WaterfallPosts';
 import WaterfallStaticProfile from '../components/profile/WaterfallStaticProfile';
-import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/layout/Navbar';
 import './waterfallUser.css';
-
+import Posts from '../components/post/PostList';
 import { connect } from "react-redux";
 import { getUserData } from "../redux/actions/dataActions";
 
-export class WaterfallUser extends Component {
+class WaterfallUser extends Component {
     state =  {
         profile: null,
         screamIdParam: null
@@ -29,6 +28,7 @@ export class WaterfallUser extends Component {
                 this.setState({
                     profile:res.data.user
                 })
+                console.log(this.state);
             })
             .catch((err) => console.log(err));
     };
@@ -52,15 +52,17 @@ export class WaterfallUser extends Component {
         // )
 
         const postMarkup = loading ? (
-            <p>Loading data...</p>
+             <div className="loading">
+                <p className="loadText">Loading</p>
+            </div>
         ): screams === null ? (
-            <p>No posts from this user</p>
+            <p style={{color:'white'}}>No posts from this user</p>
         ) : !screamIdParam ? (
             <WaterfallPosts screams={screams}/>
         ) : (
                 screams.screamId !== screamIdParam ? 
-                (<WaterfallPosts  scream={screams}/>):
-                (<WaterfallPosts scream={screams} openDialog/>)
+                (<WaterfallPosts screams={screams}/>):
+                (<WaterfallPosts screams={screams} key={screams.screamId} openDialog/>)
         )
 
         return (

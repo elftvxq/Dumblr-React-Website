@@ -6,6 +6,7 @@ import MyButton from '../../util/MyButton';
 import { Link } from 'react-router-dom';
 import Comments from './Commets';
 import CommentForm from './CommentForm';
+import './postDialog.css';
 //MUI
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -17,7 +18,8 @@ import ChatIcon from '@material-ui/icons/Chat';
 //Icon
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import CloseIcon from '@material-ui/icons/Close';
-
+import HeartCircle from '../../image/PUN-458-2.jpg';
+import CommentCircle from '../../image/chat+chatting+comment+message+three+dots+typing+icon-1320085879344879887.png';
 //Redux
 import { connect } from 'react-redux';
 import { getScream, clearErrors } from '../../redux/actions/dataActions';
@@ -71,6 +73,7 @@ class PostDialog extends Component {
             this.handleOpen();
             }
         }
+
         handleOpen = () => {
             let oldPath = window.location.pathname;
 
@@ -117,14 +120,16 @@ class PostDialog extends Component {
                         <hr className={classes.invisibleSeperator}/>
                          <Typography variant="body2">{body}</Typography>
 
-                         <Typography variant="body2" >
-                         <LikeButton screamId={screamId}/>
-                         <span>{likeCount} Likes </span>
-                         <MyButton tip="comments">
-                             <ChatIcon color="primary"/>
-                         </MyButton>
-                         <span>{commentCount} Comments </span>
-                         </Typography>
+                        <div className="dialogCount">
+                             {/* <LikeButton screamId={screamId} /> */}
+                        <img src={HeartCircle} alt="like" style={{width: '35px'}}/> <span style={{marginRight:'10px'}}> {likeCount} Likes </span>
+                            {/* <MyButton tip="comments">
+                                <ChatIcon color="primary"/>
+                            </MyButton> */}
+                        <img src={CommentCircle} alt="comment" style={{width: '21px', marginRight:'10px'}}/> <span> {commentCount} Comments </span></div>
+                        
+                        
+                       
                 </Grid>
                 <hr className={classes.invisibleSeperator}/>
                 <CommentForm screamId={screamId}/>

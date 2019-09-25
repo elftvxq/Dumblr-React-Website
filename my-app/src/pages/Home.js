@@ -26,7 +26,11 @@ class Home extends Component {
             let recentPosts = !loading ? (
                 screams.map((scream) => <Posts key={scream.screamId} scream={scream} />)
             ) : (
-                <p>Loading...</p>
+                // <p>Loading...</p>
+                <div className="loading">
+                    <p className="loadText">Loading</p>
+                </div>
+                
             )
 
 

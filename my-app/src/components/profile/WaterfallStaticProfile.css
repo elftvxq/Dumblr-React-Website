@@ -1,0 +1,14 @@
+.profile-background {
+  
+    background-color: #ffffff;
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    background: rgba(255, 255, 255, 0.6);
+    height: auto;
+    padding: 5px 0 5px 0           
+}
+
+.waterfall-bio{
+    line-height: 20px;
+}

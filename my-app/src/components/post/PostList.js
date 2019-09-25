@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import "./postList.css";
-// import { ReactComponent as Comment } from "../image/chat.svg";
-// import { ReactComponent as Retweet } from "../image/retweet.svg";
-// import { ReactComponent as Heart } from "../image/heart.svg";
-// import { ReactComponent as Liked } from "../image/like.svg";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
@@ -15,10 +11,9 @@ import LikeButton from './LikeButton';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //MUI
-import MyButton from '../../util/MyButton';
-import ChatIcon from '@material-ui/icons/Chat';
+// import MyButton from '../../util/MyButton';
+// import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
-import CardActions from '@material-ui/core/CardActions';
 
 const styles = (theme)=> ({
     likeHeart: {
@@ -185,7 +180,7 @@ class Posts extends Component {
                                 <span className="card-hashtag">{hash}</span>  
                             </div>
                                 <div className="postAction">
-                                <div className="likeHeart">
+                                 <div className="likeHeart">
                                     <LikeButton screamId={screamId}/></div>
                                    
                                         <p className='likecount'>{likeCount} Likes</p>
@@ -223,7 +218,7 @@ class Posts extends Component {
                         {/* <p className="quote-from">── {title}</p> */}
                         {/* <img className="mainImage" src={pictureUrl} alt=""/> */}
                         <div className='body-content'>
-                        <span className="card-hashtag">{hash}</span>  
+                            <span className="card-hashtag">{hash}</span>  
                         </div>
 
                             <div className="postAction">
@@ -259,7 +254,7 @@ class Posts extends Component {
                             null : <p className="card-title">{title}</p>}
                     
                     <img className="mainImage" src={pictureUrl} alt=""/>
-                    <div>
+                    <div className='body-content'>
                       <p className="card-content">{body}</p>
                       <span className="card-hashtag">{hash}</span>  
                     </div>

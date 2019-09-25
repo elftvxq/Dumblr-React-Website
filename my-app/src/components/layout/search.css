@@ -5,8 +5,8 @@
     height: 35px;
     width: 350px;
     padding-left: 35px;
-    color: #6E7271;
-    background: #E2E2E2 url(../../image//magnifying-glass-black.svg) no-repeat center;
+    padding-right: 10px;
+    background: #E2E2E2 url(../../image/search_grey.svg) no-repeat center;
     background-size: 5%;
     background-position: 10px 7px;
     border: 1px solid white;
@@ -15,18 +15,16 @@
 
 .searchBar input::-webkit-input-placeholder {
     color: #6E7271;
-
 }
 
-/* .searchBar ::-webkit-input-placeholder {
-    color: #ffffff;
-    font-size: 16px;
-} */
 
 .searchBar input:focus {
-    color: #000000;
     outline: none;
     background: #ffffff url(../../image//magnifying-glass-black.svg) no-repeat center;
     background-size: 5%;
     background-position: 10px 7px;
+}
+
+.searchBar input:focus::-webkit-input-placeholder {
+    color: #000000;
 }
