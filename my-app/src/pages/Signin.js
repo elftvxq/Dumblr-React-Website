@@ -19,8 +19,8 @@ const styles = {
         textAlign: 'center',
     },
     image:{
-        width: '150px',
-        margin: '20px auto 20px auto'
+        width: '100%',
+        // margin: '20px auto 20px auto'
     },
     textField: {
         margin: '10px auto 10px auto', 
@@ -34,7 +34,7 @@ const styles = {
         paddingTop: 10,
         paddingBottom: 10,
         position: 'relative',
-        background: '#8AA29E'
+        background: '#4A5899'
     },
     customError:{
         color: 'red',
@@ -45,7 +45,7 @@ const styles = {
         color: '#4B4E6D'
     },
     pageTitle: {
-        color: '#FFFFFF'
+        color: '#FFFFFF', 
     },
     remind: {
         color: '#FAFAFA'
@@ -92,13 +92,32 @@ class SignIn extends Component{
              <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-                <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
-                <Typography variant="h4" className={classes.pageTitle}>
-                    Dumblr 
-                    <br/>
-                    Login
-                </Typography>
-                    <form noValidate onSubmit={this.handleSubmit}>
+
+                <div className='profile-container'>
+                    <div className="avatar">
+                        <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
+                    </div>
+                </div>
+                
+                
+
+                    <div className="text-animation">
+                        <div className="content-container">
+                            <p className="content-container-text">
+                            Hello
+                            </p>
+                            <ul className="content-container-list">
+                            <li className="content-container-list-item">world !</li>
+                            <li className="content-container-list-item">dumblrs !</li>
+                            <li className="content-container-list-item">users !</li>
+                            <li className="content-container-list-item">everybody !</li>
+                            </ul>
+                        </div>
+                    </div>
+ 
+            
+                    <form noValidate onSubmit={this.handleSubmit} className="login-form">
+                    <p className="pageTitle">Login</p> 
                         <TextField
                             id="email"
                             label="Email"
@@ -110,7 +129,6 @@ class SignIn extends Component{
                             variant="filled"
                             value={this.state.email}
                             helperText={errors.email} error={errors.email ? true : false}
-
                             fullWidth
                         />
                         {/* <TextField className={classes.textField} type="email" id="email" name="email" lable="email" onChange={this.handleChange} placeholder="Email" value={this.state.email} variant="filled" helperText={errors.email} error={errors.email ? true : false} fullWidth/> */}
@@ -145,7 +163,7 @@ class SignIn extends Component{
                          </div> */}
                          <br/>
                          <small className={classes.remind}>
-                             Don 't have an account? Sign up <Link to="/signup" className={classes.remind}>  here</Link>
+                             Don 't have an account? <Link to="/signup" className={classes.remind}> Sign up here</Link>
                          </small>
                          </form>
                     </Grid>

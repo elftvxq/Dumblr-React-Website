@@ -20,7 +20,8 @@ import Typography from '@material-ui/core/Typography';
 
 const styles ={
     nav: {
-        backgroundColor: '#14213D'
+        // backgroundColor: '#14213D'
+        backgroundColor: '#407899'
     },
     appTitle: {
         marginRight: '30px',

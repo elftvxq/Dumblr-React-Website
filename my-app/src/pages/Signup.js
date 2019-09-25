@@ -20,8 +20,8 @@ const styles = {
             textAlign: 'center'
         },
         image: {
-            width: '150px',
-            margin: '20px auto 20px auto'
+            width: '100%',
+            // margin: '20px auto 20px auto'
         },
         textField: {
             margin: '10px auto 10px auto',
@@ -99,13 +99,29 @@ class Signup extends Component{
         <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-                <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
-                <Typography variant="h4" className={classes.pageTitle}>
-                    Dumblr
-                    <br/>
-                    Signup
-                </Typography>
+
+                <div className='profile-container-signup'>
+                    <div className="avatar">
+                        <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
+                    </div>
+                </div>
+                
+                <div className="text-animation">
+                        <div className="content-container">
+                            <p className="content-container-text">
+                            Hello
+                            </p>
+                            <ul className="content-container-list">
+                            <li className="content-container-list-item">world !</li>
+                            <li className="content-container-list-item">dumblrs !</li>
+                            <li className="content-container-list-item">users !</li>
+                            <li className="content-container-list-item">everybody !</li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <form noValidate onSubmit={this.handleSubmit}>
+                    <p className="pageTitle">Sign Up</p> 
                         <TextField
                             id="email"
                             label="Email"
@@ -178,7 +194,7 @@ class Signup extends Component{
                          </div> */}
                          <br/>
                          <small className={classes.remind}>
-                             Already have an account? Sign in <Link to="/login" className={classes.remind}>here</Link>
+                             Already have an account? <Link to="/login" className={classes.remind}>Sign in here</Link>
                          </small>
                          </form>
                     </Grid>

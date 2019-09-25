@@ -57,14 +57,14 @@ class CreateText extends Component {
           } else if(e.key === 'Backspace' && !inputValue) {
               this.removeTag(this.state.tags.length-1);
         }
-        console.log(this.state.tags)
+        // console.log(this.state.tags)
     }
 
     linkChange=(e)=>{        
         this.setState({
             [e.target.id]: e.target.value
         })
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     

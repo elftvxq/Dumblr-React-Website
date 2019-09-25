@@ -55,7 +55,7 @@ class WaterfallUser extends Component {
              <div className="loading">
                 <p className="loadText">Loading</p>
             </div>
-        ): this.state.screams == null ? (
+        ): this.state.screams === null ? (
             <p style={{color:'white'}}>No posts from this user</p>
         ) : !screamIdParam ? (
             <WaterfallPosts screams={screams}/>
