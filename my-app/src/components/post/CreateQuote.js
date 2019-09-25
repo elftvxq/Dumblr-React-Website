@@ -114,10 +114,10 @@ class CreateQuote extends Component {
                         { tags.map((tag, i)=>(
                             <li key={tag}>
                                 {tag}
-                                <button type="button" onClick={()=>{this.removeTag(i)}}>+</button>
+                                <button type="button" onClick={()=>{this.removeTag(i)}} style={{color:'white'}}>+</button>
                             </li>
                         )) }
-                        <li className="keyin-tag"><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
+                        <li className="keyin-tag" style={{border:'none', backgroundColor:'white'}}><input id="tags" type="text" placeholder="#標籤" onKeyDown={this.inputKeyDown} ref={c => {
                         this.tagInput = c; }} autoComplete="off"/></li>
                     </ul>    
                 </div>

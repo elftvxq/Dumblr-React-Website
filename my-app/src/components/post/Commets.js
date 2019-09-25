@@ -25,7 +25,8 @@ const styles = (theme) => ({
 
 class Comments extends Component {
     render(){
-        const { comments,classes  } = this.props;
+        const { comments, classes  } = this.props;
+
         return (
             <Grid container>
                 {comments.map((comment, index) => {

@@ -57,8 +57,7 @@ class WaterfallPosts extends Component {
                 } else {
                     hash = "";
                 };
-            
-                
+        
             
 
             let postTitle;

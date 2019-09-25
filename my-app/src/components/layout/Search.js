@@ -44,7 +44,7 @@ class Search extends Component {
         .then((res)=>{
             this.setState({
                 profile: res.data.user
-            })
+            });
             if (this.state.profile !== null) {
                  window.location.href = `/users/${this.state.searchInput}`
             } else {
