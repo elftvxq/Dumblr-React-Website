@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
@@ -39,11 +39,12 @@ if(token){
   }
 };
 
-function App() {
-  return (
+class App extends Component {
+  render(){
+    return (
       <MuiThemeProvider theme={theme}>
       <Provider store={store}>
-        
+  
             <Router history={ history }>
               {/* <Navber/> */}
               <div className="container">
@@ -60,7 +61,8 @@ function App() {
         
       </Provider>
       </MuiThemeProvider>
-  );
+    );
+  }
 }
 
 export default App;

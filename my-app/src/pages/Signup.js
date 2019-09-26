@@ -106,7 +106,7 @@ class Signup extends Component{
                     </div>
                 </div>
                 
-                <div className="text-animation">
+                <div className="text-animation-signup">
                         <div className="content-container">
                             <p className="content-container-text">
                             Hello
