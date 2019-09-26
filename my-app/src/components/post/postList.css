@@ -34,8 +34,8 @@
 
 .mainImage {
     width: 100%;
-    margin-bottom: 20px;
-    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    margin-top: 15px;
     object-fit: cover;
 }
 
@@ -49,10 +49,10 @@
 
 .card-title {
     font-weight: 400;
-    font-size: 36px;
+    font-size: 30px;
     padding-left: 15px;
     padding-right: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
     /* margin-bottom: 10px; */
 }
 

@@ -17,9 +17,9 @@ const styles = (theme => ({
     },
     textField:{
         backgroundColor: 'transparent',
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
-        marginBottom: '20px'
+        // marginLeft: theme.spacing(1),
+        // marginRight: theme.spacing(1),
+        // marginBottom: '20px'
     },
     dense: {
         marginTop: theme.spacing(2),

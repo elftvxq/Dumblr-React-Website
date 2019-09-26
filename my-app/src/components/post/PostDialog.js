@@ -62,7 +62,8 @@ const styles = (theme) => ({
     },
     gridContent:{
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent:'center'
     }
 });
 
@@ -112,8 +113,8 @@ class PostDialog extends Component {
              <CircularProgress size={150} thickness={3}/>   
             </div>
         ):( 
-            <Grid container spacing={2} className={classes.gridContent}>
-                <Grid item sm={3}>
+            <Grid container spacing={3} className={classes.gridContent}>
+                <Grid item sm={4}>
                     <img src={userImage} alt="profile" className={classes.profileImage}/>
                 </Grid>
                 <Grid item sm={7}>

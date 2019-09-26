@@ -44,7 +44,7 @@ const styles = (theme) => ({
     profile: {
         
         '& .image-wrapper': {
-            bottom: '45px',
+            bottom: '25px',
             textAlign: 'center',
             position: 'relative',
             '& button': {
@@ -55,35 +55,37 @@ const styles = (theme) => ({
         },
         '& .profile-image': {
             width: 100,
-            height: 100,
+            // height: 100,
             objectFit: 'cover',
             maxWidth: '100%',
             borderRadius: '5%',
-            position: 'absolute',
+            // position: 'absolute',
             bottom: '-55px',
-            left: '38%',
+            // left: '38%',
             boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)',
             margin: '0 auto',
             border: '3px solid #B3CDD1',
             backgroundColor: '#ffffff',
             boxShadow: '0 5px 15px 0px rgba(0, 0, 0, 0.6)',
             '@media (max-width:780px)': { 
-                left: '35%',
+                // left: '35%',
                 width: 90,
                 height: 90,
             },
              '@media (max-width:680px)': { 
-                 left: '35%',
+                //  left: '35%',
                  width: 80,
                  height: 80,
              },
              '@media (max-width:576px)': { 
-                 left: '43%',
-                 width: 80,
-                 height: 80,
+                //  left: '43%',
+                 width: 120,
+                 height: 120,
              },
              '@media (max-width:375px)': {
-                 left: '40%',
+                //  left: '40%',
+                  width: 110,
+                  height: 110,
              },
         }, 
         '& .profile-details': {
