@@ -34,13 +34,15 @@
     /* left: 85px;
     bottom: 100px; */
     border-radius: 5px;
-    left: 84px;
+    left: 13%;
     top: 1px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
     z-index: 999;
     padding: 10px 15px 15px 20px;
     box-sizing: border-box;
+    width: 80%;
+    margin-left: 15px;
 }
 
 .post-title {

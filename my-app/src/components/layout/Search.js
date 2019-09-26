@@ -75,7 +75,7 @@ class Search extends Component {
     return ( 
         <form className="searchBar" onSubmit={this.handleSubmit}>
         <div className='search-group'>
-            <input type ="search" id='searchInput' className ="Searchinput" placeholder = "請輸入正確的使用者名稱" onChange={this.handleChange} autoComplete='off' 
+            <input type ="search" id='searchInput' className ="Searchinput" placeholder = "Search for..." onChange={this.handleChange} autoComplete='off' 
             />
             <p className='error-message'>{this.state.errors}</p>
         </div>

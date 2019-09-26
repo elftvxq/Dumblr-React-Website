@@ -65,3 +65,14 @@
     height: 0%;
   }
 }
+@media screen and (max-width: 576px) {
+  img.profile-cover {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  img.profile-cover {
+    height: 250px;
+  }
+}

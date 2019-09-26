@@ -26,7 +26,10 @@ const styles ={
     appTitle: {
         marginRight: '30px',
         color: '#FFFFFF',
-        fontWeight:'700'
+        fontWeight:'700',
+      '@media (max-width:375px)': {
+        marginRight: '10px',
+      },
     }
 }
 

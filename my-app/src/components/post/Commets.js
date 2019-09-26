@@ -23,6 +23,12 @@ const styles = (theme) => ({
     invisibleSeperator:{
         border: 'none',
         marginBottom: '10px'
+    }, 
+    visibleSeperator:{
+         width: '100%',
+        //  borderBottom: '1px solid rbga(0, 0, 0, 0.1)',
+         border: 'none',
+         marginBottom: 20
     }
 
 });

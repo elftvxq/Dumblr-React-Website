@@ -106,7 +106,7 @@
 
 .profile-container-signup{
      width: 100%;
-     height: 34%;
+     height: 55%;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -115,15 +115,15 @@
 
 .text-animation-signup{
     position: absolute;
-    top: 42%;
+    /* top: 42%; */
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 160px;
+    height: 110px;
     overflow: hidden;
     font-family: 'Lato',
     sans-serif;
     font-size: 35px;
     line-height: 40px;
     color: #ecf0f1;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }

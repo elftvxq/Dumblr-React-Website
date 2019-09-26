@@ -17,10 +17,7 @@ import { ReactTinyLink } from 'react-tiny-link';
 import Linkify from 'react-linkify';
 
 const styles = (theme)=> ({
-    likeHeart: {
-        position: 'absolute',
-        left: '85%' 
-        }
+
     });
 
 class Posts extends Component {

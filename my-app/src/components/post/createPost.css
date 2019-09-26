@@ -5,20 +5,20 @@
     flex-wrap: wrap;
     position: relative;
     z-index: 500;
+    justify-content: space-evenly;
 }
 
 .post-section {
     background-color: #ffffff;
-    height: 100px;
-    width: 540px;
+    /* height: 100px; */
+    width: 85%;
     border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    padding: 10px 0 20px 0;
+    padding: 5px 0 10px 0;;
     box-sizing: border-box;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-    padding-bottom: 15px;
     border: 1px solid #D6DBD2;
 }
 
@@ -38,7 +38,7 @@
     border-radius: 3px;
     background-size: cover;
     overflow: visible;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     object-fit: cover;
 }
 
@@ -61,16 +61,57 @@
     line-height: 1;
 }
 
-.post-text,
+/* .post-text,
 .post-pic,
 .post-quote {
     border-right: rgba(0, 0, 0, 0.3) 0.5px solid;
     padding-right: 50px;
-    /* height: 60px; */
-    /* border: 0;
-    height: 1px; */
-    /* background-image: -webkit-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -moz-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -ms-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -o-linear-gradient(top, #f0f0f0, #8c8b8b, #f0f0f0); */
+
+} */
+
+@media screen and (max-width: 950px) {
+    .post-section{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 705px) {
+    img.avatar-Pic {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    img.avatar-Pic {
+        height: 65px;
+        width: 65px;
+    }
+}
+
+@media screen and (max-width: 414px)  {
+    img.avatar-Pic{
+        height: 50px;
+        width: 50px; 
+    }
+    .post-section img {
+        width: 35px;
+    }
+}    
+
+@media screen and (max-width: 375px) {
+    .post-section {
+        padding: 0 0 10px 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    img.avatar-Pic {
+        height: 40px;
+        width: 40px;
+    }
+
+    .post-section img {
+        width: 30px;
+    }
 }

@@ -1,43 +1,20 @@
-.bg {
-    width: 1920px;
-    height: 1920px;
-    background-color: #001935;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-}
-
-.post-id {
-    font-size: 13px;
-    font-weight: 700;
-    color: #000;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.postPic {
-    z-index: 999;
-    width: 60px;
-    border-radius: 5px;
-    position: relative;
-    top: 10px
-}
 
 .link-card {
-    width: 540px;
+    /* width: 540px; */
     background-color: #ffffff;
     height: auto;
     position: absolute;
     border-radius: 5px;
-    left: 84px;
+    
     top: 1px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
                 0 10px 10px rgba(0, 0, 0, 0.22);
     z-index: 999;
     padding: 10px 15px 15px 20px;
     box-sizing: border-box;
+    left: 13%;
+    width: 80%;
+    margin-left: 15px;
 }
 
 .link-section {

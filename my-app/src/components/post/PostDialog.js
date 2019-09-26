@@ -50,7 +50,10 @@ const styles = (theme) => ({
     },
     expandButton: {
         position: 'absolute',
-        left: '90%'
+        left: '90%',
+         '@media (max-width:768px)': { 
+             left: '85%',
+         },
     },
     spinnerDiv: {
         textAlign: 'center',
@@ -110,7 +113,7 @@ class PostDialog extends Component {
             </div>
         ):( 
             <Grid container spacing={2} className={classes.gridContent}>
-                <Grid item sm={4}>
+                <Grid item sm={3}>
                     <img src={userImage} alt="profile" className={classes.profileImage}/>
                 </Grid>
                 <Grid item sm={7}>

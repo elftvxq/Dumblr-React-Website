@@ -8,17 +8,19 @@
     border-radius: 3px;
     background-size: cover;
     overflow: visible;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     object-fit: cover;
 }
 
 .post-body {
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .post-card {
-    width: 540px;
+    /* width: 540px; */
+    width: 85%;
     font-size: 14px;
     background: #fff;
     padding: 15px 0 0;
@@ -26,14 +28,15 @@
     border-radius: 3px;
     margin-bottom: 20px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-    border: 1px solid #D6DBD2;
+    /* border: 1px solid #D6DBD2; */
     position: relative;
 }
 
 .mainImage {
     width: 100%;
     margin-bottom: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    object-fit: cover;
 }
 
 .user-id {
@@ -59,7 +62,9 @@
     margin-bottom: 30px;
     /* padding-left: 20px; */
     white-space: pre-wrap;
+    word-break: break-word;
     font-size: 16px;
+    line-height: 1.4;
 }
 
 
@@ -168,3 +173,45 @@
     font-weight: 500;
 }
 
+@media (max-width: 950px) {
+    .post-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .likeHeart {
+        left: 75%;
+    }
+}
+
+@media screen and (max-width: 705px) {
+    img.user-pic {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    img.user-pic {
+        height: 65px;
+        width: 65px;
+ }
+}
+
+@media screen and (max-width: 414px) {
+    img.user-pic {
+        height: 50px;
+        width: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+    img.user-pic {
+        height: 40px;
+        width: 40px;
+    }
+
+}

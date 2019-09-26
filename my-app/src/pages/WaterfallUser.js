@@ -71,11 +71,11 @@ class WaterfallUser extends Component {
             
             <Fragment>
             <Navbar/>
-                 <Fragment>
+                <div className="main-profile">
                     {this.state.profile === null ? ( 
                         <p>Loading profile...</p>
                     ):( <WaterfallStaticProfile profile={this.state.profile}/>)}
-                </Fragment>
+                </div>
                 <Fragment>
                     {postMarkup}
                 </Fragment>

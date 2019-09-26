@@ -92,8 +92,8 @@ class SignIn extends Component{
              <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-
-                <div className='profile-container'>
+                
+                     <div className='profile-container'>
                     <div className="avatar">
                         <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
                     </div>
@@ -110,12 +110,13 @@ class SignIn extends Component{
                             <li className="content-container-list-item">users !</li>
                             <li className="content-container-list-item">everybody !</li>
                             </ul>
+                             
                         </div>
                     </div>
  
             
                     <form noValidate onSubmit={this.handleSubmit} className="login-form">
-                    <p className="pageTitle">Login</p> 
+                        <p className="pageTitle">Login</p> 
                         <TextField
                             id="email"
                             label="Email"
@@ -164,7 +165,9 @@ class SignIn extends Component{
                              Don 't have an account? <Link to="/signup" className="remind"> Sign up here</Link>
                          </small>
                          </form>
-                    </Grid>
+                    
+               
+                    </Grid>     
                     <Grid item sm/>
                 </Grid>
         )

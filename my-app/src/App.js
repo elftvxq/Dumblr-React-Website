@@ -29,9 +29,9 @@ const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecoded(token);
   // console.log(decodedToken);
-  if(decodedToken.exp * 1001 < Date.now()){
+  if(decodedToken.exp * 1000 < Date.now()){
     store.dispatch(logoutUser());
-    window.location.href = '/signin';
+    window.location.href = '/login';
   } else {
     store.dispatch({ type: SET_AUTHENTICATED });
     axios.defaults.headers.common['Authorization'] = token; 

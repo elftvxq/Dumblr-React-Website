@@ -6,8 +6,6 @@ import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
 import GifPicker from 'gifpicker';
 import 'gifpicker/dist/style.css';
-import Fab from '@material-ui/core/Fab';
-import GifIcon from '@material-ui/icons/Gif';
 import { makeStyles } from '@material-ui/core/styles';
 
 

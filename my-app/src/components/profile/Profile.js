@@ -27,7 +27,9 @@ const styles = (theme) => ({
     spacing: value => value ** 2,
     paper: {
         // padding: 10,
-        width: '300px',
+        // width: '300px',
+        width: '100%',
+        borderRadius: '3px',
         
         '& .cover-wrapper': {
             position: 'relative',
@@ -59,13 +61,31 @@ const styles = (theme) => ({
             borderRadius: '5%',
             position: 'absolute',
             bottom: '-55px',
-            left: '100px',
+            left: '38%',
             boxShadow: '0 5px 10px 0 rgba(0, 0, 0, .1)',
             margin: '0 auto',
             border: '3px solid #B3CDD1',
             backgroundColor: '#ffffff',
             boxShadow: '0 5px 15px 0px rgba(0, 0, 0, 0.6)',
-        },
+            '@media (max-width:780px)': { 
+                left: '35%',
+                width: 90,
+                height: 90,
+            },
+             '@media (max-width:680px)': { 
+                 left: '35%',
+                 width: 80,
+                 height: 80,
+             },
+             '@media (max-width:576px)': { 
+                 left: '43%',
+                 width: 80,
+                 height: 80,
+             },
+             '@media (max-width:375px)': {
+                 left: '40%',
+             },
+        }, 
         '& .profile-details': {
             textAlign: 'center',
             position: 'relative',
