@@ -115,7 +115,7 @@ class Signup extends Component{
                             <li className="content-container-list-item">world !</li>
                             <li className="content-container-list-item">dumblrs !</li>
                             <li className="content-container-list-item">users !</li>
-                            <li className="content-container-list-item">everybody</li>
+                            <li className="content-container-list-item">everybody!</li>
                             </ul>
                         </div>
                     </div>
@@ -186,7 +186,7 @@ class Signup extends Component{
                         <Button type="submit" variant="contained" color="primary" className={classes.button} disabled={loading}>
                         Signup
                         { loading && (
-                            <CircularProgress size={25} className={classes.progress}/>
+                            <CircularProgress size={20} className={classes.progress}/>
                         )}
                         </Button>
                          {/* <div>

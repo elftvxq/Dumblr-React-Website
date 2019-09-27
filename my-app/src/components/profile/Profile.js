@@ -138,6 +138,9 @@ const styles = (theme) => ({
              background: "#F19C79",
          },
     },
+    loginRemind:{
+       paddingTop: '10px' 
+    }
     
     
 });
@@ -234,7 +237,7 @@ class Profile extends Component {
           </Paper>  
         ):(
             <Paper className={classes.paper}>
-                <Typography variant='body2' align='center' mt={4}>
+                <Typography variant='body2' align='center' mt={4} className={classes.loginRemind}>
                     No profile found, please login again.</Typography>
                     <div className={classes.buttons}>
                         <Button variant='contained' className={classes.loginButton} color='primary' component={Link} to='/login'>

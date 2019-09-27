@@ -149,4 +149,7 @@
     .likeHeart2 {
         left: 77%;
     }
+    .my-masonry-grid {
+        margin-left: -10px;
+    }
 }
