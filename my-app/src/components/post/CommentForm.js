@@ -21,9 +21,9 @@ const styles = (theme => ({
         // marginRight: theme.spacing(1),
         // marginBottom: '20px'
     },
-    dense: {
-        marginTop: theme.spacing(2),
-    },
+    // dense: {
+    //     marginTop: theme.spacing(2),
+    // },
     invisibleSeparator:{
         border: 'none'
     }

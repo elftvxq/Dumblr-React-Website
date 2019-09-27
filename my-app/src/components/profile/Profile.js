@@ -91,6 +91,8 @@ const styles = (theme) => ({
         '& .profile-details': {
             textAlign: 'center',
             position: 'relative',
+            whiteSpace: 'pre-wrap',
+            wordBreak: 'break-word',
             fontSize: '14px',
             marginTop: '20px',
             '& span, svg': {
@@ -126,7 +128,9 @@ const styles = (theme) => ({
         fontSize: '0.875 rem',
         fontWeight: '400',
         lineHeight: '1.43',
-        letterSpacing: '0.01071em'
+        letterSpacing: '0.01071em',
+        whiteSpace: 'pre-wrap',
+        wordBreak: 'break-word',
     },
     loginButton: {
         backgroundColor: '#A44A3F',

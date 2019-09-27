@@ -1,14 +1,15 @@
 .profile-background {
-  
+    word-break: break-word;
     background-color: #ffffff;
-    width: 40%;
+    width: 50%;
     position: absolute;
-    left: 30%;
+    left: 25%;
     background: rgba(255, 255, 255, 0.6);
     height: auto;
-    padding: 5px 0 5px 0           
+    padding: 5px 10px 5px 10px;           
 }
 
 .waterfall-bio{
     line-height: 20px;
+    white-space: pre-wrap;
 }

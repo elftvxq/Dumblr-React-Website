@@ -37,6 +37,11 @@ const styles = (theme) => ({
             textAlign: 'center',
             position: 'relative',
             fontSize: '14px',
+            
+            '& span':{
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-word',
+            },
             '& span, svg': {
                 verticalAlign: 'middle'
             },
@@ -80,7 +85,7 @@ const StaticProfile = (props) => {
             @{handle}
           </MuiLink>
           <hr />
-          {bio && <span variant="body2"> <pre>{bio}</pre></span>}
+          {bio && <span variant="body2">{bio}</span>}
           <hr />
           {location && (
             <Fragment>
@@ -91,7 +96,7 @@ const StaticProfile = (props) => {
           {website && (
             <Fragment>
               <LinkIcon color="primary" />
-              <a href={website} target="_blank" rel="noopener noreferrer">
+              <a href={website} target="_blank" rel="noopener noreferrer" style={{wordBreak: 'break-word'}}>
                 {' '}
                 {website}
               </a>

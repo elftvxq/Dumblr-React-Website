@@ -11,11 +11,16 @@
     background-position: 10px 7px;
     /* border: 1px solid white; */
     margin-right: 30px;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-indent: .4rem;
+     
 }
 
 .searchBar input::-webkit-input-placeholder {
     color: #6E7271;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 
@@ -65,7 +70,7 @@
         height: 20px;
         margin-right: 10px;
     }
-    .searchBar input::-webkit-input-placeholder {
+    /* .searchBar input::-webkit-input-placeholder {
         font-size: 10px;
-    }
+    } */
 }

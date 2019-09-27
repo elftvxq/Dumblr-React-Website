@@ -54,7 +54,7 @@ class App extends Component {
                   <AuthRoute exact path='/login' component={SignIn}/>
                   <AuthRoute exact path='/signup' component={Signup}/>
                   <Route exact path='/users/:handle' component={WaterfallUser} history={history}/>
-                  <Route exact path='/users/:handle/scream/:screamId' component={WaterfallUser} />
+                  <Route exact path='/users/:handle/scream/:screamId' component={User} />
                 </Switch>
               </div>
             </Router> 

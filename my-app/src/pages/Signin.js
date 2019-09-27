@@ -108,7 +108,7 @@ class SignIn extends Component{
                             <li className="content-container-list-item">world !</li>
                             <li className="content-container-list-item">dumblrs !</li>
                             <li className="content-container-list-item">users !</li>
-                            <li className="content-container-list-item">everybody !</li>
+                            <li className="content-container-list-item">everybody</li>
                             </ul>
                              
                         </div>

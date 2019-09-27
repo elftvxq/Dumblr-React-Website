@@ -139,7 +139,7 @@ class PostDialog extends Component {
                             {/* <MyButton tip="comments">
                                 <ChatIcon color="primary"/>
                             </MyButton> */}
-                        <img src={CommentCircle} alt="comment" style={{width: '21px', marginRight:'10px'}}/> <span> {commentCount} Comments </span></div>
+                        <img src={CommentCircle} alt="comment" style={{width: '20px', marginRight:'10px'}}/> <span> {commentCount} Comments </span></div>
                         
                         
                        

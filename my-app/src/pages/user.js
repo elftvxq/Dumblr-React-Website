@@ -2,12 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Posts from '../components/post/PostList';
+import profile from '../components/profile/Profile';
 import StaticProfile from '../components/profile/StaticProfile'
+import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/layout/Navbar';
 
 import { connect } from "react-redux";
 import { getUserData } from "../redux/actions/dataActions";
+
+
+
+const styles = {
+    gridProfile:{
+        marginTop: '60px',
+        flexWrap: 'wrap-reverse'
+    }
+}
 
 export class user extends Component {
     state =  {
@@ -35,6 +46,7 @@ export class user extends Component {
     render() {
         const { screams, loading } = this.props.data;
         const { screamIdParam } = this.state;
+        const { classes } = this.props;
 
         const postMarkup = loading ? (
             <p>Loading data...</p>
@@ -52,7 +64,7 @@ export class user extends Component {
 
         return (
             
-            <Grid container spacing={10}>
+            <Grid container spacing={4} className={classes.gridProfile}>
             <Navbar/>
             <Grid item sm={8} xs={12}>
                 {postMarkup}
@@ -80,4 +92,5 @@ const mapStateToProps = (state) => ({
     data: state.data
 });
 
-export default connect(mapStateToProps, { getUserData })(user);
+export default connect(mapStateToProps, { getUserData })(withStyles(styles)(user));
+

@@ -1,6 +1,6 @@
 .post-bar {
     margin-bottom: 20px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -11,7 +11,7 @@
 .post-section {
     background-color: #ffffff;
     /* height: 100px; */
-    width: 85%;
+    width: 80%;
     border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
@@ -72,6 +72,12 @@
 @media screen and (max-width: 950px) {
     .post-section{
         width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-bar {
+        width: 100%;
     }
 }
 
