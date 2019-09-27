@@ -1,22 +1,12 @@
 import React, { Component } from "react";
 import './createGif.css';
-import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
 import GifPicker from 'gifpicker';
 import 'gifpicker/dist/style.css';
-import { makeStyles } from '@material-ui/core/styles';
 
 
-const styles = makeStyles(theme => ({
-    fab: {
-        margin: theme.spacing(1)
-    },
-    extendedIcon: {
-        marginRight: theme.spacing(1),
-    },
-}));
 
 class CreateGif extends Component {
     

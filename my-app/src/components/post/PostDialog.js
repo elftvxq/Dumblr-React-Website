@@ -13,8 +13,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import LikeButton from './LikeButton';
-import ChatIcon from '@material-ui/icons/Chat';
 //Icon
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import CloseIcon from '@material-ui/icons/Close';
@@ -103,7 +101,7 @@ class PostDialog extends Component {
         
 
         const componentDecorator = (href, text, key) => (
-            <a href={href} key={key} target="_blank">
+            <a href={href} key={key} target="_blank" rel="noopener noreferrer">
                 {text}
             </a>
             );

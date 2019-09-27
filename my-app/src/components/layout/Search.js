@@ -3,10 +3,9 @@ import './search.css'
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { getUserData, getScreams } from "../../redux/actions/dataActions";
-import TextField from '@material-ui/core/TextField';
+import { getUserData } from "../../redux/actions/dataActions";
 import history from '../../util/history';
-import { red } from '@material-ui/core/colors';
+
 
 class Search extends Component {
 
@@ -53,9 +52,7 @@ class Search extends Component {
         if(this.handleValidation()){
             axios.get(`/user/${this.state.searchInput}`)
             .then((res)=>{
-                
-                    //  window.location.href = `/users/${this.state.searchInput}`
-                    history.push(`/users/${this.state.searchInput}`);
+                history.push(`/users/${this.state.searchInput}`);
             }
             )
             .catch((err) => this.setState({
@@ -69,17 +66,16 @@ class Search extends Component {
     
     render(){
 
-       const errors = this.state.errors;
       
 
     return ( 
         <form className="searchBar" onSubmit={this.handleSubmit}>
-        <div className='search-group'>
-            <input type ="search" id='searchInput' className ="Searchinput" placeholder = "Search for..." onChange={this.handleChange} autoComplete='off' 
-            />
-            <p className='error-message'>{this.state.errors}</p>
-        </div>
-            
+            <div className='search-group'>
+                <input type ="search" id='searchInput' className ="Searchinput" placeholder = "Search for..." onChange={this.handleChange} autoComplete='off' 
+                />
+                <p className='error-message'>{this.state.errors}</p>
+            </div>
+        
         </form>
     
     )  

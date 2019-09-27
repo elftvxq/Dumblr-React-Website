@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import Search from './Search'
 import Notifications from "../Notifications"
 import MyButton from '../../util/MyButton'
-import { useSpring, animated } from 'react-spring';
 //Redux
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/actions/userActions";
@@ -21,7 +20,10 @@ import Typography from '@material-ui/core/Typography';
 const styles ={
     nav: {
         // backgroundColor: '#14213D'
-        backgroundColor: '#407899'
+        backgroundColor: '#407899',
+        // backgroundColor: '#084C61',
+        opacity: 0.95
+
     },
     appTitle: {
         marginRight: '30px',
@@ -30,7 +32,10 @@ const styles ={
       '@media (max-width:375px)': {
         marginRight: '10px',
       },
-    }
+    },
+    // homeIcon:{
+    //   padding: '10px'
+    // }
 }
 
 class Navbar extends Component {
@@ -39,7 +44,7 @@ class Navbar extends Component {
   render() {
     const { classes, authenticated } = this.props;
     return (
-      <AppBar>
+      <AppBar className={classes.nav}>
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
@@ -47,7 +52,7 @@ class Navbar extends Component {
               <Search/>
               <Link to="/">
                 <MyButton tip="Home">
-                  <HomeIcon />
+                  <HomeIcon className={classes.homeIcon}/>
                 </MyButton>
               </Link>
               <Notifications />

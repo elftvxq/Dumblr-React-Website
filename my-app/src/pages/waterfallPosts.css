@@ -16,7 +16,7 @@
 
 .waterfall-card:hover{
     cursor: pointer;
-    border: #42858C 3px solid;
+    border: transparent 3px solid;
 }
 
 

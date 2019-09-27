@@ -3,7 +3,7 @@
     border: none;
     border-radius: 3px;
     height: 30px;
-    width: 300px;
+    max-width: 300px;
     padding-left: 35px;
     padding-right: 10px;
     background: #E2E2E2 url(../../image/search_grey.svg) no-repeat center;
@@ -14,8 +14,7 @@
     display: inline-block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    text-indent: .4rem;
-     
+    /* text-indent: .4rem; */
 }
 
 .searchBar input::-webkit-input-placeholder {
@@ -43,7 +42,7 @@
 }
 
 .error-message{
-    color: #75B09C;
+    color: #000000;
     /* display: inline-block; */
     /* line-height: 15px;
     margin: 5px 0 0; */
@@ -70,7 +69,4 @@
         height: 20px;
         margin-right: 10px;
     }
-    /* .searchBar input::-webkit-input-placeholder {
-        font-size: 10px;
-    } */
 }

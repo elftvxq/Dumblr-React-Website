@@ -31,8 +31,8 @@ const styles = {
     button: {
         marginTop: 20,
         marginBottom: 10,
-        paddingTop: 10,
-        paddingBottom: 10,
+        // paddingTop: 10,
+        // paddingBottom: 10,
         position: 'relative',
         background: '#4A5899'
     },
@@ -49,6 +49,9 @@ const styles = {
     },
     remind: {
         color: '#F2F4F3'
+    },
+    formWidth:{
+        width: '100%'
     }
 };
 
@@ -91,9 +94,9 @@ class SignIn extends Component{
         return(
              <Grid container className={classes.form}>
                 <Grid item sm />
-                <Grid item sm>
+                <Grid item sm className={classes.formWidth}>
                 
-                     <div className='profile-container'>
+                <div className='profile-container'>
                     <div className="avatar">
                         <img src={Logo} alt="Dumblr" style={{borderRadius: '999em'}} className={classes.image} />
                     </div>
@@ -115,7 +118,7 @@ class SignIn extends Component{
                     </div>
  
             
-                    <form noValidate onSubmit={this.handleSubmit} className="login-form">
+                    <form noValidate onSubmit={this.handleSubmit}>
                         <p className="pageTitle">Login</p> 
                         <TextField
                             id="email"
@@ -154,7 +157,7 @@ class SignIn extends Component{
                         <Button type="submit" variant="contained" color="primary" className={classes.button} disabled={loading}>
                         Login
                         { loading && (
-                            <CircularProgress size={25} className={classes.progress}/>
+                            <CircularProgress size={20} className={classes.progress}/>
                         )}
                         </Button>
                          {/* <div>

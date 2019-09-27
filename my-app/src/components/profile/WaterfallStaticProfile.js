@@ -14,12 +14,13 @@ import './WaterfallStaticProfile.css';
 const styles = (theme) => ({
     paper: {
         padding: 20,
-        backgroundAttachment: 'fixed',
+        // backgroundAttachment: 'fixed',
         backgroundRepeat:'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         marginBottom:'20px',
-        height: '500px'
+        height: '500px',
+        width: '100%'
     },
     profile: {
         color: 'white',
@@ -77,7 +78,7 @@ const WaterfallStaticProfile = (props) => {
   } = props;
 
   return (
-    <div className={classes.paper} style={{backgroundImage: `url(${coverimageUrl})`}}>
+    <div className={classes.paper} style={{backgroundImage: `url(${coverimageUrl})`, objectFit:'cover'}}>
       <div className={classes.profile}>
         <div className="image-wrapper">
           <img src={imageUrl} alt="profile" className="profile-image" />

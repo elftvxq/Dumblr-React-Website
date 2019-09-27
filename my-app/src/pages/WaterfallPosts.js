@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import './waterfallPosts.css';
@@ -7,9 +7,7 @@ import { connect } from 'react-redux';
 import Masonry from 'react-masonry-css'
 import { Link } from "react-router-dom";
 import LikeButton from '../components/post/LikeButton';
-import MyButton from '../util/MyButton';
 import PostDailog from '../components/post/PostDialog';
-import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
 import Linkify from 'react-linkify';
 
@@ -26,11 +24,6 @@ const breakpointColumnsObj = {
     576: 1
 };
 
-const masonryOptions = {
-    transitionDuration: 2
-};
-
-const imagesLoadedOptions = { background: '.my-bg-image-el' }
 
 
 class WaterfallPosts extends Component {
@@ -54,7 +47,7 @@ class WaterfallPosts extends Component {
      console.log(this.props);
 
      const componentDecorator = (href, text, key) => (
-            <a href={href} key={key} target="_blank">
+            <a href={href} key={key} target="_blank" rel="noopener noreferrer">
                 {text}
             </a>
             );

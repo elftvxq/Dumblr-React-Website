@@ -39,6 +39,7 @@
     background-color: #F2F2F2;
     padding-left: 10px;
     padding-right: 10px;
+    word-break: break-all;
 }
 
 .link-title:focus {

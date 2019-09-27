@@ -25,12 +25,13 @@
     background: #fff;
     padding: 15px 0 0;
     word-wrap: break-word;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     margin-bottom: 20px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
     /* border: 1px solid #D6DBD2; */
     position: relative;
 }
+
 
 .mainImage {
     width: 100%;
@@ -154,7 +155,7 @@
 
 .likeHeart{
     position: absolute;
-    left: 81%;
+    left: 79%;
 }
 
 .postAction{

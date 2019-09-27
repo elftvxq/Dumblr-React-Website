@@ -17,7 +17,8 @@ import { signupUser } from "../redux/actions/userActions";
 
 const styles = {
         form: {
-            textAlign: 'center'
+            textAlign: 'center',
+            marginBottom: '20px'
         },
         image: {
             width: '100%',
@@ -31,10 +32,10 @@ const styles = {
         button: {
             marginTop: 20,
             marginBottom: 10,
-            paddingTop: 10,
-            paddingBottom: 10,
+            // paddingTop: 10,
+            // paddingBottom: 10,
             position: 'relative',
-            background: '#8AA29E'
+            background: '#4A5899'
         },
         customError: {
             color: 'red',
@@ -106,7 +107,7 @@ class Signup extends Component{
                     </div>
                 </div>
                 
-                <div className="text-animation-signup">
+                    <div className="text-animation-signup">
                         <div className="content-container">
                             <p className="content-container-text">
                             Hello

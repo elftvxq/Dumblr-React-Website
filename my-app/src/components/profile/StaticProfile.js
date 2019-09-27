@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 //MUI
 import MuiLink from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 // Icons
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
