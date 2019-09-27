@@ -50,5 +50,7 @@
     ]
   },
   "proxy": "https://us-central1-react-personal-project.cloudfunctions.net/api",
-  "devDependencies": {}
+  "devDependencies": {
+    "react-masonry-css": "^1.0.12"
+  }
 }

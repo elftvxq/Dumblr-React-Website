@@ -50,7 +50,7 @@ const styles = (theme) => ({
     },
     expandButton: {
         position: 'absolute',
-        left: '90%',
+        left: '88%',
          '@media (max-width:768px)': { 
              left: '85%',
          },

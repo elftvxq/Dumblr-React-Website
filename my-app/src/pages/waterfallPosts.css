@@ -1,12 +1,5 @@
-
-.waterfall-body {
-    width: 100%;
-    display: flex;
-    margin-right: 2px;
-}
-
 .waterfall-card {
-    width: 32%;
+    /* width: 100%; */
     height: auto;
     font-size: 14px;
     background: #fff;
@@ -18,6 +11,7 @@
     box-sizing: border-box;
     /* position: relative; */
     margin-right: 10px;
+    position: relative;
 }
 
 .waterfall-card:hover{
@@ -117,5 +111,42 @@
 
 .likeHeart2 {
     position: absolute;
-    left: 82%;
+    left: 80%;
+}
+
+.my-masonry-grid {
+    display: -webkit-box;
+    /* Not needed if autoprefixing */
+    display: -ms-flexbox;
+    /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -30px;
+    padding-left: 10px;
+    /* gutter size offset */
+}
+
+.my-masonry-grid_column {
+    /* padding-left: 30px; */
+    /* gutter size */
+    /* background-clip: padding-box; */
+    margin-left: 10px;
+    /* border-left: 10px solid transparent; */
+    background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+    /* change div to reference your elements you put in <Masonry> */
+    /* background: grey;
+    height: auto;
+    margin-bottom: 30px; */
+        background: #EDF2F4;
+        padding: 10px;
+        margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .likeHeart2 {
+        left: 77%;
+    }
 }

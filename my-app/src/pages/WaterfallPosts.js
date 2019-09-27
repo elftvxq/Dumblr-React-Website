@@ -3,7 +3,8 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import './waterfallPosts.css';
 import { connect } from 'react-redux';
-import Masonry from 'react-masonry-component';
+// import Masonry from 'react-masonry-component';
+import Masonry from 'react-masonry-css'
 import { Link } from "react-router-dom";
 import LikeButton from '../components/post/LikeButton';
 import MyButton from '../util/MyButton';
@@ -17,7 +18,13 @@ const style = {
    
 };
 
-
+const breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    850: 2,
+    700: 2,
+    576: 1
+};
 
 const masonryOptions = {
     transitionDuration: 2
@@ -87,8 +94,8 @@ class WaterfallPosts extends Component {
             };
  
            return (
-                 <Fragment key={scream.screamId}>
-                        <div className="waterfall-card" >
+                 
+                        <div className="waterfall-card" key={scream.screamId}>
                             <Link to={`/users/${scream.userHandle}`} className="user-id">{scream.userHandle}</Link>
                             <p className="post-time">{dayjs(scream.createdAt).fromNow()}</p>
 
@@ -143,22 +150,15 @@ class WaterfallPosts extends Component {
                             
                                 
                         </div>            
-                    </Fragment>
+                   
             );
         });
     
     return (
-       <Masonry className={'my-gallery-class'} // default ''
-                elementType={'div'} // default 'div'
-                style={style}
-                options={masonryOptions} // default {}
-                disableImagesLoaded={false} // default false
-                updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-                imagesLoadedOptions={imagesLoadedOptions} // default {}>
-                >
-                  {childElements}
-                  <div className="my-bg-image-el"></div>
-          
+       <Masonry breakpointCols={breakpointColumnsObj}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column">
+                  {childElements}  
        </Masonry>
         );
     }
