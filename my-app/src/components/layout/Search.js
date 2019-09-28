@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { getUserData } from "../../redux/actions/dataActions";
 import history from '../../util/history';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 class Search extends Component {
@@ -69,13 +70,14 @@ class Search extends Component {
       
 
     return ( 
-        <form className="searchBar" onSubmit={this.handleSubmit}>
+        <form className="search-bar" onSubmit={this.handleSubmit}>
             <div className='search-group'>
-                <input type ="search" id='searchInput' className ="Searchinput" placeholder = "Search for..." onChange={this.handleChange} autoComplete='off' 
+                <input type ="search" id='searchInput' className ="search-input" placeholder = "Search for..." onChange={this.handleChange} autoComplete='off' 
                 />
-                <p className='error-message'>{this.state.errors}</p>
-            </div>
-        
+            <button type='submit' className='search-button'> <i className='fa fa-search'></i> 
+             </button>
+            </div> 
+            <p className='error-message'>{this.state.errors}</p>
         </form>
     
     )  

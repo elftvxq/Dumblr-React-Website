@@ -91,14 +91,6 @@
     font-family: 'Noto Serif TC', serif;
 }
 
-.quote-body {
-    font-size: 34px;
-    line-height: 42px;
-    margin-left: 15px;
-    margin-right: 15px;
-    font-family: 'Noto Serif TC', serif;
-    width: 100%;
-}
 
 .quote-from {
     padding-left: 20px;
@@ -143,6 +135,13 @@
         background: #EDF2F4;
         padding: 10px;
         margin-bottom: 20px;
+}
+
+@media screen and (max-width: 996px) {
+    .likeHeart2 {
+        left: 78%;
+    }
+
 }
 
 @media screen and (max-width: 768px) {

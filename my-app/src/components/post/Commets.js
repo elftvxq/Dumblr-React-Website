@@ -18,7 +18,8 @@ const styles = (theme) => ({
         marginLeft: '30px'
     },
     commentData: {
-        marginLeft: 20
+        marginLeft: 20,
+        marginBottom: 10
     },
     invisibleSeperator:{
         border: 'none',

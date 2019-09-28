@@ -44,7 +44,16 @@ const styles = (theme) => ({
     },
     closeButton : {
         position: 'absolute',
-        left: '90%'
+        left: '90%',
+        '@media (max-width:576px)': {
+             left: '86%',
+        },
+        '@media (max-width:414px)': {
+            left: '81%',
+        },
+        '@media (max-width:320px)': {
+            left: '78%',
+        },
     },
     expandButton: {
         position: 'absolute',

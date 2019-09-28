@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Posts from '../components/post/PostList';
-import profile from '../components/profile/Profile';
+import Profile from '../components/profile/Profile';
 import StaticProfile from '../components/profile/StaticProfile'
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
@@ -49,7 +49,9 @@ export class user extends Component {
         const { classes } = this.props;
 
         const postMarkup = loading ? (
-            <p>Loading data...</p>
+                <div className="loading">
+                    <p className="loadText">Loading</p>
+                </div>
         ): screams === null ? (
             <p>No posts from this user</p>
         ) : !screamIdParam ? (
@@ -73,7 +75,7 @@ export class user extends Component {
                {this.state.profile === null ? ( 
                    <p>Loading profile...</p>
 
-               ):( <StaticProfile profile={this.state.profile}/>
+               ):( <Profile profile={this.state.profile}/>
 
                )}
             </Grid>

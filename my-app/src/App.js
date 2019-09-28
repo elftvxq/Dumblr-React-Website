@@ -40,6 +40,7 @@ if(token){
 };
 
 class App extends Component {
+  
   render(){
     return (
       <MuiThemeProvider theme={theme}>

@@ -248,7 +248,7 @@ class Profile extends Component {
                     </div>
                
             </Paper>
-        )) :( <span className="loader"><span className="loader-inner"></span></span> )
+        )) :( <div className="loader"><span className="loader-inner"></span></div> )
         
         return profileMarkup;
            
