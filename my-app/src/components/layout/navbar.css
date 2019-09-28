@@ -1,16 +1,18 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid #FFFFFF; */
-    background-color: #14213D;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-    align-items: center;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 15px;
-    margin: auto;
+.appTitle {
+    color: #FFFFFF;
+    font-weight: 700;
+    margin-right: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border-top: 4px solid #407899;
+    border-bottom: 4px solid #407899;
+    padding: 20px 0;
+}
+
+.appTitle:hover{
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    padding: 6px 0;
 }
 
 .headLeft {
@@ -25,3 +27,11 @@
     font-size: 20px;
     font-weight: 700;
 }
+
+@media (max-width: 414px) {
+    .appTitle {
+        font-weight: 700;
+        margin-right: 10px;
+    }
+}
+

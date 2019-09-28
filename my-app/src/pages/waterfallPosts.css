@@ -5,18 +5,31 @@
     background: #fff;
     padding: 15px 5px 0 5px;
     word-wrap: break-word;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     margin-bottom: 10px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
     box-sizing: border-box;
     /* position: relative; */
     margin-right: 10px;
     position: relative;
+    animation: anim 1s ease-out 0s 1;
+    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .waterfall-card:hover{
-    cursor: pointer;
-    border: transparent 3px solid;
+    transform: translateY(-0.5rem) scale(1.0125);
+    box-shadow: 0 0.5em 3rem -1rem rgba(0, 0, 0, 0.5);
 }
 
 

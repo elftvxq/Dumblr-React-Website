@@ -2,6 +2,19 @@
     position: absolute;
     z-index: 100;
     left: 82%;
+    
+}
+
+.cover-wrapper{
+   overflow: hidden
+}
+
+.cover-wrapper img {
+  transition: transform .5s ease;
+}
+
+.cover-wrapper:hover img {
+  transform: scale(1.2);
 }
 
 .loader {

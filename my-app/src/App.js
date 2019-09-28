@@ -21,6 +21,7 @@ import User from './pages/user';
 import WaterfallUser from './pages/WaterfallUser';
 import history from './util/history'
 
+
 const theme = createMuiTheme(themeFile);
 
 axios.defaults.baseURL = "https://us-central1-react-personal-project.cloudfunctions.net/api";
@@ -48,15 +49,22 @@ class App extends Component {
   
             <Router history={ history }>
               {/* <Navber/> */}
-              <div className="container">
-                <Switch>
-                  <Route exact path='/' component={Home}/>
-                  <AuthRoute exact path='/login' component={SignIn}/>
-                  <AuthRoute exact path='/signup' component={Signup}/>
-                  <Route exact path='/users/:handle' component={WaterfallUser} history={history}/>
-                  <Route exact path='/users/:handle/scream/:screamId' component={User} />
-                </Switch>
-              </div>
+                 
+                    <div className="container">
+                     
+                      <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <AuthRoute exact path='/login' component={SignIn}/>
+                        <AuthRoute exact path='/signup' component={Signup}/>
+                        <Route exact path='/users/:handle' component={WaterfallUser} history={history}/>
+                        <Route exact path='/users/:handle/scream/:screamId' component={User} />
+                      </Switch>
+                      
+                    </div>
+                  
+                  
+             
+              
             </Router> 
         
       </Provider>

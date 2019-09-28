@@ -49,7 +49,7 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-            <Typography variant="h6" color="secondary" className={classes.appTitle} component={Link} to="/">Dumblr</Typography>
+            <a className="appTitle">Dumblr</a>
               <Search/>
               <Link to="/">
                 <MyButton tip="Home">
