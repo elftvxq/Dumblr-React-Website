@@ -3,7 +3,7 @@ import { storage } from '../../config/fbConfig';
 import './createText.css';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
-import uploadphoto from '../../image/photo-camera-grey.png';
+import uploadphoto from '../../image/photo-camera-upload.png';
 import PreviewPicture from "./PreviewPicture";
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
@@ -144,7 +144,7 @@ class CreateText extends Component {
                 
                 <input className="post-title" id="title" type="title" placeholder="標題" onChange={this.handleChange} autoComplete="off"/>
                 <PreviewPicture pictureUrl={this.state.pictureUrl} className={classes.previewPic}/>
-                <div className="upload"><img title="上傳照片" src={uploadphoto} alt="" onClick={()=> this.fileInput.click()}/>
+                <div className="upload"><img title="上傳照片" src={uploadphoto} style={{width: '20px'}} alt="" onClick={()=> this.fileInput.click()}/>
                     <input type="file" className="upload-image" onChange={(e)=> {this.displayPicture(e)}} multiple={false} accept="image/*" validate="required" ref={fileInput=> this.fileInput = fileInput} style={{display:'none'}}/>
                     <div className="preview-image">
                         { /* preview image */ }

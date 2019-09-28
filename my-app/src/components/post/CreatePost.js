@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import text from "../../image/text.png";
-import quote from "../../image/left-quote.png";
-import link from '../../image/link.png';
-import gif from '../../image/gif.png';
+import text from "../../image/text_512.png";
+import quote from "../../image/quote_512.png";
+import link from '../../image/link_512.png';
+import gif from '../../image/gif_512.png';
 import './createPost.css';
 import CreateText from "./CreateText";
 import CreateLink from './CreateLink';
