@@ -72,7 +72,7 @@ class Search extends Component {
     return ( 
         <form className="search-bar" onSubmit={this.handleSubmit}>
             <div className='search-group'>
-                <input type ="search" id='searchInput' className ="search-input" placeholder = "Search for..." onChange={this.handleChange} autoComplete='off' 
+                <input type ="search" id='searchInput' className ="search-input" placeholder = "Search user" onChange={this.handleChange} autoComplete='off' 
                 />
             <button type='submit' className='search-button'> <i className='fa fa-search'></i> 
              </button>

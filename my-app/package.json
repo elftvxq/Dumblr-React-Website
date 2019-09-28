@@ -26,6 +26,7 @@
     "react-scripts": "3.1.1",
     "react-spring": "^8.0.27",
     "react-tiny-link": "^2.0.1",
+    "react-transition-group": "^4.3.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
   },
