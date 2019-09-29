@@ -60,12 +60,10 @@
 
 .upload img {
     width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 
-.upload img:hover {
-    bottom: -3px;
-}
 
 .post-content {
     border: none;

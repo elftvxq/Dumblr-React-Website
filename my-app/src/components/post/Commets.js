@@ -30,6 +30,9 @@ const styles = (theme) => ({
         //  borderBottom: '1px solid rbga(0, 0, 0, 0.1)',
          border: 'none',
          marginBottom: 20
+    },
+    commentContent:{
+        marginTop: 15
     }
 
 });
@@ -47,7 +50,7 @@ class Comments extends Component {
 
                     return (
                         <Fragment key={createdAt}>
-                            <Grid item sm={10}>
+                            <Grid item sm={10} className={classes.commentContent}>
                                 <Grid container>
                                     <Grid item sm={3}>
                                         <img src={userImage} alt="comment" className={classes.commentImage}/>

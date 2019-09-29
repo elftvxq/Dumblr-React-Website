@@ -15,6 +15,8 @@ import Button from '@material-ui/core/Button';
 import Toolbar from "@material-ui/core/Toolbar";
 import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography';
+//React Spring
+import { useTransition, animated } from 'react-spring';
 
 
 const styles ={
@@ -41,7 +43,6 @@ const styles ={
 
 class Navbar extends Component {
 
-  
   render() {
     const { classes, authenticated } = this.props;
     return (

@@ -20,6 +20,17 @@
     box-sizing: border-box;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
     border: 1px solid #D6DBD2;
+    animation: dropdown 0.05s ease-out 0s 1;
+}
+
+@keyframes dropdown {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .post-section img {

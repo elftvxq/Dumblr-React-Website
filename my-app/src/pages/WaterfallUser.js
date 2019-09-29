@@ -73,7 +73,7 @@ class WaterfallUser extends Component {
             <Navbar/>
                 <div className="main-profile">
                     {this.state.profile === null ? ( 
-                        <p>Loading profile...</p>
+                        <div className="loader"><span className="loader-inner"></span></div>
                     ):( <WaterfallStaticProfile profile={this.state.profile}/>)}
                 </div>
                 <Fragment>

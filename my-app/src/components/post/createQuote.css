@@ -47,14 +47,11 @@
     background-color: transparent;
 }
 
-.upload img {
+/* .upload img {
     width: 20px;
     cursor: pointer;
-}
+} */
 
-.upload img:hover {
-    bottom: -3px;
-}
 
 .quote-content {
     border: none;

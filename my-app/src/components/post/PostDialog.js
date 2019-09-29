@@ -118,7 +118,7 @@ class PostDialog extends Component {
 
         const dialogMarkup = loading ? (
             <div className={classes.spinnerDiv}>
-             <CircularProgress size={150} thickness={3}/>   
+             <CircularProgress size={100} thickness={3}/>   
             </div>
         ):( 
             <Grid container spacing={3} className={classes.gridContent}>
@@ -148,10 +148,8 @@ class PostDialog extends Component {
                                 <ChatIcon color="primary"/>
                             </MyButton> */}
                         <img src={CommentCircle} alt="comment" style={{width: '20px', marginRight:'10px'}}/> <span> {commentCount} Comments </span></div>
-                        
-                        
-                       
                 </Grid>
+
                 <hr className={classes.invisibleSeperator}/>
                 <CommentForm screamId={screamId}/>
                 <Comments comments={comments}/> 

@@ -21,12 +21,6 @@ class CreateGif extends Component {
        errors: {},
     };
 
-     handleGifPicker = () => {
-         console.log('gif出來')
-         this.setState({
-             gifPicker: true
-         })
-     };
 
     componentWillReceiveProps(nextProps){
         if(nextProps.UI.errors){
@@ -69,7 +63,8 @@ class CreateGif extends Component {
     passUrl = (gifUrl) => {
         this.setState({
             pictureUrl: gifUrl
-        })
+        }) 
+        this.clearGiftInput();
     }
 
     gifChange=(e)=>{        
@@ -77,6 +72,7 @@ class CreateGif extends Component {
             [e.target.id]: e.target.value
         })
         console.log(this.state)
+       
     }
 
     gifSubmit=(e)=>{
@@ -85,13 +81,13 @@ class CreateGif extends Component {
         this.props.isClose();
     }
    
-    // clearSearchInput = () =>{
-    //     console.log('點到')
-    //     var gifInput = document.querySelector('.gifpicker__input');
-    //     console.log(gifInput);
-    //     var gifInputValue = gifInput.value;
-    //     gifInputValue = '';
-    // };
+    clearGiftInput = () =>{
+        console.log('點到')
+        var gifInput = document.getElementsByClassName('gifpicker__chosengif');
+        var gifInputValue = gifInput.src;
+        console.log(gifInput);
+        console.log(gifInputValue)
+    };
     
 
 
@@ -146,7 +142,7 @@ class CreateGif extends Component {
                     <GifIcon className={classes.extendedIcon} />
                     Select a Gif
                 </Fab> */}
-                 <GifPicker apikey="HB062X5OE101" onSelect={(gifUrl) => {this.passUrl(gifUrl); console.log(gifUrl)}} /> 
+                 <GifPicker apikey="HB062X5OE101" onSelect={(gifUrl) => {this.passUrl(gifUrl); console.log(gifUrl)}}/> 
                 
             </div>
            

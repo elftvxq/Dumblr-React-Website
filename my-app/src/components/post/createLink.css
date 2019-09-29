@@ -60,10 +60,6 @@
     outline: none;
 }
 
-.upload {
-    display: flex;
-    justify-content: flex-end;
-}
 
 .close-btn {
     display: inline-block;

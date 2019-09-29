@@ -1,3 +1,10 @@
+.nav{ 
+    background-color: '#14213D';
+    background-color: '#407899';
+    /* background-color: '#084C61'; */
+    opacity: 0.95
+}
+
 .appTitle {
     color: #FFFFFF;
     font-weight: 700;
@@ -31,7 +38,13 @@
 @media (max-width: 414px) {
     .appTitle {
         font-weight: 700;
-        margin-right: 10px;
+        margin-right: 20px;
     }
 }
+/* @media (max-width: 375px) {
+    .appTitle {
+        font-weight: 700;
+        margin-right: 15px;
+    }
+} */
 

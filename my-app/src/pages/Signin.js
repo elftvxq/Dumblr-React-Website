@@ -61,8 +61,19 @@ class SignIn extends Component{
     state = {
         email: '',
         password: '',
-        errors:{}
+        errors:{},
+        showPassword: false
     }
+
+     handleClickShowPassword = () => {
+         this.setState({
+             showPassword: true
+         });
+     };
+
+    handleMouseDownPassword = (e) => {
+         e.preventDefault();
+     };
 
     handleChange = (e) => {
         this.setState({

@@ -16,18 +16,18 @@ class Search extends Component {
         errors:'',
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.UI.errors) {
-            this.setState({
-                errors: nextProps.UI.errors
-            });
-        }
-        if (!nextProps.UI.errors && !nextProps.UI.loading) {
-            this.setState({
-                searchInput: ''
-            });
-        }
-    }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.UI.errors) {
+    //         this.setState({
+    //             errors: nextProps.UI.errors
+    //         });
+    //     }
+    //     if (!nextProps.UI.errors && !nextProps.UI.loading) {
+    //         this.setState({
+    //             searchInput: ''
+    //         });
+    //     }
+    // }
 
     handleValidation = () => {
         let formIsValid = true;
