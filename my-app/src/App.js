@@ -41,11 +41,14 @@ if(token){
 };
 
 class App extends Component {
+
+
   
   render(){
     return (
-      <MuiThemeProvider theme={theme}>
-      <Provider store={store}>
+
+        <MuiThemeProvider theme={theme}>
+          <Provider store={store}>
   
             <Router history={ history }>
               {/* <Navber/> */}
@@ -69,6 +72,8 @@ class App extends Component {
         
       </Provider>
       </MuiThemeProvider>
+      
+      
     );
   }
 }

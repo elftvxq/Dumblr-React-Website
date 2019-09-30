@@ -125,7 +125,7 @@ class PostDialog extends Component {
                 <Grid item sm={4}>
                     <img src={userImage} alt="profile" className={classes.profileImage}/>
                 </Grid>
-                <Grid item sm={7}>
+                <Grid item sm={8} xs={12}>
                     <Typography
                         component={Link}
                         color="primary"
