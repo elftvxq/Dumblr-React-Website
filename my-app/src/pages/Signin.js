@@ -3,7 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import "./signIn.css";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import Logo from '../image/Dumblr2.jpg';
+import Logo from '../image/logo_3moais.png';
 //MUI 
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';

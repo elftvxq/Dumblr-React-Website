@@ -2,7 +2,7 @@ import React,{ Component } from "react";
 import "./signUp.css";
 import { Link } from "react-router-dom";
 import withStyles from '@material-ui/core/styles/withStyles'
-import Logo from '../image/Dumblr2.jpg';
+import Logo from '../image/logo_3moais.png';
 import PropTypes from 'prop-types';
 //MUI 
 import Grid from '@material-ui/core/Grid';
