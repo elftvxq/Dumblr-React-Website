@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.416bff82.chunk.css",
-    "main.js": "/static/js/main.30c6dafe.chunk.js",
-    "main.js.map": "/static/js/main.30c6dafe.chunk.js.map",
+    "main.css": "/static/css/main.0e8d500a.chunk.css",
+    "main.js": "/static/js/main.42a1305a.chunk.js",
+    "main.js.map": "/static/js/main.42a1305a.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.97c3e86d.js",
     "runtime~main.js.map": "/static/js/runtime~main.97c3e86d.js.map",
     "static/css/2.68f559bc.chunk.css": "/static/css/2.68f559bc.chunk.css",
     "static/js/2.62f8f95c.chunk.js": "/static/js/2.62f8f95c.chunk.js",
     "static/js/2.62f8f95c.chunk.js.map": "/static/js/2.62f8f95c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.04e2717db46848e45f531f89fd7e4fd8.js": "/precache-manifest.04e2717db46848e45f531f89fd7e4fd8.js",
+    "precache-manifest.d56a665fbf84899e23abdf4475073ce6.js": "/precache-manifest.d56a665fbf84899e23abdf4475073ce6.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.68f559bc.chunk.css.map": "/static/css/2.68f559bc.chunk.css.map",
-    "static/css/main.416bff82.chunk.css.map": "/static/css/main.416bff82.chunk.css.map",
-    "static/media/Dumblr2.jpg": "/static/media/Dumblr2.daa6e41c.jpg",
+    "static/css/main.0e8d500a.chunk.css.map": "/static/css/main.0e8d500a.chunk.css.map",
     "static/media/chat+chatting+comment+message+three+dots+typing+icon-1320085879344879887.png": "/static/media/chat+chatting+comment+message+three+dots+typing+icon-1320085879344879887.a0469a83.png",
     "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/gif_512.png": "/static/media/gif_512.483ea465.png",
     "static/media/style.css": "/static/media/icons.d0ce5038.f9967120.svg",
-    "static/media/link_512.png": "/static/media/link_512.e2bf044f.png"
+    "static/media/link_512.png": "/static/media/link_512.e2bf044f.png",
+    "static/media/logo_3moais.png": "/static/media/logo_3moais.4fc49711.png"
   }
 }

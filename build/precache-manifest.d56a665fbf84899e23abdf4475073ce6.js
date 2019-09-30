@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3dfe33cfb00361e73aabfafb2e74fda3",
+    "revision": "5deeaeca383cade9208da23e8cb377e1",
     "url": "/index.html"
   },
   {
@@ -8,24 +8,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.68f559bc.chunk.css"
   },
   {
-    "revision": "ccb434e4a6666a50b25f",
-    "url": "/static/css/main.416bff82.chunk.css"
+    "revision": "b99174bd086229c111d8",
+    "url": "/static/css/main.0e8d500a.chunk.css"
   },
   {
     "revision": "3be5a56ee945152cb0e1",
     "url": "/static/js/2.62f8f95c.chunk.js"
   },
   {
-    "revision": "ccb434e4a6666a50b25f",
-    "url": "/static/js/main.30c6dafe.chunk.js"
+    "revision": "b99174bd086229c111d8",
+    "url": "/static/js/main.42a1305a.chunk.js"
   },
   {
     "revision": "0fe9f119e6adbb4eb13c",
     "url": "/static/js/runtime~main.97c3e86d.js"
-  },
-  {
-    "revision": "daa6e41c8df2b74f5b4bded9d9c8c626",
-    "url": "/static/media/Dumblr2.daa6e41c.jpg"
   },
   {
     "revision": "a0469a8367f90e4d6f8cefbbe157b6f2",
@@ -78,5 +74,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e2bf044f458fefaaa00b2a8c625ec026",
     "url": "/static/media/link_512.e2bf044f.png"
+  },
+  {
+    "revision": "4fc4971162b8a5d5d3e368bbaf797361",
+    "url": "/static/media/logo_3moais.4fc49711.png"
   }
 ]);
