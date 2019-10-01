@@ -24,6 +24,9 @@ import { Button } from "@material-ui/core";
 const styles = {
     button: {
         float: 'right'
+    },
+    textField: {
+        marginBottom: 20
     }
 };
 

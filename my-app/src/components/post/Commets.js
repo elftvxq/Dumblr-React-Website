@@ -32,7 +32,7 @@ const styles = (theme) => ({
          marginBottom: 20
     },
     commentContent:{
-        marginTop: 15
+        marginTop: 10
     }
 
 });

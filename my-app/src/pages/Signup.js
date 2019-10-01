@@ -32,8 +32,8 @@ const styles = {
         button: {
             marginTop: 20,
             marginBottom: 10,
-            // paddingTop: 10,
-            // paddingBottom: 10,
+            paddingTop: 10,
+            paddingBottom: 10,
             position: 'relative',
             background: '#4A5899'
         },

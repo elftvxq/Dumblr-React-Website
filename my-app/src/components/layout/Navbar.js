@@ -50,7 +50,7 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-            <a className="appTitle">Dumblr</a>
+             <Link to="/"> <div className="appTitle">Dumblr</div> </Link>   
               <Search/>
               <Link to="/">
                 <MyButton tip="Home">

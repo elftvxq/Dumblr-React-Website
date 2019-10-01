@@ -6,6 +6,7 @@
 }
 
 .appTitle {
+    font-size: 28px;
     color: #FFFFFF;
     font-weight: 700;
     margin-right: 30px;
@@ -13,13 +14,13 @@
     transition: 0.3s ease;
     border-top: 4px solid #407899;
     border-bottom: 4px solid #407899;
-    padding: 20px 0;
+    /* padding: 20px 0; */
 }
 
 .appTitle:hover{
     border-top: 4px solid #ffffff;
     border-bottom: 4px solid #ffffff;
-    padding: 6px 0;
+    padding: 3px 0;
 }
 
 .headLeft {
@@ -38,7 +39,7 @@
 @media (max-width: 414px) {
     .appTitle {
         font-weight: 700;
-        margin-right: 20px;
+        margin-right: 25px;
     }
 }
 /* @media (max-width: 375px) {
