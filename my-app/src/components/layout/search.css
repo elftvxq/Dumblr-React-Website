@@ -1,12 +1,11 @@
 .search-bar{
     width: 45%;
-    height: 32px;
+    height: 45px;
     margin-right: 20px;
 }
 
 .search-group{
     width: 100%;
-    height: 100%;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -33,7 +32,7 @@
      border: 3px solid #00B4CC;
      border-right: none;
      padding: 5px;
-     height: 30px;
+     height: 35px;
      border-radius: 5px 0 0 5px;
     border-top-left-radius:5px;
       /*width and height both 35px */
@@ -77,7 +76,7 @@
 
 .search-button{
     width: 40px;
-    height: 30px;
+    height: 35px;
     border: 1px solid #00B4CC;
     background: #00B4CC;
     text-align: center;

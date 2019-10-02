@@ -44,7 +44,6 @@ class WaterfallPosts extends Component {
 
 
      dayjs.extend(relativeTime);
-     console.log(this.props);
 
      const componentDecorator = (href, text, key) => (
             <a href={href} key={key} target="_blank" rel="noopener noreferrer">
