@@ -110,7 +110,7 @@ class CreateText extends Component {
 
 
     render(){
-        const { tags, urlerror } = this.state;
+        const { tags } = this.state;
         const { user: { credentials: { handle } }} = this.props;
         
     

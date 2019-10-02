@@ -55,10 +55,11 @@ class CreateText extends Component {
             if (this.state.tags.find(tag=> tag.toLowerCase() === inputValue.toLowerCase())) {
                 return;
             }
+            e.preventDefault();
             this.setState({
                 tags: [...this.state.tags, inputValue]
             });
-            this.tagInput.value = null;
+            this.tagInput.value = '';
           } else if(e.key === 'Backspace' && !inputValue) {
               this.removeTag(this.state.tags.length-1);
         }

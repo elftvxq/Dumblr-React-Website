@@ -10,11 +10,8 @@ import LikeButton from '../components/post/LikeButton';
 import PostDailog from '../components/post/PostDialog';
 import { ReactTinyLink } from 'react-tiny-link';
 import Linkify from 'react-linkify';
+import ReactPlayer from 'react-player';
 
-const style = {
-    
-   
-};
 
 const breakpointColumnsObj = {
     default: 3,
@@ -24,22 +21,12 @@ const breakpointColumnsObj = {
     576: 1
 };
 
-
-
 class WaterfallPosts extends Component {
 
    
 
   render() {
-     const {
-         user: {
-                 authenticated,
-                 credentials: {
-                     handle
-                 }
-             },
-             screams
-     } = this.props;
+     const { screams } = this.props;
 
 
 
@@ -67,7 +54,7 @@ class WaterfallPosts extends Component {
             
 
             let postTitle;
-             if (scream.type === 'text'|| scream.type === 'link' || scream.type === 'gif')
+             if (scream.type === 'text' || scream.type === 'link' || scream.type === 'gif' || scream.type === 'video')
                 if(scream.title !== null) {
                     postTitle = <p className="card-title">{scream.title}</p>
                 } else if (scream.type === 'quote') {
@@ -75,7 +62,7 @@ class WaterfallPosts extends Component {
                 }
 
             let postContent;
-            if (scream.type === 'text'|| scream.type === 'link' || scream.type === 'gif') {
+            if (scream.type === 'text'|| scream.type === 'link' || scream.type === 'gif' || scream.type === 'video') {
                  postContent = <Linkify componentDecorator={componentDecorator}><span className="card-content">{scream.body}</span></Linkify>
             } else if (scream.type === 'quote') {
                 postContent = <div className='quoteHere'>
@@ -84,6 +71,28 @@ class WaterfallPosts extends Component {
                                 null : <p className="quote-from">── {scream.title}</p>}
                             </div>
             };
+
+            let linkContent;
+            if (scream.type === 'link') {
+                linkContent = <ReactTinyLink
+                                cardSize="large"
+                                showGraphic={true}
+                                maxLine={2}
+                                minLine={1}
+                                url = {scream.linkUrl}
+                                    />
+                } else if (scream.type === 'video') {
+                    linkContent = 
+                                <ReactPlayer 
+                                    url={scream.linkUrl}
+                                    playing={false}
+                                    volume={0.8}
+                                    width="100%"
+                                    className='react-player'   
+                                    controls={true}
+                                />  
+                };
+            
  
            return (
                  
@@ -101,14 +110,8 @@ class WaterfallPosts extends Component {
                             {(scream.pictureUrl === null) ?
                             null : <img className="mainImage" src={scream.pictureUrl} alt=""/>}
                             
-                            {(scream.linkUrl === null || scream.linkUrl==="")?
-                            null : <ReactTinyLink
-                                        cardSize="large"
-                                        showGraphic={true}
-                                        maxLine={2}
-                                        minLine={1}
-                                        url = {scream.linkUrl}
-                                         />}
+                            {linkContent}
+                            
                             
                             <div className='body-content'>
                                 {/* <span className="card-content">{scream.body}</span> */}

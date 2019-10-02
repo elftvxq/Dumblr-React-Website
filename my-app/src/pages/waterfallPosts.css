@@ -45,36 +45,6 @@
     color: #ffffff;
 }
 
-.reply-box {
-    position: relative;
-    display: inline-block;
-    z-index: 999;
-}
-
-.mask {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.quoteHere {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    line-height: 2;
-    margin-top: 20px;
-    font-family: 'Noto Serif TC', serif;
-}
-
-
-.quote-from {
-    padding-left: 20px;
-    font-size: 14px;
-}
-
 .body-content {
     display: grid;
 }

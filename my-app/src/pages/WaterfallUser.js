@@ -28,7 +28,6 @@ class WaterfallUser extends Component {
                 this.setState({
                     profile:res.data.user
                 })
-                console.log(this.state);
             })
             .catch((err) => console.log(err));
     };

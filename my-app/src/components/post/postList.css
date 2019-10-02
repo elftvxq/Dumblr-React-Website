@@ -167,7 +167,7 @@
 .quoteHere{
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 2;
     margin-top: 20px;
     font-family: 'Noto Serif TC',serif;
@@ -214,6 +214,20 @@
 
 .commentcount{
     font-weight: 500;
+}
+
+.player-wrapper{
+    position: relative;
+    padding-top: 20px;
+    height: auto;
+    /* 720 / 1280 = 0.5625 */
+}
+
+.react-player {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    height: auto;
 }
 
 @media (max-width: 950px) {

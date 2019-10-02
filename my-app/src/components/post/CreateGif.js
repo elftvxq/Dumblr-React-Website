@@ -106,7 +106,7 @@ class CreateGif extends Component {
 
     render(){
         const { tags } = this.state;
-        const { classes, user: { credentials: { handle } }} = this.props;
+        const { user: { credentials: { handle } }} = this.props;
        
     
     return(     

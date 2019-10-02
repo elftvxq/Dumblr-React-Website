@@ -7,6 +7,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import DeleteScream from "./DeleteScream";
 import PostDailog from './PostDialog';
 import LikeButton from './LikeButton';
+import ReactPlayer from 'react-player';
+
 //Redux
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -47,7 +49,7 @@ class Posts extends Component {
     }
 
     render(){
-        const { classes,
+        const {
             user: {
                 authenticated,
                 credentials: {
@@ -159,16 +161,15 @@ class Posts extends Component {
                             {deleteButton} 
                             <p className="post-time">{dayjs(createdAt).fromNow()}</p>
 
-                             {(linkUrl === "") ?
-                            null :  <div className="linkImage">
-                                        <ReactTinyLink
-                                            cardSize="large"
-                                            showGraphic={true}
-                                            maxLine={2}
-                                            minLine={1}
-                                            url = {linkUrl}
-                                            />
-                                        </div> }
+                                <div className="linkImage">
+                                    <ReactTinyLink
+                                        cardSize="large"
+                                        showGraphic={true}
+                                        maxLine={2}
+                                        minLine={1}
+                                        url = {linkUrl}
+                                        />
+                                 </div> 
                         
                             <div className='body-content'>
                                  <Linkify componentDecorator={componentDecorator}><span className="card-content">{body}</span></Linkify>
@@ -266,12 +267,56 @@ class Posts extends Component {
                                             userHandle={userHandle}
                                             openDialog={this.props.openDialog}/>
                                  </div>
-                </div>            
-            </div>
-        )      
+                    </div>            
+                </div>
+            )      
         }
 
-       
+        else if (type === "video") {
+             return (
+                    <div className="post-body">
+                        <div className="pic-wrapper">
+                                <img className="user-pic" src={userImage} alt="user profile"/>
+                        </div>
+                    
+                        <div className="post-card" >
+                            <Link to={`/users/${userHandle}`} className="user-id">{userHandle}</Link>
+                            {deleteButton} 
+                            <p className="post-time">{dayjs(createdAt).fromNow()}</p>
+
+                            <div className="player-wrapper">
+                                <ReactPlayer 
+                                    url={linkUrl}
+                                    playing={false}
+                                    volume={0.8}
+                                    width="100%"
+                                    height="auto"
+                                    className='react-player'   
+                                    controls={true}
+                                />
+                            </div> 
+                        
+                            <div className='body-content'>
+                                 <Linkify componentDecorator={componentDecorator}><span className="card-content">{body}</span></Linkify>
+                                <span className="card-hashtag">{hash}</span>  
+                            </div>
+                                <div className="postAction">
+                                 <div className="likeHeart">
+                                    <LikeButton screamId={screamId}/></div>
+                                   
+                                        <p className='likecount'>{likeCount} Likes</p>
+                                        <p className='commentcount'>{commentCount} Comments</p>
+                            
+                                        <PostDailog
+                                            screamId={screamId}
+                                            userHandle={userHandle}
+                                            openDialog={this.props.openDialog}/>
+                                 </div>
+                        </div>            
+                    </div>
+             )    
+
+        }
     }
 }
 

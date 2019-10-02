@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Posts from '../components/post/PostList';
 import Profile from '../components/profile/Profile';
-import StaticProfile from '../components/profile/StaticProfile'
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../components/layout/Navbar';
