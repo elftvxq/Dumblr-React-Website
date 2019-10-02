@@ -124,7 +124,7 @@ class CreateQuote extends Component {
 
                 <div className="post-btns">
                     <span className="close-btn" onClick={()=>{this.props.isClose()}}>關閉</span>
-                    <span type="submit" className="quote-btn" onClick={this.quoteSubmit}>貼文</span> 
+                    <span type="submit" className="send-btn" onClick={this.quoteSubmit}>貼文</span> 
                 </div>
     
             </form>
