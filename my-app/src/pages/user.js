@@ -72,7 +72,7 @@ export class user extends Component {
             </Grid>
             <Grid item sm={4} xs={12}>
                {this.state.profile === null ? ( 
-                   <p>Loading profile...</p>
+                   <div className="loader"><span className="loader-inner"></span></div>
 
                ):( <Profile profile={this.state.profile}/>
 

@@ -88,6 +88,7 @@ class WaterfallPosts extends Component {
                                     playing={false}
                                     volume={0.8}
                                     width="100%"
+                                    height='100%'
                                     className='react-player'   
                                     controls={true}
                                 />  
