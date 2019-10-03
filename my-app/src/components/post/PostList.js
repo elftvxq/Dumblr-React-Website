@@ -24,30 +24,6 @@ const styles = (theme)=> ({
 
 class Posts extends Component {
 
-     
-    state = {
-        displayReply: false,
-        key: ""
-    };
-
-    showReply=(id)=>{
-        // console.log(id);
-        
-        this.setState({
-            displayReply:true, key:id }, ()=>{
-            // document.addEventListener('click', this.hideReply);    
-        });
-    }
-
-    hideReply=(e)=>{
-        e.preventDefault();
-        e.stopPropagation();
-        this.setState({
-            displayReply: false}, ()=>{
-                // document.removeEventListener('click', this.hideReply);
-            });
-    }
-
     render(){
         const {
             user: {
