@@ -20,11 +20,11 @@
 }
 
 .search-input{
-     width: 100%;
+     /* width: 100%; */
      /* border: 3px solid #00B4CC; */
-     border-right: none;
+     border: none;
      /* padding: 5px; */
-     /* height: 35px; */
+     height: 30px;
       /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
      /* border-radius: 5px 0 0 5px; */
      padding-left: 3px;

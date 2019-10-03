@@ -8,13 +8,9 @@ import DeleteScream from "./DeleteScream";
 import PostDailog from './PostDialog';
 import LikeButton from './LikeButton';
 import ReactPlayer from 'react-player';
-
 //Redux
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-//MUI
-// import MyButton from '../../util/MyButton';
-// import ChatIcon from '@material-ui/icons/Chat';
 import { ReactTinyLink } from 'react-tiny-link';
 import Linkify from 'react-linkify';
 
