@@ -84,7 +84,6 @@ class WaterfallPosts extends Component {
                 } else if (scream.type === 'video') {
                      const linkUrlstr = `${scream.linkUrl}`
                         if (linkUrlstr.match('facebook') != null) {
-                        console.log('來源為臉書');
                             linkContent=<ReactPlayer 
                                             url={scream.linkUrl}
                                             playing={false}
@@ -144,18 +143,7 @@ class WaterfallPosts extends Component {
                                             openDialog={this.props.openDialog}/>
 
                                  </div>
-
-                                {/* <LikeButton screamId={scream.screamId} />
-                                <span>{scream.likeCount}</span>
-                                <MyButton tip="comments">
-                                    <ChatIcon color="primary" />
-                                </MyButton>
-                                <span>{scream.commentCount}</span>
-                                <PostDailog
-                                    screamId={scream.screamId}
-                                    userHandle={scream.userHandle}
-                                    openDialog={this.props.openDialog}/> */}
-                            
+            
                                 
                         </div>            
                    

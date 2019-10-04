@@ -19,8 +19,10 @@ import Signup from './pages/Signup';
 import axios from 'axios';
 import User from './pages/user';
 import WaterfallUser from './pages/WaterfallUser';
-import history from './util/history'
+// import history from './util/history'
+import { createBrowserHistory } from 'history';
 
+const history = createBrowserHistory();
 
 const theme = createMuiTheme(themeFile);
 
