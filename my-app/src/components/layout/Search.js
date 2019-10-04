@@ -74,7 +74,7 @@ class Search extends Component {
             <div className='search-group'>
                 <input type ="search" id='searchInput' className ="search-input" placeholder = "Search user" onChange={this.handleChange} autoComplete='off' 
                 />
-            <button type='submit' className='search-button'> <i className='fa fa-search'></i> 
+             <button type='submit' className='search-button'> <i className='fa fa-search'></i> 
              </button>
             </div> 
             <p className='error-message'>{this.state.errors}</p>

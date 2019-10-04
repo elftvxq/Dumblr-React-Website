@@ -69,6 +69,30 @@ class Posts extends Component {
         //     url = {linkUrl}
         //   />
         // ) : null
+        
+        let videoContent;
+        const linkUrlstr = `${linkUrl}`
+        if (linkUrlstr.match('facebook') != null) {
+           console.log('來源為臉書');
+            videoContent=   <ReactPlayer 
+                                    url={linkUrl}
+                                    playing={false}
+                                    volume={0.8}
+                                    width="100%"
+                                    height="100%"
+                                    className='react-player'   
+                                    controls={true}
+                                />
+        } else {
+            videoContent=   <ReactPlayer 
+                                    url={linkUrl}
+                                    playing={false}
+                                    volume={0.8}
+                                    width="100%"
+                                    className='react-player'   
+                                    controls={true}
+                                />
+        }
 
                 
         const componentDecorator = (href, text, key) => (
@@ -257,7 +281,7 @@ class Posts extends Component {
                             <p className="post-time">{dayjs(createdAt).fromNow()}</p>
 
                             <div className="player-wrapper">
-                                <ReactPlayer 
+                                {/* <ReactPlayer 
                                     url={linkUrl}
                                     playing={false}
                                     volume={0.8}
@@ -265,7 +289,8 @@ class Posts extends Component {
                                     height="auto"
                                     className='react-player'   
                                     controls={true}
-                                />
+                                /> */}
+                                {videoContent}
                             </div> 
                         
                             <div className='body-content'>

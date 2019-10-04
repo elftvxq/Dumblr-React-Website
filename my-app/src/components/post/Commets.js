@@ -55,17 +55,17 @@ class Comments extends Component {
                                     <Grid item sm={3}>
                                         <img src={userImage} alt="comment" className={classes.commentImage}/>
                                     </Grid>
-                                    <Grid item sm={8}>
+                                    <Grid item sm={8} xs={6}>
                                         <div className={classes.commentData}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={Link}
-                                                    to={`/users/${userHandle}`}
-                                                    color="primary"
-                                                    style={ {textDecoration: 'none'}}
-                                                >
-                                                    {userHandle}
-                                                </Typography>
+                                            <Typography
+                                                variant="h6"
+                                                component={Link}
+                                                to={`/users/${userHandle}`}
+                                                color="primary"
+                                                style={ {textDecoration: 'none'}}
+                                            >
+                                                {userHandle}
+                                            </Typography>
                                             <Typography variant="body2" color="textSecondary">
                                                 {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
                                             </Typography>

@@ -77,7 +77,7 @@ class CreateText extends Component {
                 urlerror: 'The link cannot be empty'
             });
             formIsValid = false;
-        } else if (!this.validURL(this.state.linkUrl)) {
+        } else if (!this.isValidURL(this.state.linkUrl)) {
             this.setState({
                 urlerror: 'This link is not valid'
             });
@@ -86,15 +86,24 @@ class CreateText extends Component {
 
 
     //驗證連結正確性
-    validURL = (str) => {
-        var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-            '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-            '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-        return !!pattern.test(str);
-    };
+    // validURL = (str) => {
+    //     var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+    //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+    //         '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+    //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+    //         '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+    //         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+    //     return !!pattern.test(str);
+    // };
+
+     isValidURL = (url) => {
+         var RegExp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+         if (RegExp.test(url)) {
+             return true;
+         } else {
+             return false;
+         }
+     }
     
     linkSubmit=(e)=>{
          e.preventDefault();

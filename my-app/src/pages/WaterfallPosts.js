@@ -82,16 +82,28 @@ class WaterfallPosts extends Component {
                                 url = {scream.linkUrl}
                                     />
                 } else if (scream.type === 'video') {
-                    linkContent = 
-                                <ReactPlayer 
-                                    url={scream.linkUrl}
-                                    playing={false}
-                                    volume={0.8}
-                                    width="100%"
-                                    height='100%'
-                                    className='react-player'   
-                                    controls={true}
-                                />  
+                     const linkUrlstr = `${scream.linkUrl}`
+                        if (linkUrlstr.match('facebook') != null) {
+                        console.log('來源為臉書');
+                            linkContent=<ReactPlayer 
+                                            url={scream.linkUrl}
+                                            playing={false}
+                                            volume={0.8}
+                                            width="100%"
+                                            height="100%"
+                                            className='react-player'   
+                                            controls={true}
+                                            />
+                            } else {
+                                linkContent=<ReactPlayer 
+                                            url={scream.linkUrl}
+                                            playing={false}
+                                            volume={0.8}
+                                            width="100%"
+                                            className='react-player'   
+                                            controls={true}
+                                            />
+                    }
                 };
             
  
