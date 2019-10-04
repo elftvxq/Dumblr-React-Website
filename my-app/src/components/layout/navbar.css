@@ -40,16 +40,3 @@
     font-weight: 700;
 }
 
-@media (max-width: 414px) {
-    .appTitle {
-        font-weight: 700;
-        margin-right: 25px;
-    }
-}
-/* @media (max-width: 375px) {
-    .appTitle {
-        font-weight: 700;
-        margin-right: 15px;
-    }
-} */
-

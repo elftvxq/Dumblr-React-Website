@@ -31,12 +31,20 @@ const styles ={
         fontWeight:'700',
         textDecoration:'none',
       '@media (max-width: 414px)': {
-        marginRight: '10px',
+        marginRight: '20px',
+        fontSize: '20px'
+      },
+      '@media (max-width: 320px)': {
+        marginRight: '20px',
+        fontSize: '20px',
+        fontWeight: '600',
       },
     },
-    // homeIcon:{
-    //   padding: '10px'
-    // }
+    navsub: {
+      '@media (max-width: 414px)': {
+        display: 'none'
+      },
+    }
 }
 
 class Navbar extends Component {
@@ -61,10 +69,10 @@ class Navbar extends Component {
             <Fragment>
             <Typography variant="h6" color="secondary" className={classes.appTitle} component={Link} to="/">Dumblr</Typography>
             <Search/>
-              <Button color="inherit" component={Link} to="/login" className='nav-item'>
+              <Button color="inherit" component={Link} to="/login" >
                 Login
               </Button>
-              <Button color="inherit" component={Link} to="/" className='nav-item'>
+              <Button color="inherit" component={Link} to="/" className={classes.navsub}>
                 Home
               </Button>
               <Button color="inherit" component={Link} to="/signup" className='nav-item'>
