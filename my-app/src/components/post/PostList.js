@@ -73,7 +73,6 @@ class Posts extends Component {
         let videoContent;
         const linkUrlstr = `${linkUrl}`
         if (linkUrlstr.match('facebook') != null) {
-           console.log('來源為臉書');
             videoContent=   <ReactPlayer 
                                     url={linkUrl}
                                     playing={false}
