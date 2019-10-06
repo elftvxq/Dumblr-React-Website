@@ -36,14 +36,14 @@ class CommentForm extends Component {
         errors:{ }
     }
 
-    // componentWillReceiveProps(nextProps){
-    //     if(nextProps.UI.errors){
-    //         this.setState({errors: nextProps.UI.errors });
-    //     }
-    //     if (!nextProps.UI.errors && !nextProps.UI.loading ) {
-    //         this.setState({ body: ''});
-    //     }
-    // }
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.UI.errors){
+            this.setState({errors: nextProps.UI.errors });
+        }
+        if (!nextProps.UI.errors && !nextProps.UI.loading ) {
+            this.setState({ body: ''});
+        }
+    }
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     };

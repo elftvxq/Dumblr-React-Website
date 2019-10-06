@@ -34,18 +34,18 @@ class CreateQuote extends Component {
        errors: {}
     };
 
-    // componentWillReceiveProps(nextProps){
-    //     if(nextProps.UI.errors){
-    //         this.setState({
-    //         errors: nextProps.UI.errors
-    //     });
-    //    };
-    //    if(!nextProps.UI.errors && !nextProps.UI.loading){
-    //        this.setState({ body: '', erros:{} });
-    //        this.props.isClose();
-    //    }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.UI.errors){
+            this.setState({
+            errors: nextProps.UI.errors
+        });
+       };
+       if(!nextProps.UI.errors && !nextProps.UI.loading){
+           this.setState({ body: '', erros:{} });
+           this.props.isClose();
+       }
             
-    // };
+    };
     
     removeTag = (i) =>{
         const newTags = [...this.state.tags];

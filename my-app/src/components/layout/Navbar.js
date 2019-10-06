@@ -31,11 +31,15 @@ const styles ={
         fontWeight:'700',
         textDecoration:'none',
       '@media (max-width: 414px)': {
-        marginRight: '20px',
+        marginRight: '25px',
+        fontSize: '20px'
+      },
+      '@media (max-width: 360px)': {
+        marginRight: '15px',
         fontSize: '20px'
       },
       '@media (max-width: 320px)': {
-        marginRight: '20px',
+        marginRight: '30px',
         fontSize: '20px',
         fontWeight: '600',
       },
