@@ -29,6 +29,7 @@ const styles ={
         marginRight: '30px',
         color: '#FFFFFF',
         fontWeight:'700',
+        fontSize:'30px',
         textDecoration:'none',
       '@media (max-width: 414px)': {
         marginRight: '25px',
