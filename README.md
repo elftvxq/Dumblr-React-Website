@@ -25,7 +25,7 @@ https://react-personal-project.firebaseapp.com/
 ## Features
 
 **Login / Registering with Email**
-> Users can sign up and login by email and password.
+###### Users can sign up and login by email and password.
 ![Login Screenshot](https://upload.cc/i1/2019/10/13/sy6AP5.png)
 
 **Various types of post contents**
