@@ -35,6 +35,7 @@ https://react-personal-project.firebaseapp.com/
 
 **Text post: uploading photos w/ title, description also the tags**
 ###### The post won't be sent out if the description is empty
+###### File storage with Firebase Storage
 ![Text Post](https://upload.cc/i1/2019/10/13/aJQ7n8.jpg)
 
 **Link post: paste link w/ description for this link**
@@ -68,4 +69,13 @@ https://react-personal-project.firebaseapp.com/
 ![upload profile pic](https://upload.cc/i1/2019/10/13/T6fmjY.png)
 ![edit personal bio](https://upload.cc/i1/2019/10/13/iWDxnS.jpg)
 
+**Post Notifications**
+###### user can see who liked thier post and who left the comment. They also can click and being directed to the post.
+![notifications](https://upload.cc/i1/2019/10/13/CxeGor.jpg)
 
+**User Main Pgae - Masonary Design**
+###### Click user name and user can see all the posts
+![user main page](https://upload.cc/i1/2019/10/13/l4v1BI.jpg)
+
+**Search for other users**
+###### The user name have to be matched
