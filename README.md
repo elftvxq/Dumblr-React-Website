@@ -48,3 +48,9 @@ https://react-personal-project.firebaseapp.com/
 **GIF post: the post is with the content and one GIF**
 ###### Enter the key word in GIF input, select one and create the content to post
 ![GIF Post](https://upload.cc/i1/2019/10/13/wa8sSx.jpg)
+
+**Like and dislike the post**
+###### Hint word: user can like or undo like
+###### Evry post displays number of likes for post
+![like & dislike post](https://upload.cc/i1/2019/10/13/y32DAG.png)
+
