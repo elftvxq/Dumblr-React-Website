@@ -30,24 +30,24 @@ https://react-personal-project.firebaseapp.com/
 Users can sign up and login by email and password.
 ![Login Screenshot](https://upload.cc/i1/2019/10/13/sy6AP5.png)
 
-### Various types of post contents**
+### Various types of post contents
 Post content with photos / Link / Quote / GIF / Video
 ![Post Screenshot](https://upload.cc/i1/2019/10/13/UlALNc.jpg)
 
-### Text post: uploading photos w/ title, description also the Hashtags**
+### Text post: uploading photos w/ title, description also the Hashtags
 The post won't be sent out if the description is empty.
 Use file storage with Firebase Storage.
 ![Text Post](https://upload.cc/i1/2019/10/13/aJQ7n8.jpg)
 
-### Link post: paste link w/ description for this link**
+### Link post: paste link w/ description for this link
 The post desplays the image of this page, title and content.
 ![Link Post](https://upload.cc/i1/2019/10/13/UaTfpM.jpg)
 
-### Quote post: post the sentence and resource**
+### Quote post: post the sentence and resource
 Use different font style to highlight the quote.
 ![Quote Post](https://upload.cc/i1/2019/10/13/yBYaSg.jpg)
 
-### GIF post: the post is with the content and one GIF**
+### GIF post: the post is with the content and one GIF
 Enter the keyword in GIF search input, select one and create the content to post.
 ![GIF Post](https://upload.cc/i1/2019/10/13/wa8sSx.jpg)
 
