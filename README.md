@@ -60,7 +60,7 @@ https://react-personal-project.firebaseapp.com/
 ![comment post](https://upload.cc/i1/2019/10/13/679mg2.jpg)
 
 **Delete the post**
-###### User can only delete himself/herself post. Do double check 
+###### User can only delete himself/herself post. Double check then allow user to delete the post
 ![delete post](https://upload.cc/i1/2019/10/13/xPUbWL.jpg)
 
 
