@@ -63,4 +63,9 @@ https://react-personal-project.firebaseapp.com/
 ###### User can only delete himself/herself post. Double check then allow user to delete the post
 ![delete post](https://upload.cc/i1/2019/10/13/xPUbWL.jpg)
 
+**Change profile picture, cover photo and edit personal bio**
+###### Update immeditely after uploading the photo or editing 
+![upload profile pic](https://upload.cc/i1/2019/10/13/T6fmjY.png)
+![edit personal bio](https://upload.cc/i1/2019/10/13/iWDxnS.jpg)
+
 
