@@ -169,12 +169,12 @@
     flex-wrap: wrap;
     margin-bottom: 20px;
     line-height: 2;
-    margin-top: 20px;
+    margin-top: 5px;
     font-family: 'Noto Serif TC',serif;
 }
 
 .quote-body {
-    font-size: 34px;
+    font-size: 28px;
     line-height: 42px;
     margin-left: 20px;
     margin-right: 15px;

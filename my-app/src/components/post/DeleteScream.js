@@ -57,7 +57,7 @@ class DeleteScream extends Component {
                     onClose={this.handleClose}
                     fullWidth
                     maxWidth="sm">
-                        <DialogTitle> Are you sure you want to selete this post?</DialogTitle>
+                        <DialogTitle> Are you sure you want to delete this post?</DialogTitle>
                         <DialogActions>
                             <Button onClick={this.handleClose} color='primary'> Cancel </Button>
                             <Button onClick={this.deleteScream} color='secondary'> Delete </Button>
