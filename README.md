@@ -52,5 +52,10 @@ https://react-personal-project.firebaseapp.com/
 **Like and dislike the post**
 ###### Hint word: user can like or undo like
 ###### Evry post displays number of likes for post
-![like & dislike post](https://upload.cc/i1/2019/10/13/y32DAG.png)
+![like & dislike post](https://upload.cc/i1/2019/10/13/uZa0zX.jpg)
+
+**Comment on the post**
+###### Display comments from other users by time 
+###### Display comment time and user profile photo
+![comment post](https://upload.cc/i1/2019/10/13/679mg2.jpg)
 
