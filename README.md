@@ -18,6 +18,7 @@ https://react-personal-project.firebaseapp.com/
   * Provided native signed-in via Firebase Authentication
   * Well supported different user devices through RWD
   * Module bundling with Webpack
+  * Database with Firebase Real-Time Database
 * Backend
   * Built a RESTful API with Node.js and Express.js
   * Designed backend data structure in Cloud Firestore
