@@ -1,4 +1,4 @@
-# Dumblr-React-Social-Network
+# Dumblr-Share your thoughts anytime!
 ![Dumblr Logo](https://upload.cc/i1/2019/10/13/UKPHFq.jpg)
 
 
