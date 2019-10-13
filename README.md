@@ -1,5 +1,5 @@
 # Dumblr-React-Social-Network
-![Dumblr Logo](https://upload.cc/i1/2019/10/13/YNq2Pa.png)
+![Dumblr Logo](https://upload.cc/i1/2019/10/13/UKPHFq.jpg)
 
 
 A social network powered by ReactJS, Express and Firebase Storage / Authentication / Real-Time Database.
