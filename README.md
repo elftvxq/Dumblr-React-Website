@@ -55,7 +55,12 @@ https://react-personal-project.firebaseapp.com/
 ![like & dislike post](https://upload.cc/i1/2019/10/13/uZa0zX.jpg)
 
 **Comment on the post**
-<p> Display comments from other users by time </p>
-<p> Display comment time and user profile photo </p>
+###### Display comments from other users by time
+###### Display comment time and user profile photo
 ![comment post](https://upload.cc/i1/2019/10/13/679mg2.jpg)
+
+**Delete the post**
+###### User can only delete himself/herself post. Do double check 
+![delete post](https://upload.cc/i1/2019/10/13/xPUbWL.jpg)
+
 
