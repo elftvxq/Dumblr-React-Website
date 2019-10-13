@@ -79,3 +79,11 @@ https://react-personal-project.firebaseapp.com/
 
 **Search for other users**
 ###### The user name have to be matched
+
+
+## To-Do
+* Upload multiple images
+* Password reset
+* Delete comment
+* Emoji keyboard avalaible when creating post or reply 
+
