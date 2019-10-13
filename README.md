@@ -1,6 +1,7 @@
 # Dumblr-React-Social-Network
 ![Dumblr Logo](https://upload.cc/i1/2019/10/13/YNq2Pa.png)
 
+
 A social network powered by ReactJS, Express and Firebase Storage / Authentication / Real-Time Database.
 
 Tumblr clone - A social networking platform where users can post various types of content, reply to others' posts, edit personal information and get notification from others.
@@ -29,13 +30,21 @@ https://react-personal-project.firebaseapp.com/
 ![Login Screenshot](https://upload.cc/i1/2019/10/13/sy6AP5.png)
 
 **Various types of post contents**
-> Text with photos / Link / Quote / GIF / Video
+###### Text with photos / Link / Quote / GIF / Video
 ![Post Screenshot](https://upload.cc/i1/2019/10/13/UlALNc.jpg)
 
 **Text post: uploading photos w/ title, description also the tags**
-> The post won't be sent out if the description is empty
+###### The post won't be sent out if the description is empty
 ![Text Post](https://upload.cc/i1/2019/10/13/aJQ7n8.jpg)
 
 **Link post: paste link w/ description for this link**
->The post desplays the screenshot of this page, title and content
+###### The post desplays the screenshot of this page, title and content
 ![Link Post](https://upload.cc/i1/2019/10/13/UaTfpM.jpg)
+
+**Quote post: post the sentence and resource**
+###### Use different font style to highlight the quote
+![Quote Post](https://upload.cc/i1/2019/10/13/yBYaSg.jpg)
+
+**GIF post: the post is with the content and one GIF**
+###### Enter the key word in GIF input, select one and create the content to post
+![GIF Post](https://upload.cc/i1/2019/10/13/wa8sSx.jpg)
