@@ -71,7 +71,7 @@ https://react-personal-project.firebaseapp.com/
 
 **Post Notifications**
 ###### user can see who liked thier post and who left the comment. They also can click and being directed to the post.
-![notifications](https://upload.cc/i1/2019/10/13/CxeGor.jpg)
+![notifications](https://upload.cc/i1/2019/10/13/ZHSw08.jpg)
 
 **User Main Pgae - Masonary Design**
 ###### Click user name and user can see all the posts
