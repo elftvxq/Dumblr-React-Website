@@ -1,17 +1,16 @@
-# Dumblr - Share your thoughts anytime!
+# Dumblr - Share your thoughts anytime
 ![Dumblr Logo](https://upload.cc/i1/2019/10/13/UKPHFq.jpg)
-
 
 A social network powered by ReactJS, Express and Firebase Storage / Authentication / Real-Time Database.
 
 Tumblr clone - A social networking platform where users can post various types of content, reply to others' posts, edit personal information and get notification from others.
 
 ## website demo link
-https://react-personal-project.firebaseapp.com/
+<https://react-personal-project.firebaseapp.com/>
 
 ## Technologies
 * Front-End
-  * Built a SPA with React and Router
+  *  Built a SPA with React and Router
   * Utilized Redux for global state management
   * Managed async data-flow with Redux-Thunk
   * Adopted Material Design and Flex-box for the UI layout
