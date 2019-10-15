@@ -22,7 +22,11 @@ Tumblr clone - A social networking platform where users can post various types o
   * Built a RESTful API with Node.js and Express.js
   * Designed backend data structure in Cloud Firestore
   * Deployed on Firebase Function
+  
+#### Database Schema
 ###### Link: <https://github.com/elftvxq/react-dumblr-functions>
+![database scheama](https://upload.cc/i1/2019/10/15/5bE9wC.png)
+
 
 ## Features
 
