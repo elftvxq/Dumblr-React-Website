@@ -26,8 +26,6 @@ import MyButton from '../../util/MyButton';
 const styles = (theme) => ({
     spacing: value => value ** 2,
     paper: {
-        // padding: 10,
-        // width: '300px',
         width: '100%',
         borderRadius: '3px',
         
@@ -55,29 +53,23 @@ const styles = (theme) => ({
         },
         '& .profile-image': {
             width: 100,
-            // height: 100,
             objectFit: 'cover',
             maxWidth: '100%',
             borderRadius: '5%',
-            // position: 'absolute',
             bottom: '-55px',
-            // left: '38%',
             margin: '0 auto',
             border: '3px solid #B3CDD1',
             backgroundColor: '#ffffff',
             boxShadow: '0 5px 15px 0px rgba(0, 0, 0, 0.6)',
             '@media (max-width:780px)': { 
-                // left: '35%',
                 width: 90,
                 height: 90,
             },
              '@media (max-width:680px)': { 
-                //  left: '35%',
                  width: 80,
                  height: 80,
              },
              '@media (max-width:576px)': { 
-                //  left: '43%',
                  width: 120,
                  height: 120,
              },

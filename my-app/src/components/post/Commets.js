@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 
-const styles = (theme) => ({
+const styles = {
     commentImage: {
         maxWith: '100%',
         height: '80px',
@@ -27,7 +27,6 @@ const styles = (theme) => ({
     }, 
     visibleSeperator:{
          width: '100%',
-        //  borderBottom: '1px solid rbga(0, 0, 0, 0.1)',
          border: 'none',
          marginBottom: 20
     },
@@ -35,7 +34,7 @@ const styles = (theme) => ({
         marginTop: 10
     }
 
-});
+};
 
 
 class Comments extends Component {

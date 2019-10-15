@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import './createVideo.css';
-import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
 
 
-const styles = {
-  
-};
-
-class CreateText extends Component {
+class CreateVideo extends Component {
     
     state = {
        type: 'video', 
@@ -58,14 +53,12 @@ class CreateText extends Component {
           } else if(e.key === 'Backspace' && !inputValue) {
               this.removeTag(this.state.tags.length-1);
         }
-        // console.log(this.state.tags)
     }
 
     linkChange=(e)=>{        
         this.setState({
             [e.target.id]: e.target.value
         })
-        // console.log(this.state)
     }
 
     //表單驗證
@@ -162,7 +155,7 @@ class CreateText extends Component {
 }
 
 
-CreateText.propType ={
+CreateVideo.propType = {
     postScream: PropTypes.func.isRequired,
     UI: PropTypes.object.isRequired
 }
@@ -172,4 +165,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateText));
+export default connect(mapStateToProps, { postScream })(CreateVideo);

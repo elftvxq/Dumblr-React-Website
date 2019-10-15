@@ -6,6 +6,11 @@ import axios from 'axios';
 import { getUserData } from "../../redux/actions/dataActions";
 import history from '../../util/history';
 import 'font-awesome/css/font-awesome.min.css';
+import {Redirect} from 'react-router-dom';
+
+// import { createBrowserHistory } from 'history';
+
+// const history = createBrowserHistory();
 
 
 class Search extends Component {
@@ -46,6 +51,7 @@ class Search extends Component {
         
     };
     
+    
         
     handleSubmit = (e)=>{
         e.preventDefault();
@@ -72,7 +78,7 @@ class Search extends Component {
     return ( 
         <form className="search-bar" onSubmit={this.handleSubmit}>
             <div className='search-group'>
-                <input type ="search" id='searchInput' className ="search-input" placeholder = "Search user" onChange={this.handleChange} autoComplete='off' 
+                <input type ="search" id='searchInput' className ="search-input" placeholder="Search user" onChange={this.handleChange} autoComplete='off' 
                 />
              <button type='submit' className='search-button'> <i className='fa fa-search'></i> 
              </button>

@@ -90,7 +90,6 @@ class SignIn extends Component{
 
         const { classes, UI: { loading } } = this.props;
         const { errors } = this.state;
-        // if(auth.uid) return <Redirect to="/dashboard"/>
 
         return(
              <Grid container className={classes.form}>
@@ -149,7 +148,6 @@ class SignIn extends Component{
                             helperText={errors.password} error={errors.password ? true : false} 
                             fullWidth
                         />
-                        {/* <TextField className={classes.textField} type="password" id="password" name="password" lable="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} helperText={errors.password} error={errors.password ? true: false} variant="filled" fullWidth/> */}
                         { errors.general && (
                             <Typography variant="body2" className={classes.customError}>
                             {errors.general}
@@ -161,9 +159,7 @@ class SignIn extends Component{
                             <CircularProgress size={20} className={classes.progress}/>
                         )}
                         </Button>
-                         {/* <div>
-                         {authError? <p className="signin-message">{ authError }</p> : null }
-                         </div> */}
+                       
                          <br/>
                          <small className={classes.remind}>
                              Don 't have an account? <Link to="/signup" className="remind"> Sign up here</Link>

@@ -120,15 +120,7 @@ class CreateGif extends Component {
                 <div className="gif-section">
                     <input className="gif-title" id="title" type="title" placeholder='標題' onChange={this.gifChange} autoComplete="off"/>
                 </div>
-
                
-               
-                {/* <div className="uploadGif"><img title="選擇一個GIF" src={uploadphoto} alt="" onClick={()=> this.fileInput.click()}/>
-                    <input type="file" className="upload-gif" validate="required" style={{display:'none'}}/>
-                    
-                </div> */}
-                
-                
                 <textarea className="gif-content" id="body" cols="15" rows="5" placeholder="有什麼話想說？" onChange={this.gifChange}></textarea>
                 {/* Hashtag輸入 */}
               
@@ -151,10 +143,6 @@ class CreateGif extends Component {
                 </div>
     
             </form>
-                {/* <Fab variant="extended" aria-label="button" onClick={this.handleGifPicker} style={{height:'30px', boxShadow:'none', borderRadius:'4px', backgroundColor:'#88B7B5', fontSize:'10px'}} className={classes.fab}>
-                    <GifIcon className={classes.extendedIcon} />
-                    Select a Gif
-                </Fab> */}
                  <GifPicker apikey="HB062X5OE101" onSelect={(gifUrl) => {this.passUrl(gifUrl); console.log(gifUrl)}}/> 
                 
             </div>

@@ -9,6 +9,10 @@
     z-index: 100;
 }
 
+.preview-pic{
+    width: 100%;
+}
+
 .post-id {
     font-size: 13px;
     font-weight: 700;

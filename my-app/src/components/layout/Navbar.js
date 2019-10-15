@@ -19,9 +19,7 @@ import Typography from '@material-ui/core/Typography';
 
 const styles ={
     nav: {
-        // backgroundColor: '#14213D'
         backgroundColor: '#407899',
-        // backgroundColor: '#084C61',
         opacity: 0.95
 
     },

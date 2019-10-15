@@ -1,33 +1,27 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-//MUI Staff
+//MUI Stuff
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import clsx from 'clsx';
-//Redux staff
+//Redux stuff
 import { connect } from 'react-redux';
 import { submitComment } from '../../redux/actions/dataActions';
  
 
-const styles = (theme => ({
+const styles = {
     button:{
         marginTop: '20px'
     },
     textField:{
         backgroundColor: 'transparent',
-        // marginLeft: theme.spacing(1),
-        // marginRight: theme.spacing(1),
-        // marginBottom: '20px'
     },
-    // dense: {
-    //     marginTop: theme.spacing(2),
-    // },
     invisibleSeparator:{
         border: 'none'
     }
-}));
+};
 
 class CommentForm extends Component {
     

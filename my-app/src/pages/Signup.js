@@ -22,7 +22,6 @@ const styles = {
         },
         image: {
             width: '100%',
-            // margin: '20px auto 20px auto'
         },
         textField: {
             margin: '10px auto 10px auto',
@@ -52,9 +51,6 @@ const styles = {
         }
 };
 
-// const styles = (theme) => ({
-//     ...theme.spreadIt
-// })
 
 class Signup extends Component{
     state = {

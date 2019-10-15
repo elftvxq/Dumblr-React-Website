@@ -15,8 +15,7 @@ class WaterfallUser extends Component {
         screamIdParam: null
     }
 
-    
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
         const handle = this.props.match.params.handle;
         const screamId = this.props.match.params.screamId;
 

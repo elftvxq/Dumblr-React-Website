@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import "./notifications.css";
 // MUI
@@ -20,9 +19,6 @@ import ChatIcon from '@material-ui/icons/Chat';
 import { connect } from 'react-redux';
 import { markNotificationsRead } from '../redux/actions/userActions';
 
-const styles = {
-
-};
 
 
 class Notifications extends Component {
@@ -129,4 +125,4 @@ const mapStateToProps = (state) => ({
   notifications: state.user.notifications
 });
 
-export default connect( mapStateToProps,{ markNotificationsRead })(withStyles(styles)(Notifications));
+export default connect( mapStateToProps,{ markNotificationsRead })(Notifications);

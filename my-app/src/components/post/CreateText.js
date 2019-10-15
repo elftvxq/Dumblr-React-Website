@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 import { storage } from '../../config/fbConfig';
 import './createText.css';
-import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import uploadphoto from '../../image/photo-camera-grey.png';
 import PreviewPicture from "./PreviewPicture";
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
 
-
-const styles = {
-    previewPic: {
-        width: '100%'
-    }
-};
 
 class CreateText extends Component {
     
@@ -132,7 +125,7 @@ class CreateText extends Component {
 
     render(){
         const { tags } = this.state;
-        const { classes, user: { credentials: { handle } }} = this.props;
+        const { user: { credentials: { handle } }} = this.props;
     
     return(     
         <div className="wrap">
@@ -143,7 +136,7 @@ class CreateText extends Component {
                   <p className="post-id">{handle}</p>
                 
                 <input className="post-title" id="title" type="title" placeholder="標題" onChange={this.handleChange} autoComplete="off"/>
-                <PreviewPicture pictureUrl={this.state.pictureUrl} className={classes.previewPic}/>
+                <PreviewPicture pictureUrl={this.state.pictureUrl} className="preview-pic"/>
                 <div className="upload"><img title="上傳照片" src={uploadphoto} style={{width: '20px', height: '20px'}} alt="" onClick={()=> this.fileInput.click()}/>
                     <input type="file" className="upload-image" onChange={(e)=> {this.displayPicture(e)}} multiple={false} accept="image/*" validate="required" ref={fileInput=> this.fileInput = fileInput} style={{display:'none'}}/>
                     <div className="preview-image">
@@ -193,4 +186,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateText));
+export default connect(mapStateToProps, { postScream })(CreateText);

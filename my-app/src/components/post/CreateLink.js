@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import './createLink.css';
-import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
  /* eslint-disable */
 
-const styles = {
-  
-};
-
-class CreateText extends Component {
+class CreateLink extends Component {
     
     state = {
        type: 'link', 
@@ -171,7 +166,7 @@ class CreateText extends Component {
 }
 
 
-CreateText.propType ={
+CreateLink.propType = {
     postScream: PropTypes.func.isRequired,
     UI: PropTypes.object.isRequired
 }
@@ -181,4 +176,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { postScream })(withStyles(styles)(CreateText));
+export default connect(mapStateToProps, { postScream })(CreateLink);

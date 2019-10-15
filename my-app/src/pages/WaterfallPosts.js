@@ -28,8 +28,6 @@ class WaterfallPosts extends Component {
   render() {
      const { screams } = this.props;
 
-
-
      dayjs.extend(relativeTime);
 
      const componentDecorator = (href, text, key) => (

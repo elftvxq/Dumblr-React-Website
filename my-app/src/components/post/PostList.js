@@ -3,7 +3,6 @@ import "./postList.css";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
 import DeleteScream from "./DeleteScream";
 import PostDailog from './PostDialog';
 import LikeButton from './LikeButton';
@@ -14,9 +13,6 @@ import { connect } from "react-redux";
 import { ReactTinyLink } from 'react-tiny-link';
 import Linkify from 'react-linkify';
 
-const styles = (theme)=> ({
-
-    });
 
 class Posts extends Component {
 
@@ -128,9 +124,6 @@ class Posts extends Component {
                                     <LikeButton screamId={screamId}/></div>
                                    
                                         <p className='likecount'>{likeCount} Likes</p>
-                                        {/* <MyButton tip="comments">
-                                            <ChatIcon color="primary" />
-                                        </MyButton> */}
                                         <p className='commentcount'>{commentCount} Comments</p>
                                    
                                         
@@ -319,7 +312,6 @@ class Posts extends Component {
 Posts.propTypes = {
     user: PropTypes.object.isRequired,
     scream: PropTypes.object.isRequired,
-    classes: PropTypes.object.isRequired,
     openDialog: PropTypes.bool
 }
 
@@ -328,4 +320,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(withStyles(styles)(Posts));
+export default connect(mapStateToProps)(Posts);
