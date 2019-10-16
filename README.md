@@ -8,6 +8,9 @@ Tumblr clone - A social networking platform where users can post various types o
 
 ## website demo link
 <https://react-personal-project.firebaseapp.com/>
+#### test account
+* account: public_test@mail.com
+* password: 123456
 
 ## Technologies
 * Front-End
