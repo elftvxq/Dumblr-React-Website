@@ -3,6 +3,7 @@ import './createVideo.css';
 import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
+import { linktool } from './Checklink';
 
 
 class CreateVideo extends Component {
@@ -70,7 +71,7 @@ class CreateVideo extends Component {
                 urlerror: 'The link cannot be empty'
             });
             formIsValid = false;
-        } else if (!this.validURL(this.state.linkUrl)) {
+        } else if (!linktool.validURL(this.state.linkUrl)) {
             this.setState({
                 urlerror: 'This link is not valid'
             });
@@ -79,15 +80,15 @@ class CreateVideo extends Component {
 
 
     //驗證連結正確性
-    validURL = (str) => {
-        var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-            '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-            '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-        return !!pattern.test(str);
-    };
+    // validURL = (str) => {
+    //     var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+    //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+    //         '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+    //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+    //         '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+    //         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+    //     return !!pattern.test(str);
+    // };
     
     linkSubmit=(e)=>{
          e.preventDefault();
