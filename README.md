@@ -1,5 +1,6 @@
 # Dumblr - Share your thoughts anytime
 ![Dumblr Logo](https://upload.cc/i1/2019/10/13/UKPHFq.jpg)
+![main page](https://upload.cc/i1/2019/10/16/PIA6qk.jpg)
 
 A social network powered by ReactJS, Express and Firebase Storage / Authentication / Real-Time Database.
 
@@ -36,7 +37,6 @@ Users can sign up and login by email and password.
 
 ### Various types of post contents
 Post content with photos / Link / Quote / GIF / Video
-![Post Screenshot](https://upload.cc/i1/2019/10/13/UlALNc.jpg)
 
 ### Text post: uploading photos w/ title, description also the Hashtags
 The post won't be sent out if the description is empty.
