@@ -6,7 +6,6 @@ import axios from 'axios';
 import { getUserData } from "../../redux/actions/dataActions";
 import history from '../../util/history';
 import 'font-awesome/css/font-awesome.min.css';
-import {Redirect} from 'react-router-dom';
 
 // import { createBrowserHistory } from 'history';
 

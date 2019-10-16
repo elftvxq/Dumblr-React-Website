@@ -4,11 +4,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createBrowserHistory } from 'history';
+// import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
-const history = createBrowserHistory();
+import history from './util/history';
+// const history = createBrowserHistory();
 
 ReactDOM.render(
     <Provider store={store}>
