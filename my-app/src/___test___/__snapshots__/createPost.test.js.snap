@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="post-bar"
+>
+  <img
+    alt=""
+    className="avatar-Pic"
+  />
+  <div
+    className="post-section"
+  >
+    <div
+      className="post-text"
+      onClick={[Function]}
+    >
+      <img
+        alt="文字"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+      <p
+        className="icon-text"
+      >
+        文字
+      </p>
+    </div>
+    <div
+      className="post-pic"
+      onClick={[Function]}
+    >
+      <img
+        alt="連結"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+      <p
+        className="icon-text"
+      >
+        連結
+      </p>
+    </div>
+    <div
+      className="post-quote"
+      onClick={[Function]}
+    >
+      <img
+        alt="引述"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+      <p
+        className="icon-text"
+      >
+        引述
+      </p>
+    </div>
+    <div
+      className="post-gif"
+      onClick={[Function]}
+    >
+      <img
+        alt="GIF"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+      <p
+        className="icon-text"
+      >
+        GIF
+      </p>
+    </div>
+    <div
+      className="post-video"
+      onClick={[Function]}
+    >
+      <img
+        alt="影片"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+      <p
+        className="icon-text"
+      >
+        影片
+      </p>
+    </div>
+  </div>
+</div>
+`;

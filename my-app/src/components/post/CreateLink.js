@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { postScream } from '../../redux/actions/dataActions';
 import { connect } from 'react-redux';
 import { linktool } from './Checklink';
- /* eslint-disable */
+
 
 class CreateLink extends Component {
     

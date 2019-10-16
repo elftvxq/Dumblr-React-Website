@@ -33,4 +33,5 @@ const store = createStore(
     )
 );
 
-export default store;
+// export default store;
+export { store as default, reducers};
