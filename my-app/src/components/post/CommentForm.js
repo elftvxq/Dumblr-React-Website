@@ -30,7 +30,7 @@ class CommentForm extends Component {
         errors:{ }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if(nextProps.UI.errors){
             this.setState({errors: nextProps.UI.errors });
         }
@@ -38,6 +38,8 @@ class CommentForm extends Component {
             this.setState({ body: ''});
         }
     }
+
+
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     };

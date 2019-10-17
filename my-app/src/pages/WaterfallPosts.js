@@ -23,8 +23,6 @@ const breakpointColumnsObj = {
 
 class WaterfallPosts extends Component {
 
-   
-
   render() {
      const { screams } = this.props;
 
@@ -36,7 +34,6 @@ class WaterfallPosts extends Component {
             </a>
             );
      
- 
      const childElements = screams.map(scream => {
 
             //Hashtag陣列
