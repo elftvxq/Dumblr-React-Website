@@ -41,6 +41,7 @@ export class user extends Component {
             })
             .catch((err) => console.log(err));
     };
+
     
     render() {
         const { screams, loading } = this.props.data;

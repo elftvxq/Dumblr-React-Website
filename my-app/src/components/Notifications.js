@@ -18,7 +18,6 @@ import ChatIcon from '@material-ui/icons/Chat';
 //Redux
 import { connect } from 'react-redux';
 import { markNotificationsRead } from '../redux/actions/userActions';
-import history from '../util/history';
 
 
 class Notifications extends Component {

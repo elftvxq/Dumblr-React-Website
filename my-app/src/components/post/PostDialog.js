@@ -13,11 +13,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import LikeButton from './LikeButton';
 //Icon
 import UnfoldMore from '@material-ui/icons/ChatBubbleOutlineSharp';
 import CloseIcon from '@material-ui/icons/Close';
 import HeartCircle from '../../image/PUN-458-2.jpg';
 import CommentCircle from '../../image/chat+chatting+comment+message+three+dots+typing+icon-1320085879344879887.png';
+import ChatIcon from '@material-ui/icons/ChatBubbleOutlineSharp';
 //Redux
 import { connect } from 'react-redux';
 import { getScream, clearErrors } from '../../redux/actions/dataActions';
@@ -141,12 +143,15 @@ class PostDialog extends Component {
                          <Linkify componentDecorator={componentDecorator}><span className="dialog-text">{body}</span></Linkify>
 
                         <div className="dialogCount">
-                             {/* <LikeButton screamId={screamId} /> */}
-                        <img src={HeartCircle} alt="like" style={{width: '35px'}}/> <span style={{marginRight:'10px'}}> {likeCount} Likes </span>
-                            {/* <MyButton tip="comments">
+                             <LikeButton screamId={screamId} />
+                        {/* <img src={HeartCircle} alt="like" style={{width: '35px'}}/>  */}
+                        <span style={{marginRight:'10px'}}> {likeCount} Likes </span>
+                            <MyButton tip="comments">
                                 <ChatIcon color="primary"/>
-                            </MyButton> */}
-                        <img src={CommentCircle} alt="comment" style={{width: '20px', marginRight:'10px'}}/> <span> {commentCount} Comments </span></div>
+                            </MyButton> 
+                        {/* <img src={CommentCircle} alt="comment" style={{width: '20px', marginRight:'10px'}}/>  */}
+                        <span> {commentCount} Comments </span>
+                        </div>
                 </Grid>
 
                 <hr className={classes.invisibleSeperator}/>
