@@ -20,6 +20,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-ga": "^2.7.0",
     "react-giphy-searchbox": "^1.0.5",
     "react-linkify": "^1.0.0-alpha",
     "react-masonry-component": "^6.2.1",

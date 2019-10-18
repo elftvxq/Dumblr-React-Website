@@ -19,10 +19,12 @@ import Signup from './pages/Signup';
 import axios from 'axios';
 import User from './pages/user';
 import WaterfallUser from './pages/WaterfallUser';
-// import { createBrowserHistory } from 'history';
-
-// const history = createBrowserHistory();
+//history
 import history from './util/history';
+//ga
+import {PageView, initGA} from './components/tracking/tracking';
+
+
 
 const theme = createMuiTheme(themeFile);
 
@@ -44,7 +46,10 @@ if(token){
 
 class App extends Component {
 
-
+  componentDidMount() {
+    initGA('G-48XPBWNCJ6');
+    PageView();
+  }
   
   render(){
     return (
