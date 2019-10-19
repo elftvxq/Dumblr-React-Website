@@ -81,26 +81,7 @@ class CreateGif extends Component {
         this.props.isClose();
     }
    
-    // clearGiftInput = () =>{
-    //     console.log('點到')
-    //     var gifInput = document.getElementsByClassName('gifpicker__chosengif');
-    //     let abc = document.querySelector('.gifpicker__chosengif img').src;
-    //     console.log(abc);
-
-    //     var len = gifInput.length;
-    //     var lenValue = len.value;
-    //     console.log(gifInput);
-    //     console.log(gifInput[0]);
-    //     console.log(gifInput[0].defaultValue);
-    //     console.log(len);
-    //     console.log(lenValue)
-    //     // let imagesrc = document.getElementsByName("tenorgif")[0].value;
-    //     let imagesrc = document.getElementsByName("tenorgif")[0];
-    //     console.log(imagesrc);
-    //     let inputValue = imagesrc.value
-    //     inputValue = "";
-        
-    // };
+ 
     
 
 
