@@ -14,6 +14,7 @@ import { ReactTinyLink } from 'react-tiny-link';
 import Linkify from 'react-linkify';
 
 
+
 class Posts extends Component {
 
     render(){
@@ -55,16 +56,6 @@ class Posts extends Component {
         const deleteButton = authenticated && userHandle === handle ? (
             <DeleteScream screamId={screamId}/>
         ): null 
-        
-        // const linkPost = linkUrl && type === 'link' ? (
-        //     <ReactTinyLink
-        //     cardSize="large"
-        //     showGraphic={true}
-        //     maxLine={2}
-        //     minLine={1}
-        //     url = {linkUrl}
-        //   />
-        // ) : null
         
         let videoContent;
         const linkUrlstr = `${linkUrl}`
@@ -198,9 +189,6 @@ class Posts extends Component {
                              null : <p className="quote-from">── {title}</p>}
                         </div>
                       
-
-                        {/* <p className="quote-from">── {title}</p> */}
-                        {/* <img className="mainImage" src={pictureUrl} alt=""/> */}
                         <div className='body-content'>
                             <span className="card-hashtag">{hash}</span>  
                         </div>
@@ -273,15 +261,6 @@ class Posts extends Component {
                             <p className="post-time">{dayjs(createdAt).fromNow()}</p>
 
                             <div className="player-wrapper">
-                                {/* <ReactPlayer 
-                                    url={linkUrl}
-                                    playing={false}
-                                    volume={0.8}
-                                    width="100%"
-                                    height="auto"
-                                    className='react-player'   
-                                    controls={true}
-                                /> */}
                                 {videoContent}
                             </div> 
                         

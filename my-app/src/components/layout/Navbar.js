@@ -4,7 +4,7 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Search from './Search'
-import Notifications from "../Notifications"
+import Notifications from "../post/Notifications";
 import MyButton from '../../util/MyButton'
 //Redux
 import { connect } from "react-redux";

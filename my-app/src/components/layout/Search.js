@@ -7,11 +7,6 @@ import { getUserData } from "../../redux/actions/dataActions";
 import history from '../../util/history';
 import 'font-awesome/css/font-awesome.min.css';
 
-// import { createBrowserHistory } from 'history';
-
-// const history = createBrowserHistory();
-
-
 class Search extends Component {
 
     state = {
@@ -54,7 +49,6 @@ class Search extends Component {
         
     handleSubmit = (e)=>{
         e.preventDefault();
-        // this.props.getUserData(this.state.searchInput);
         if(this.handleValidation()){
             axios.get(`/user/${this.state.searchInput}`)
             .then((res)=>{

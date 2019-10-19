@@ -17,8 +17,6 @@ import LikeButton from './LikeButton';
 //Icon
 import UnfoldMore from '@material-ui/icons/ChatBubbleOutlineSharp';
 import CloseIcon from '@material-ui/icons/Close';
-// import HeartCircle from '../../image/PUN-458-2.jpg';
-// import CommentCircle from '../../image/chat+chatting+comment+message+three+dots+typing+icon-1320085879344879887.png';
 import ChatIcon from '@material-ui/icons/ChatBubbleOutlineSharp';
 //Redux
 import { connect } from 'react-redux';
@@ -26,8 +24,7 @@ import { getScream, clearErrors } from '../../redux/actions/dataActions';
 import Linkify from 'react-linkify';
 
 
-const styles = (theme) => ({
-    
+const styles = {
     invisibleSeperator: {
         border: 'none',
         margin: 4
@@ -74,7 +71,7 @@ const styles = (theme) => ({
         flexWrap: 'wrap',
         justifyContent:'center'
     }
-});
+};
 
 class PostDialog extends Component {
 

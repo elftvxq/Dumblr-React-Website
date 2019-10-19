@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { Link } from 'react-router-dom';
-import "./notifications.css";
 // MUI
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -17,7 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ChatIcon from '@material-ui/icons/Chat';
 //Redux
 import { connect } from 'react-redux';
-import { markNotificationsRead } from '../redux/actions/userActions';
+import { markNotificationsRead } from '../../redux/actions/userActions';
 
 
 class Notifications extends Component {

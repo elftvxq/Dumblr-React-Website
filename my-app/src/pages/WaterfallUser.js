@@ -35,20 +35,6 @@ class WaterfallUser extends Component {
         const { screams, loading } = this.props.data;
         const { screamIdParam } = this.state;
 
-        // const postMarkup = loading ? (
-        //     <p>Loading data...</p>
-        // ): screams === null ? (
-        //     <p>No posts from this user</p>
-        // ) : !screamIdParam ? (
-        //     screams.map(scream => <WaterfallPosts key={scream.screamId} scream={scream}/>)
-        // ) : (
-        //     screams.map(scream => {
-        //         if(scream.screamId !== screamIdParam)
-        //         return <WaterfallPosts key={scream.screamId} scream={scream}/>
-        //         else return <WaterfallPosts key={scream.screamId} scream={scream} openDialog/>
-        //     })
-        // )
-
         const postMarkup = loading ? (
              <div className="loading">
                 <p className="loadText">Loading</p>

@@ -163,7 +163,7 @@ class Signup extends Component{
 
                         <TextField
                             id="handle"
-                            label = "Handle"
+                            label = "User Name"
                             className={classes.textField}
                             type="text"
                             name = "handle"
@@ -174,7 +174,7 @@ class Signup extends Component{
                             helperText={errors.handle} error={errors.handle ? true : false} 
                             fullWidth
                         />
-                        {/* <TextField className={classes.textField} type="password" id="password" name="password" lable="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} helperText={errors.password} error={errors.password ? true: false} variant="filled" fullWidth/> */}
+                       
                         { errors.general && (
                             <Typography variant="body2" className={classes.customError}>
                             {errors.general}
@@ -186,9 +186,6 @@ class Signup extends Component{
                             <CircularProgress size={20} className={classes.progress}/>
                         )}
                         </Button>
-                         {/* <div>
-                         {authError? <p className="signin-message">{ authError }</p> : null }
-                         </div> */}
                          <br/>
                          <small className={classes.remind}>
                              Already have an account? <Link to="/login" className="remind">Sign in here</Link>

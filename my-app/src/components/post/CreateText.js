@@ -68,8 +68,6 @@ class CreateText extends Component {
     
     handleSubmit=(e)=>{
         e.preventDefault();
-        // console.log("ssss")
-        // console.log(this.state)
         if (this.state.picture == null) {
             this.props.postScream(this.state);
             this.props.isClose();
