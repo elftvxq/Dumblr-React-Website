@@ -71,11 +71,9 @@ class SignIn extends Component{
         })
     }
 
-    static getDerivedStateFromProps(props) {
-        if (props.UI.errors) {
-        return {
-            errors: props.UI.errors
-        }
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.UI.errors) {
+        this.setState({ errors: nextProps.UI.errors });
         }
     }
 
